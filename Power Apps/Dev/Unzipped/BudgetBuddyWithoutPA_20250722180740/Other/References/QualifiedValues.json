@@ -1,0 +1,39 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_gd_expensecategorylist_forms",
+      "Namespace": "Expense Category Lists (Forms)",
+      "Values": {
+        "Information": "9463d6ec-98d3-4faf-bf28-fc70c5a29f28"
+      }
+    },
+    {
+      "Kind": "default.cds_gd_expenseitemslist_forms",
+      "Namespace": "Expense Items Lists (Forms)",
+      "Values": {
+        "Information": "5c481a5c-3604-4fe5-998d-ee8f5acdccaa"
+      }
+    },
+    {
+      "Kind": "default.cds_gd_incomecategorylists_forms",
+      "Namespace": "Income Category Lists (Forms)",
+      "Values": {
+        "Information": "2a72d641-3e83-423f-9c25-d28cdfe85e24"
+      }
+    },
+    {
+      "Kind": "default.cds_gd_table2_forms",
+      "Namespace": "Table2S (Forms)",
+      "Values": {
+        "Information": "5e713b19-ad88-40b2-a522-fa93a6f647ec"
+      }
+    },
+    {
+      "Kind": "default.cds_gd_incomeitemslists_forms",
+      "Namespace": "Income Items Lists (Forms)",
+      "Values": {
+        "Information": "986c2379-f399-49ee-b67c-de0dc300a8d5"
+      }
+    }
+  ]
+}

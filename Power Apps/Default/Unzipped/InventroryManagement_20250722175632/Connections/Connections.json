@@ -1,0 +1,31 @@
+{
+  "63ade35b-36b4-4eb3-840a-baec1a686e05": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1754/1.0.1754.4231/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://labskraft27.sharepoint.com/sites/GuruCompany": {
+        "dataSources": {
+          "Inventory Management": {
+            "tableName": "1a5af257-438b-4a20-97b2-b94a8c1a62b1"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Inventory Management"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "63ade35b-36b4-4eb3-840a-baec1a686e05"
+  }
+}

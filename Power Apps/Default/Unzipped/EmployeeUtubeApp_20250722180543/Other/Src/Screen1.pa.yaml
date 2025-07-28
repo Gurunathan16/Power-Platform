@@ -1,0 +1,174 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Screen1:
+    Properties:
+      Fill: =RGBA(255, 255, 255, 1)
+      LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+    Children:
+      - ScreenContainer1:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =RGBA(245, 245, 245, 1)
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =16
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Width: =Parent.Width
+          Children:
+            - HeaderContainer1:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  Height: =75
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                Children:
+                  - Header1:
+                      Control: Header@0.0.44
+                      Properties:
+                        Logo: ='675737011'
+                        Title: ="Employee Details"
+            - FooterContainer1:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  Height: =75
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                Children:
+                  - ButtonCanvas1:
+                      Control: Button@0.0.45
+                      Properties:
+                        Align: =Align.Center
+                        Text: ="New Request"
+                        Width: =140
+            - MainContainer1:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  LayoutDirection: =LayoutDirection.Vertical
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                Children:
+                  - Table1:
+                      Control: Table@1.0.278
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        Items: ='Employee Details'
+                      Children:
+                        - Name1:
+                            Control: TableDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="Name"
+                              FieldName: ="Name"
+                              FieldType: ="s"
+                              Order: =1
+                        - Title1:
+                            Control: TableDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="Title"
+                              FieldName: ="Title"
+                              FieldType: ="s"
+                              Order: =2
+                        - Age1:
+                            Control: TableDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="Age"
+                              FieldName: ="Age"
+                              FieldType: ="n"
+                              Order: =3
+                        - Gender1:
+                            Control: TableDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="Gender"
+                              FieldName: ="Gender"
+                              FieldType: ="E"
+                              Order: =4
+                        - Date of Birth1:
+                            Control: TableDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="Date of Birth"
+                              FieldName: ="DateofBirth"
+                              FieldType: ="D"
+                              Order: =5
+                        - Phone Number1:
+                            Control: TableDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="Phone Number"
+                              FieldName: ="PhoneNumber"
+                              FieldType: ="n"
+                              Order: =6
+                        - Email ID1:
+                            Control: TableDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="Email ID"
+                              FieldName: ="EmailID"
+                              FieldType: ="s"
+                              Order: =7
+                        - Permanent Address1:
+                            Control: TableDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="Permanent Address"
+                              FieldName: ="PermanentAddress"
+                              FieldType: ="s"
+                              Order: =8
+                        - Communication Address1:
+                            Control: TableDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="Communication Address"
+                              FieldName: ="CommunicationAddress"
+                              FieldType: ="s"
+                              Order: =9
+                        - HR Name1:
+                            Control: TableDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="HR Name"
+                              FieldName: ="HRName"
+                              FieldType: ="E"
+                              Order: =10

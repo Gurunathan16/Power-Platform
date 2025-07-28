@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{986c2379-f399-49ee-b67c-de0dc300a8d5}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{ae167583-97c3-447f-b1cd-8678271247f2}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{14c39074-fd8c-4563-af5d-766cd6b76d8f}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{48c831c2-5d60-438d-b946-b4718416fb36}">
+                        <labels>
+                          <label description="IncomeName" languagecode="1033" />
+                        </labels>
+                        <control id="gd_incomename" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="gd_incomename" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c60b8e4b-f093-47a2-b40c-7f05434b2a34}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ee381442-53d1-429e-9940-058a196da5c6}">
+                        <labels>
+                          <label description="IncomeID" languagecode="1033" />
+                        </labels>
+                        <control id="gd_incomeid" classid="{c6d124ca-7eda-4a60-aea9-7fb8d318b68f}" datafieldname="gd_incomeid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b43addcb-209e-4b1e-9857-7bb36975c241}">
+                        <labels>
+                          <label description="Category Lookup" languagecode="1033" />
+                        </labels>
+                        <control id="gd_categorylookup" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="gd_categorylookup" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

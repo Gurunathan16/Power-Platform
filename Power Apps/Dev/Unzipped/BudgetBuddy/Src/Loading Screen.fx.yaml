@@ -1,0 +1,90 @@
+"'Loading Screen' As screen":
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    "'LS Main Container' As groupContainer.manualLayoutContainer":
+        DropShadow: =DropShadow.Light
+        Height: =Parent.Height
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =Parent.Width
+        X: =0   
+        ZIndex: =2
+
+        "'LS Loading GIF' As Spinner":
+            AccessibleLabel: ="Spinner"
+            Appearance: ='Spinner.Appearance'.Primary
+            BasePaletteColor: =RGBA(227, 106, 244, 1)
+            ContentLanguage: =""
+            DisplayMode: =DisplayMode.Edit
+            Font: =""
+            FontColor: =RGBA(62, 128, 149, 1)
+            FontItalic: =false
+            FontSize: =0
+            FontStrikethrough: =false
+            FontUnderline: =false
+            FontWeight: =FontWeight.Bold
+            Height: =200
+            Label: =""
+            LabelPosition: ="After"
+            OnChange: =false
+            SpinnerSize: ='Spinner.SpinnerSize'.Huge
+            TabIndex: =0
+            Tooltip: =""
+            TrackColor: =RGBA(255, 255, 255, 1)
+            Visible: =true
+            Width: =200
+            X: =Round((Parent.Width - Self.Width) / 2, 0)
+            Y: =Round((Parent.Height - Self.Height) / 2, 0)
+            ZIndex: =1
+
+        "'LS Please Wait Text Label' As Text":
+            Align: ='TextCanvas.Align'.Center
+            DisplayMode: =DisplayMode.Edit
+            Font: =Font.'Segoe UI'
+            FontColor: =RGBA(159, 50, 176, 1)
+            Height: ='LS Loading GIF'.Height * 0.2
+            Size: =20
+            Text: ="Please wait..."
+            VerticalAlign: =VerticalAlign.Middle
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: ='LS Loading GIF'.Width
+            X: ='LS Loading GIF'.X
+            Y: ='LS Loading GIF'.Y + ('LS Loading GIF'.Height * 0.75)
+            ZIndex: =2
+
+        "'LS Timer' As timer":
+            AutoStart: =true
+            BorderColor: =RGBA(0, 120, 212, 1)
+            BorderStyle: =BorderStyle.None
+            DisabledBorderColor: =RGBA(242, 242, 241, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            DisabledFill: =RGBA(242, 242, 241, 0)
+            Duration: =2000
+            Fill: =RGBA(0, 120, 212, 1)
+            Font: =Font.'Segoe UI'
+            HoverBorderColor: =RGBA(16, 110, 190, 1)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(16, 110, 190, 1)
+            OnTimerEnd: |-
+                =If(fromWhichScreen = 1, 
+                    If(
+                        !IsBlank(
+                            LookUp(
+                                'Balance Log', EntraObjectID = Text(User().EntraObjectId) && 'Current Balance' <> currentBalanceIF)),
+                        Navigate('Success Screen',ScreenTransition.Fade)),
+                    If(
+                        !IsBlank(
+                            LookUp(
+                                'Balance Log', EntraObjectID = Text(User().EntraObjectId) && 'Current Balance' <> currentBalanceEF)),
+                        Navigate('Success Screen',ScreenTransition.Fade)))
+            PressedBorderColor: =RGBA(16, 110, 190, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(16, 110, 190, 1)
+            Repeat: =true
+            Visible: =false
+            X: =40
+            Y: =40
+            ZIndex: =3
+

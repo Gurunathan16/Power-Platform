@@ -1,0 +1,232 @@
+"'Success Screen' As screen":
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+    OnVisible: =Set(currentBalanceSS, LookUp('Balance Log', EntraObjectID = Text(User().EntraObjectId), 'Current Balance'));
+
+    "'SC Screen Container' As groupContainer.horizontalAutoLayoutContainer":
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(245, 245, 245, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =16
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =16
+        PaddingLeft: =16
+        PaddingRight: =16
+        PaddingTop: =16
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =Parent.Width
+        ZIndex: =1
+
+        "'SCS Header Container' As groupContainer.horizontalAutoLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.Light
+            FillPortions: =0
+            Height: =75
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            ZIndex: =1
+
+            "'SCS Header' As Header":
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Center
+                BasePaletteColor: =RGBA(227, 106, 244, 1)
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =Font.Verdana
+                Height: =75
+                IsLogoVisible: =true
+                IsProfilePictureVisible: =true
+                IsTitleVisible: =true
+                LayoutMinHeight: =75
+                LayoutMinWidth: =Parent.Width
+                LogoMaxHeight: =70
+                LogoTooltip: ="The logo image"
+                OnSelectLogo: =Navigate('Home Screen',ScreenTransition.Fade);
+                Style: ='Header.Style'.Primary
+                TabIndex: =0
+                Title: ="BB - Balance"
+                TitleFontSize: =30
+                TitleRole: =""
+                Tooltip: =""
+                UserEmail: =User().Email
+                UserImage: =User().Image
+                UserImageAltText: =User().FullName &" profile picture"
+                UserName: =User().FullName
+                Visible: =true
+                Width: =Parent.Width
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+        "'SCS Main Container' As groupContainer.horizontalAutoLayoutContainer":
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutGap: =16
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutWrap: =true
+            PaddingBottom: =2
+            PaddingLeft: =2
+            PaddingRight: =2
+            PaddingTop: =2
+            ZIndex: =2
+
+            "'SCS Balance Container' As groupContainer.horizontalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.Semibold
+                FillPortions: =0
+                Height: =Parent.Height
+                LayoutAlignItems: =LayoutAlignItems.Stretch
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGap: =16
+                LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                LayoutMinHeight: =50
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                LayoutOverflowX: =LayoutOverflow.Scroll
+                LayoutOverflowY: =LayoutOverflow.Scroll
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                RadiusBottomLeft: =45
+                RadiusBottomRight: =45
+                RadiusTopLeft: =45
+                RadiusTopRight: =45
+                Width: =Round(Parent.Width * 0.375, 0)
+                ZIndex: =1
+
+                "'SCS Closing Balance Key' As label":
+                    Align: =Align.Center
+                    AlignInContainer: =AlignInContainer.Stretch
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Height: =65
+                    Overflow: =Overflow.Scroll
+                    Size: =28
+                    Text: ="Current Balance"
+                    Width: =Round(Parent.Width * 0.38, 0)
+                    X: =Round((Parent.Width - Self.Width ) / 2, 0)
+                    ZIndex: =1
+
+                "'SCS Current Balance Holder' As Text":
+                    Align: ='TextCanvas.Align'.Center
+                    AlignInContainer: =AlignInContainer.Center
+                    AutoHeight: =false
+                    BorderStyle: =""
+                    ContentLanguage: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =Font.Verdana
+                    FontColor: =If(currentBalanceSS < 0, RGBA(215, 58, 60, 1), RGBA(52, 152, 47, 1))
+                    FontItalic: =false
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    Height: =Round(Parent.Height * 0.1, 0)
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    PaddingLeft: =5
+                    Size: =25
+                    TabIndex: =0
+                    Text: |-
+                        =If(IsBlank(currentBalanceSS) || currentBalanceSS = 0, "₹ 0", "₹ " & Text(currentBalanceSS, "#,##0.00"))
+                    Tooltip: =""
+                    VerticalAlign: =VerticalAlign.Middle
+                    Visible: =true
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Round(Parent.Width * 0.5, 0)
+                    Wrap: =true
+                    X: =Round((Parent.Width - Self.Width ) / 2, 0)
+                    Y: |-
+                        =//Round((Parent.Height - 'EF Buttons Container_2'.Height - Self.Height) / 2, 0)
+                        'SCS Closing Balance Key'.Height + 5
+                    ZIndex: =2
+
+                "'Error Message - SCS Closing Balance' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =440
+                    X: =30
+                    Y: =24
+                    ZIndex: =3
+
+                "'EF Buttons Container_2' As groupContainer.horizontalAutoLayoutContainer":
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =50
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutGap: =10
+                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =0
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingBottom: =10
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    PaddingTop: =10
+                    X: ='SCS Balance Container'.X
+                    Y: ='SCS Balance Container'.Y + 'SCS Balance Container'.Height + 40
+                    ZIndex: =4
+
+                    "'EF Home Button_2' As Button":
+                        AcceptsFocus: =true
+                        AccessibleLabel: ="Submit form button"
+                        Align: =Align.Center
+                        Appearance: ="Primary"
+                        BasePaletteColor: =RGBA(227, 106, 244, 1)
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =32
+                        Icon: ="Home"
+                        IconRotation: =0
+                        IconStyle: ="Outline"
+                        Layout: ="Icon before"
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        OnSelect: =Navigate('Home Screen');
+                        TabIndex: =0
+                        Text: ="Home"
+                        Tooltip: =""
+                        VerticalAlign: =""
+                        Visible: =true
+                        Width: =120
+                        X: =40
+                        Y: =40
+                        ZIndex: =2
+

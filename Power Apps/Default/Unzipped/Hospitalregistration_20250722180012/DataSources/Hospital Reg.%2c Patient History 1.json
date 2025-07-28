@@ -1,0 +1,50 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2025-06-18T19:02:56.6940000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "{Attachments}": "Attachments",
+      "{Attachments}@odata.type": "{Attachments} ({Attachments}@odata.type)",
+      "{ContentType}": "Content type",
+      "{ContentType}#Id": "Content type Id",
+      "{FilenameWithExtension}": "File name with extension",
+      "{FullPath}": "Full Path",
+      "{HasAttachments}": "Has attachments",
+      "{Identifier}": "Identifier",
+      "{IsFolder}": "IsFolder",
+      "{Link}": "Link to item",
+      "{ModerationComment}": "Comments associated with the content approval of this list item",
+      "{ModerationStatus}": "Content approval status",
+      "{Name}": "Name",
+      "{Path}": "Folder path",
+      "{Thumbnail}": "Thumbnail",
+      "{TriggerWindowEndToken}": "Trigger Window End Token",
+      "{TriggerWindowStartToken}": "Trigger Window Start Token",
+      "{VersionNumber}": "Version number",
+      "Author": "Created By",
+      "Author#Claims": "Created By Claims",
+      "ComplianceAssetId": "Compliance Asset Id",
+      "Created": "Created",
+      "Editor": "Modified By",
+      "Editor#Claims": "Modified By Claims",
+      "ID": "ID",
+      "Modified": "Modified",
+      "Notes": "Notes",
+      "OData__ColorTag": "Color Tag",
+      "Pleaselistthemhere": "Please list them here",
+      "ReasonforRegistration": "Reason for Registration",
+      "Takinganymedications_x002c_curre": "Taking any medications, currently?",
+      "Title": "Title"
+    },
+    "DatasetName": "https://labskraft27.sharepoint.com/sites/GuruCompany",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "Hospital Reg., Patient History 1",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

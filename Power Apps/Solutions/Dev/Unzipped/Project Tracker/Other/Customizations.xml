@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25071.164" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25071.00164">
+  <Entities />
+  <Roles />
+  <Workflows />
+  <FieldSecurityProfiles />
+  <Templates />
+  <EntityImageConfigs>
+    <EntityImageConfig>
+      <parententitylogicalname>gd_project</parententitylogicalname>
+      <primaryimageattribute>gd_coverimage</primaryimageattribute>
+    </EntityImageConfig>
+  </EntityImageConfigs>
+  <AttributeImageConfigs>
+    <AttributeImageConfig>
+      <attributelogicalname>gd_coverimage</attributelogicalname>
+      <parententitylogicalname>gd_project</parententitylogicalname>
+      <canstorefullimage>1</canstorefullimage>
+    </AttributeImageConfig>
+  </AttributeImageConfigs>
+  <EntityMaps />
+  <EntityRelationships />
+  <OrganizationSettings />
+  <optionsets />
+  <CustomControls />
+  <EntityDataProviders />
+  <CanvasApps />
+  <Connectors />
+  <Languages>
+    <Language>1033</Language>
+  </Languages>
+</ImportExportXml>

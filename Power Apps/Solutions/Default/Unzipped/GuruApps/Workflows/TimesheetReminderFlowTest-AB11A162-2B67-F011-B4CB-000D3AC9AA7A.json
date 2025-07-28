@@ -1,0 +1,108 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "mca_sharedoffice365_48041"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      },
+      "shared_office365users": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "mca_sharedoffice365users_890cb"
+        },
+        "api": {
+          "name": "shared_office365users"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "undefined",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "Recurrence": {
+          "recurrence": {
+            "frequency": "Week",
+            "interval": 1,
+            "timeZone": "India Standard Time",
+            "startTime": "2025-07-04T02:13:00Z",
+            "schedule": {
+              "weekDays": [
+                "Friday"
+              ],
+              "hours": [
+                "9",
+                "15"
+              ],
+              "minutes": [
+                22
+              ]
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "a5b6604e-edfc-4961-baaf-e21317efa1a5"
+          },
+          "type": "Recurrence"
+        }
+      },
+      "actions": {
+        "Common_Mail": {
+          "runAfter": {
+            "Profile_Details": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "ff7dc176-13fc-4cd7-934e-babf272a9b4d"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "emailMessage/To": "user519@labskraft.com",
+              "emailMessage/Subject": "Fill your timesheet team",
+              "emailMessage/Body": "<p class=\"editor-paragraph\"><b><strong class=\"editor-text-bold\" style=\"font-family: Tahoma;\">Hi Team,</strong></b><br><br><span style=\"font-family: Tahoma;\">Just a quick reminder to please fill out and submit your </span><b><strong class=\"editor-text-bold\" style=\"font-family: Tahoma;\">timesheets </strong></b><span style=\"font-family: Tahoma;\">by the end of the day </span>@{ formatDateTime(utcNow(), 'dd-MM-yyyy')}<span style=\"font-family: Tahoma;\">. Accurate and timely timesheet submissions are essential for project tracking and payroll processing.</span><br><br><span style=\"font-family: Tahoma;\">If you have any questions or need assistance, feel free to reach out.</span><br><br><span style=\"font-family: Tahoma;\">Thank you for your cooperation!</span><br><br><span style=\"font-family: Tahoma;\">Best regards</span></p><p class=\"editor-paragraph\">@{outputs('Profile_Details')?['body/displayName']}</p>",
+              "emailMessage/Importance": "Normal"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+              "connectionName": "shared_office365",
+              "operationId": "SendEmailV2"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Profile_Details": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "9f5b1a97-2a85-4d0e-a170-125a1908136b"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365users",
+              "connectionName": "shared_office365users",
+              "operationId": "MyProfile_V2"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

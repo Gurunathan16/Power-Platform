@@ -1,0 +1,142 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "gd_projecttasks",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "gd_projecttask",
+    "Name": "Project Tasks",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "gd_AssignedTo": "Assigned To",
+      "gd_name": "Name",
+      "gd_priority": "Priority",
+      "gd_ProjectLookup": "Project Lookup",
+      "gd_projecttask_AsyncOperations": "System Jobs",
+      "gd_projecttask_BulkDeleteFailures": "Bulk Delete Failures",
+      "gd_projecttask_DuplicateBaseRecord": "Duplicate Records (gd_projecttask_DuplicateBaseRecord)",
+      "gd_projecttask_DuplicateMatchingRecord": "Duplicate Records (gd_projecttask_DuplicateMatchingRecord)",
+      "gd_projecttask_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "gd_projecttask_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "gd_projecttask_ProcessSession": "Process Sessions",
+      "gd_projecttask_SyncErrors": "Sync Errors",
+      "gd_projecttaskid": "Project Task",
+      "gd_taskstatus": "Task Status",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Project Tasks",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Project Tasks (Views)",
+    "Name": "_gd_projecttask_views",
+    "RelatedEntityName": "Project Tasks",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0f00db06-322d-4e37-8acf-bf5de7a9d2de": "Inactive Project Tasks",
+      "4b87c4fc-2e36-4aa0-ba80-d86e55a5f3c9": "Project Task Associated View",
+      "5c11583b-60d8-4d31-a74f-63e3079e7314": "Active Project Tasks",
+      "f2694a57-7e90-47fb-8e98-bc30ed3d883a": "Project Task Advanced Find View",
+      "f2d27c93-1ded-404a-bf3a-a49cb3a20f6a": "Project Task Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Priority Choices",
+    "Name": "gd_prioritychoices",
+    "OptionSetInfoNameMapping": {
+      "122690000": "P1",
+      "122690001": "P2",
+      "122690002": "P3"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "gd_priority",
+        "OptionSetReferenceEntityName": "Project Tasks"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "gd_priority",
+    "RelatedEntityName": "Project Tasks",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Project Tasks)",
+    "Name": "gd_projecttask_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Project Tasks"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Project Tasks",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Project Tasks)",
+    "Name": "gd_projecttask_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Project Tasks"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Project Tasks",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Task Status Choices",
+    "Name": "gd_taskstatuschoices",
+    "OptionSetInfoNameMapping": {
+      "122690000": "New",
+      "122690001": "Open",
+      "122690002": "Closed"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "gd_taskstatus",
+        "OptionSetReferenceEntityName": "Project Tasks"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "gd_taskstatus",
+    "RelatedEntityName": "Project Tasks",
+    "Type": "OptionSetInfo"
+  }
+]

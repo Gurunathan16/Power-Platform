@@ -1,0 +1,895 @@
+"'Income Form Screen' As screen.'headerFormLayout_ver1.0'":
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+    OnVisible: =Set(currentBalanceIF, LookUp('Balance Log', EntraObjectID = Text(User().EntraObjectId), 'Current Balance'));
+
+    "'IF Screen Container' As groupContainer.horizontalAutoLayoutContainer":
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(245, 245, 245, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =16
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =16
+        PaddingLeft: =16
+        PaddingRight: =16
+        PaddingTop: =16
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =Parent.Width
+        ZIndex: =2
+
+        "'IF Header Container' As groupContainer.horizontalAutoLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.Light
+            FillPortions: =0
+            Height: =75
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            ZIndex: =1
+
+            "'IF Header' As Header":
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Center
+                BasePaletteColor: =RGBA(227, 106, 244, 1)
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =Font.Verdana
+                Height: =75
+                IsLogoVisible: =true
+                IsProfilePictureVisible: =true
+                IsTitleVisible: =true
+                LayoutMinHeight: =75
+                LayoutMinWidth: =Parent.Width
+                Logo: =
+                LogoMaxHeight: =70
+                LogoTooltip: ="The logo image"
+                OnSelectLogo: =Navigate('Home Screen',ScreenTransition.Fade);
+                Style: ='Header.Style'.Primary
+                TabIndex: =0
+                Title: ="BB - Add your Income"
+                TitleFontSize: =30
+                TitleRole: =""
+                Tooltip: =""
+                UserEmail: =User().Email
+                UserImage: =User().Image
+                UserImageAltText: =User().FullName &" profile picture"
+                UserName: =User().FullName
+                Visible: =true
+                Width: =Parent.Width
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+        "'IF Main Container' As groupContainer.horizontalAutoLayoutContainer":
+            AlignInContainer: =AlignInContainer.Center
+            Fill: =RGBA(245, 245, 245, 1)
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutGap: =16
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            LayoutWrap: =true
+            PaddingBottom: =2
+            PaddingLeft: =2
+            PaddingRight: =2
+            PaddingTop: =2
+            ZIndex: =2
+
+            "'Income Form Container' As groupContainer.horizontalAutoLayoutContainer":
+                DropShadow: =DropShadow.Regular
+                Fill: =RGBA(255, 255, 255, 1)
+                LayoutAlignItems: =LayoutAlignItems.Stretch
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGap: =16
+                LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                LayoutMinHeight: =50
+                LayoutMinWidth: =If('Income Form Screen'.Size = ScreenSize.Small, Parent.Width, 400)
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                RadiusBottomLeft: =45
+                RadiusBottomRight: =45
+                RadiusTopLeft: =45
+                RadiusTopRight: =45
+                Width: =400
+                ZIndex: =1
+
+                "'Income Form' As form.PowerApps_CoreControls_Form":
+                    AcceptsFocus: =false
+                    AlignInContainer: =AlignInContainer.Center
+                    BorderColor: =RGBA(245, 245, 245, 1)
+                    BorderStyle: =BorderStyle.None
+                    DataSource: ='Income Tracker'
+                    DefaultMode: =FormMode.New
+                    Height: =Parent.Height - 'EF Buttons Container_1'.Height - 40
+                    LayoutMinHeight: =250
+                    LayoutMinWidth: =400
+                    NumberOfColumns: =1
+                    UseFluentV9Cards: =true
+                    Width: =400
+                    X: =10
+                    Y: =10
+                    ZIndex: =1
+
+                    "'IF Category Data Card' As typedDataCard.blankCard":
+                        AutoHeight: =true
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        BorderThickness: =0
+                        ContentLanguage: =""
+                        DataField: =""
+                        DisplayMode: =DisplayMode.Edit
+                        DisplayName: =""
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =Round(Parent.Height * 0.162, 0)
+                        LayoutHeight: =0
+                        LayoutWidth: =0
+                        LayoutX: =0
+                        LayoutY: =0
+                        maximumHeight: =7680
+                        maximumWidth: =1366
+                        minimumHeight: =20
+                        minimumWidth: =20
+                        Required: =false
+                        Visible: =true
+                        Width: =400
+                        WidthFit: =false
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                        "'IF Category Key' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Verdana
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Parent.Height / 3
+                            Size: =13
+                            Text: ="Category"
+                            Width: =Parent.Width - Self.X
+                            X: ='IF Category Combo box'.X + 30
+                            Y: =8
+                            ZIndex: =1
+
+                        "'Error Message - IF Category' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Height: =10
+                            Size: =13
+                            Text: |-
+                                ="
+                                "
+                            Width: =440
+                            X: =30
+                            Y: =80
+                            ZIndex: =2
+
+                        "'IF Category Combo box' As Combobox.pcfdataset":
+                            AccessibleLabel: ="Find Categories"
+                            Appearance: ='ComboboxCanvas.Appearance'.FilledDarker
+                            BasePaletteColor: =RGBA(227, 106, 244, 1)
+                            BorderColor: =RGBA(214, 221, 224, 1)
+                            BorderRadius: =10
+                            BorderStyle: =BorderStyle.Solid
+                            BorderThickness: =2
+                            ContentLanguage: =""
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontItalic: =false
+                            FontSize: =0
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            FontWeight: =""
+                            Height: =Round(Parent.Height * 0.36, 0)
+                            InputTextPlaceholder: ="Select categories"
+                            IsSearchable: =true
+                            Items: =Filter('Income Category Lists', 'Income Category Lists (Views)'.'Active Income Category Lists')
+                            MultiValueDelimiter: =", "
+                            OnChange: =false
+                            PaddingBottom: =5
+                            PaddingLeft: =5
+                            PaddingRight: =5
+                            PaddingTop: =5
+                            Required: =false
+                            SelectMultiple: =false
+                            TabIndex: =0
+                            Tooltip: =""
+                            TriggerOutput: ="Keypress"
+                            ValidationState: ="None"
+                            Visible: =true
+                            Width: =Round(Parent.Width * 0.67, 0)
+                            X: =(Parent.Width - 'IF Category Combo box'.Width) / 2
+                            Y: ='IF Category Key'.Y + 'IF Category Key'.Height + 5
+                            ZIndex: =3
+
+                            "'Category Name2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                                FieldDisplayName: ="Category Name"
+                                FieldName: ="gd_categoryname"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =1
+                                ZIndex: =0
+
+                            CategoryID1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                                FieldDisplayName: ="CategoryID"
+                                FieldName: ="gd_categoryid"
+                                FieldType: ="n"
+                                FieldVariantName: ="textualColumn"
+                                Order: =2
+                                ZIndex: =0
+
+                    "'Income Name Date Card' As typedDataCard.blankCard":
+                        AutoHeight: =true
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        BorderThickness: =0
+                        ContentLanguage: =""
+                        DataField: =""
+                        DisplayMode: =DisplayMode.Edit
+                        DisplayName: =""
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =Round(Parent.Height * 0.162, 0)
+                        LayoutHeight: =0
+                        LayoutWidth: =0
+                        LayoutX: =0
+                        LayoutY: =0
+                        maximumHeight: =7680
+                        maximumWidth: =1366
+                        minimumHeight: =20
+                        minimumWidth: =20
+                        Required: =false
+                        Visible: =true
+                        Width: =400
+                        WidthFit: =false
+                        X: =0
+                        Y: =1
+                        ZIndex: =2
+
+                        "'Income Name Key' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Verdana
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Parent.Height / 3
+                            Size: =13
+                            Text: ="Income Name"
+                            Width: =Parent.Width - Self.X
+                            X: ='Income Name Combo box'.X + 30
+                            Y: =8
+                            ZIndex: =1
+
+                        "'Error Message - Income Name' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Height: =10
+                            Size: =13
+                            Text: |-
+                                ="
+                                "
+                            Width: =440
+                            X: =30
+                            Y: =80
+                            ZIndex: =2
+
+                        "'Income Name Combo box' As Combobox.pcfdataset":
+                            AccessibleLabel: =""
+                            Appearance: ="FilledDarker"
+                            BasePaletteColor: =RGBA(227, 106, 244, 1)
+                            BorderColor: =RGBA(214, 221, 224, 1)
+                            BorderRadius: =10
+                            BorderStyle: =BorderStyle.Solid
+                            BorderThickness: =2
+                            ContentLanguage: =""
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontItalic: =false
+                            FontSize: =0
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            FontWeight: =""
+                            Height: =Round(Parent.Height * 0.36, 0)
+                            InputTextPlaceholder: ="Select income name"
+                            IsSearchable: =true
+                            Items: =Filter('Income Items Lists', 'Category Lookup'.'Category Name' = 'IF Category Combo box'.Selected.'Category Name')
+                            MultiValueDelimiter: =", "
+                            OnChange: =false
+                            PaddingBottom: =5
+                            PaddingLeft: =5
+                            PaddingRight: =5
+                            PaddingTop: =5
+                            Required: =false
+                            SelectMultiple: =false
+                            TabIndex: =0
+                            Tooltip: =""
+                            TriggerOutput: ="Keypress"
+                            ValidationState: ="None"
+                            Visible: =true
+                            Width: =Round(Parent.Width * 0.67, 0)
+                            X: =(Parent.Width - 'Income Name Combo box'.Width) / 2
+                            Y: ='Income Name Key'.Y + 'Income Name Key'.Height + 5
+                            ZIndex: =3
+
+                            IncomeName1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                                FieldDisplayName: ="IncomeName"
+                                FieldName: ="gd_incomename"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =1
+                                ZIndex: =0
+
+                            IncomeID1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                                FieldDisplayName: ="IncomeID"
+                                FieldName: ="gd_incomeid"
+                                FieldType: ="n"
+                                FieldVariantName: ="textualColumn"
+                                Order: =2
+                                ZIndex: =0
+
+                    "'IF Amount Data Card' As typedDataCard.blankCard":
+                        AutoHeight: =true
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        BorderThickness: =0
+                        ContentLanguage: =""
+                        DataField: =""
+                        DisplayMode: =DisplayMode.Edit
+                        DisplayName: =""
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =Round(Parent.Height * 0.162, 0)
+                        LayoutHeight: =0
+                        LayoutWidth: =0
+                        LayoutX: =0
+                        LayoutY: =0
+                        maximumHeight: =7680
+                        maximumWidth: =1366
+                        minimumHeight: =20
+                        minimumWidth: =20
+                        Required: =false
+                        Visible: =true
+                        Width: =400
+                        WidthFit: =false
+                        X: =0
+                        Y: =2
+                        ZIndex: =3
+
+                        "'IF Amount Key' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Verdana
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Parent.Height / 3
+                            Size: =13
+                            Text: ="Amount"
+                            Width: =Parent.Width - Self.X
+                            X: ='IF Amount Number Input'.X + 30
+                            Y: =8
+                            ZIndex: =1
+
+                        "'Error Message - IF Amount' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Height: =10
+                            Size: =13
+                            Text: |-
+                                ="
+                                "
+                            Width: =440
+                            X: =30
+                            Y: =80
+                            ZIndex: =2
+
+                        "'IF Amount Number Input' As 'Number input'":
+                            AccessibleLabel: =""
+                            Align: =Align.Left
+                            Appearance: ="FilledDarker"
+                            BasePaletteColor: =RGBA(227, 106, 244, 1)
+                            BorderColor: =RGBA(214, 221, 224, 1)
+                            BorderRadius: =10
+                            BorderStyle: =BorderStyle.Solid
+                            BorderThickness: =2
+                            ContentLanguage: =""
+                            DelayOutput: =false
+                            DisplayMode: =DisplayMode.Edit
+                            FontSize: =0
+                            Height: =Round(Parent.Height * 0.36, 0)
+                            Min: =0
+                            OnChange: =false
+                            PaddingBottom: =5
+                            PaddingLeft: =5
+                            PaddingRight: =5
+                            PaddingTop: =5
+                            Precision: ='NumberInput.Precision'.'2'
+                            Step: =1
+                            TabIndex: =0
+                            Tooltip: =""
+                            ValidationState: ="None"
+                            Visible: =true
+                            Width: =Round(Parent.Width * 0.67, 0)
+                            X: =(Parent.Width - 'IF Amount Number Input'.Width) / 2
+                            Y: ='IF Amount Key'.Y + 'IF Amount Key'.Height + 5
+                            ZIndex: =3
+
+                    "'Income Date Data Card' As typedDataCard.blankCard":
+                        AutoHeight: =true
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        BorderThickness: =0
+                        ContentLanguage: =""
+                        DataField: =""
+                        DisplayMode: =DisplayMode.Edit
+                        DisplayName: =""
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =Round(Parent.Height * 0.162, 0)
+                        LayoutHeight: =0
+                        LayoutWidth: =0
+                        LayoutX: =0
+                        LayoutY: =0
+                        maximumHeight: =7680
+                        maximumWidth: =1366
+                        minimumHeight: =20
+                        minimumWidth: =20
+                        Required: =false
+                        Visible: =true
+                        Width: =400
+                        WidthFit: =false
+                        X: =0
+                        Y: =3
+                        ZIndex: =4
+
+                        "'Income Date Key' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Verdana
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Parent.Height / 3
+                            Size: =13
+                            Text: ="Income Date"
+                            Width: =Parent.Width - Self.X
+                            X: ='Income Date Picker'.X + 30
+                            Y: =8
+                            ZIndex: =1
+
+                        "'Error Message - Income Date' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Height: =10
+                            Size: =13
+                            Text: |-
+                                ="
+                                "
+                            Width: =440
+                            X: =30
+                            Y: =80
+                            ZIndex: =2
+
+                        "'Income Date Picker' As 'Date picker'":
+                            AccessibleLabel: =""
+                            Appearance: ="FilledDarker"
+                            BasePaletteColor: =RGBA(227, 106, 244, 1)
+                            BorderColor: =RGBA(214, 221, 224, 1)
+                            BorderRadius: =10
+                            BorderStyle: =BorderStyle.Solid
+                            BorderThickness: =2
+                            ContentLanguage: =""
+                            DateTimeZone: ="Local"
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =""
+                            FontItalic: =false
+                            FontSize: =0
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            FontWeight: =""
+                            Format: ="Long Abbreviated"
+                            Height: =Round(Parent.Height * 0.36, 0)
+                            IsEditable: =false
+                            OnChange: =false
+                            PaddingBottom: =5
+                            PaddingLeft: =5
+                            PaddingRight: =5
+                            PaddingTop: =5
+                            Placeholder: ="Select a date..."
+                            Required: =false
+                            StartOfWeek: ="Sunday"
+                            TabIndex: =0
+                            Tooltip: =""
+                            ValidationState: ="None"
+                            Visible: =true
+                            Width: =Round(Parent.Width * 0.67, 0)
+                            X: =(Parent.Width - 'Income Date Picker'.Width) / 2
+                            Y: ='Income Date Key'.Y + 'Income Date Key'.Height + 5
+                            ZIndex: =3
+
+                    "'IF Opening Balance Data Card' As typedDataCard.blankCard":
+                        AutoHeight: =true
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        BorderThickness: =0
+                        ContentLanguage: =""
+                        DataField: =""
+                        DisplayMode: =DisplayMode.Edit
+                        DisplayName: =""
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =Round(Parent.Height * 0.162, 0)
+                        LayoutHeight: =0
+                        LayoutWidth: =0
+                        LayoutX: =0
+                        LayoutY: =0
+                        maximumHeight: =7680
+                        maximumWidth: =1366
+                        minimumHeight: =20
+                        minimumWidth: =20
+                        Required: =false
+                        Visible: =true
+                        Width: =400
+                        WidthFit: =false
+                        X: =0
+                        Y: =4
+                        ZIndex: =5
+
+                        "'IF Opening Balance Key' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Verdana
+                            FontWeight: =FontWeight.Semibold
+                            Height: =24
+                            Size: =13
+                            Text: ="Opening Balance"
+                            Width: =Parent.Width - Self.X
+                            X: ='Income Date Key'.X
+                            Y: =8
+                            ZIndex: =1
+
+                        "'Error Message - IF Opening Balance' As label":
+                            Align: =Align.Center
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Height: =10
+                            Size: =13
+                            Text: |-
+                                ="
+                                "
+                            Width: =440
+                            X: =30
+                            Y: =32
+                            ZIndex: =2
+
+                        "'IF Current Balance Holder OB' As Text":
+                            Align: ='TextCanvas.Align'.Center
+                            AutoHeight: =false
+                            BorderStyle: =""
+                            ContentLanguage: =""
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =Font.Verdana
+                            FontColor: =If(currentBalanceIF < 0, RGBA(215, 58, 60, 1), RGBA(52, 152, 47, 1))
+                            FontItalic: =false
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            Height: =32
+                            PaddingLeft: =5
+                            Size: =18
+                            TabIndex: =0
+                            Text: |-
+                                =If(IsBlank(currentBalanceIF) || currentBalanceIF = 0, "₹ 0", "₹ " & Text(currentBalanceIF, "#,##0.00"))
+                            Tooltip: =""
+                            VerticalAlign: =VerticalAlign.Middle
+                            Visible: =true
+                            Weight: ='TextCanvas.Weight'.Semibold
+                            Width: =Parent.Width
+                            Wrap: =true
+                            X: =0
+                            Y: =Round((Parent.Height - 'IF Opening Balance Key'.Height) / 2, 0) + 'IF Opening Balance Key'.Y
+                            ZIndex: =3
+
+                    "'IF Closing Balance Data Card' As typedDataCard.blankCard":
+                        AutoHeight: =true
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        BorderThickness: =0
+                        ContentLanguage: =""
+                        DataField: =""
+                        DisplayMode: =DisplayMode.Edit
+                        DisplayName: =""
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =Round(Parent.Height * 0.162, 0)
+                        LayoutHeight: =0
+                        LayoutWidth: =0
+                        LayoutX: =0
+                        LayoutY: =0
+                        maximumHeight: =7680
+                        maximumWidth: =1366
+                        minimumHeight: =20
+                        minimumWidth: =20
+                        Required: =false
+                        Visible: =false
+                        Width: =400
+                        WidthFit: =false
+                        X: =0
+                        Y: =5
+                        ZIndex: =6
+
+                        "'Error Message - IF Closing Balance' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Height: =10
+                            Size: =13
+                            Text: |-
+                                ="
+                                "
+                            Width: =440
+                            X: =30
+                            Y: =32
+                            ZIndex: =1
+
+                        "'IF Current Balance Holder CB' As Text":
+                            Align: ='TextCanvas.Align'.Center
+                            AutoHeight: =false
+                            BorderStyle: =""
+                            ContentLanguage: =""
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =Font.Verdana
+                            FontColor: =If(currentBalanceIF < 0, RGBA(215, 58, 60, 1), RGBA(52, 152, 47, 1))
+                            FontItalic: =false
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            Height: =32
+                            PaddingLeft: =5
+                            Size: =18
+                            TabIndex: =0
+                            Text: |-
+                                =If(IsBlank(currentBalanceIF) || currentBalanceIF = 0, "₹ 0", "₹ " & Text(currentBalanceIF, "#,##0.00"))
+                            Tooltip: =""
+                            VerticalAlign: =VerticalAlign.Middle
+                            Visible: =true
+                            Weight: ='TextCanvas.Weight'.Semibold
+                            Width: =Round(Parent.Width * 0.38, 0)
+                            Wrap: =true
+                            X: =159
+                            Y: =30
+                            ZIndex: =2
+
+                        "'IF Closing Balance Key' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Verdana
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Round(Parent.Height / 3, 0)
+                            Size: =13
+                            Text: ="Current Balance"
+                            Width: =Round(Parent.Width * 0.38, 0)
+                            X: ='Expense Date Picker'.X + 30
+                            Y: =8
+                            ZIndex: =3
+
+                "'EF Buttons Container_1' As groupContainer.horizontalAutoLayoutContainer":
+                    AlignInContainer: =AlignInContainer.Center
+                    FillPortions: =0
+                    Height: =50
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutGap: =10
+                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingBottom: =10
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    PaddingTop: =10
+                    Width: ='Income Form'.Width
+                    X: ='Income Form'.X
+                    Y: ='Income Form'.Y + 'Income Form'.Height + 16
+                    ZIndex: =2
+
+                    "'EF Cancel Button_1' As Button":
+                        AcceptsFocus: =true
+                        AccessibleLabel: ="Cancel form button"
+                        Align: =""
+                        Appearance: ='ButtonCanvas.Appearance'.Secondary
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =32
+                        Icon: ="Dismiss"
+                        IconRotation: =0
+                        IconStyle: ="Outline"
+                        Layout: ="Icon before"
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        OnSelect: =ResetForm('Expense Form')
+                        TabIndex: =0
+                        Text: ="Cancel"
+                        Tooltip: =""
+                        VerticalAlign: =""
+                        Visible: =true
+                        Width: =Round((Parent.Width / 3), 0) - 10
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                    "'EF Home Button_1' As Button":
+                        AcceptsFocus: =true
+                        AccessibleLabel: ="Submit form button"
+                        Align: =Align.Center
+                        Appearance: ="Primary"
+                        BasePaletteColor: =RGBA(227, 106, 244, 1)
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =32
+                        Icon: ="Home"
+                        IconRotation: =0
+                        IconStyle: ="Outline"
+                        Layout: ="Icon before"
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        OnSelect: =Navigate('Home Screen');
+                        TabIndex: =0
+                        Text: ="Home"
+                        Tooltip: =""
+                        VerticalAlign: =""
+                        Visible: =true
+                        Width: =Round((Parent.Width / 3), 0) - 10
+                        X: =40
+                        Y: =40
+                        ZIndex: =2
+
+                    "'EF Submit Button_1' As Button":
+                        AcceptsFocus: =true
+                        AccessibleLabel: ="Submit form button"
+                        Align: =""
+                        Appearance: ="Primary"
+                        BasePaletteColor: =RGBA(227, 106, 244, 1)
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =32
+                        Icon: ="Save"
+                        IconRotation: =0
+                        IconStyle: ="Outline"
+                        Layout: ="Icon before"
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        OnSelect: |+
+                            =Patch('Income Tracker', Defaults('Income Tracker'), 
+                            {
+                                Category:'IF Category Combo box'.Selected.'Category Name',
+                                'Income Name':'Income Name Combo box'.Selected.'IncomeName',
+                                Amount:'IF Amount Number Input'.Value,
+                                'Income Date':'Income Date Picker'.SelectedDate,
+                                EntraObjectID: User().EntraObjectId
+                            });
+                            
+                            Set(currentUserId, Text(User().EntraObjectId));
+                            
+                            With(
+                                {
+                                    existingRecord: LookUp('Balance Log', EntraObjectID = currentUserId)
+                                },
+                                If(
+                                    !IsBlank(existingRecord),
+                                    Patch('Balance Log', existingRecord, 
+                                    {
+                                        'Current Balance': currentBalanceIF + 'IF Amount Number Input'.Value
+                                    }),
+                                    Patch('Balance Log', Defaults('Balance Log'), 
+                                    {
+                                        EntraObjectID: currentUserId,
+                                        'Current Balance': 'IF Amount Number Input'.Value
+                                    }
+                                )));
+                            
+                            ResetForm('Expense Form');
+                            
+                            Navigate('Loading Screen', ScreenTransition.Fade, 
+                                {
+                                    fromWhichScreen: 1
+                                });
+                            
+                            
+                        TabIndex: =0
+                        Text: ="Submit"
+                        Tooltip: =""
+                        VerticalAlign: =""
+                        Visible: =true
+                        Width: =Round((Parent.Width / 3), 0) - 10
+                        X: =0
+                        Y: =0
+                        ZIndex: =3
+

@@ -1,0 +1,25 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_cre96_product_forms",
+      "Namespace": "Products (Forms)",
+      "Values": {
+        "Information": "f4b178b2-577f-4c6b-8165-fa3ee1472f92"
+      }
+    },
+    {
+      "Kind": "default.cds_cre96_manufacturer_forms",
+      "Namespace": "Manufacturers (Forms)",
+      "Values": {
+        "Information": "a6fb4404-cdae-43f6-8302-c5107b764b17"
+      }
+    },
+    {
+      "Kind": "default.cds_cre96_productlifecycle_forms",
+      "Namespace": "Product Lifecycles (Forms)",
+      "Values": {
+        "Information": "7bc17900-27be-4908-bed9-6b742353b2e8"
+      }
+    }
+  ]
+}

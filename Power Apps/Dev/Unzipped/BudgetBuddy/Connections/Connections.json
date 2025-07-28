@@ -1,0 +1,39 @@
+{
+  "8958e1d6-60e6-4cbb-9e68-5544ef270778": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1754/1.0.1754.4231/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://labskraft27.sharepoint.com/sites/GuruCompany": {
+        "dataSources": {
+          "Balance Log": {
+            "tableName": "f344090b-42a3-4c8e-809b-96204eb9c03b"
+          },
+          "Expense Tracker": {
+            "tableName": "7b8bab00-7a51-4e4a-bcf8-4e6e5d8d9a6e"
+          },
+          "Income Tracker": {
+            "tableName": "65668176-b147-46dd-a6da-e2148effb9c4"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Expense Tracker",
+      "Income Tracker",
+      "Balance Log"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "8958e1d6-60e6-4cbb-9e68-5544ef270778"
+  }
+}

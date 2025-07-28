@@ -1,0 +1,567 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_sharepointonline": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "msdyn_SharePoint_0lbh8"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "msdyn_Office365Outlook_0lbh8"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "sharepoint.site": {
+          "defaultValue": "",
+          "type": "String"
+        },
+        "sharepoint.list": {
+          "defaultValue": "",
+          "type": "String"
+        },
+        "sharepoint.remindMeIn": {
+          "defaultValue": 1,
+          "type": "Int"
+        },
+        "sharepoint.columnName": {
+          "defaultValue": "",
+          "type": "String"
+        },
+        "sharepoint.listName": {
+          "defaultValue": "",
+          "type": "String"
+        },
+        "sharepoint.emailSubject": {
+          "defaultValue": "",
+          "type": "String"
+        },
+        "sharepoint.emailBodyTitle": {
+          "defaultValue": "",
+          "type": "String"
+        },
+        "sharepoint.emailFlowLinkTitle": {
+          "defaultValue": "",
+          "type": "String"
+        }
+      },
+      "triggers": {
+        "Recurrence": {
+          "recurrence": {
+            "frequency": "Day",
+            "interval": 1,
+            "timeZone": "Pacific Standard Time",
+            "schedule": {
+              "hours": [
+                "9"
+              ]
+            }
+          },
+          "type": "Recurrence"
+        }
+      },
+      "actions": {
+        "Days_to_remind_me_in": {
+          "runAfter": {},
+          "type": "Compose",
+          "inputs": 3
+        },
+        "Set_up_helper_data_operations": {
+          "actions": {
+            "Today_+_x_days": {
+              "runAfter": {},
+              "type": "Compose",
+              "inputs": "@addDays(utcnow(), int(outputs('Days_to_remind_me_in')), 'yyyy-MM-dd')"
+            },
+            "x_Days_+_1": {
+              "runAfter": {
+                "Today_+_x_days": [
+                  "Succeeded"
+                ]
+              },
+              "type": "Compose",
+              "inputs": "@addDays(outputs('Today_+_x_days'),1,'yyyy-MM-dd')"
+            },
+            "Get_list_name_by_HTTP_request": {
+              "runAfter": {
+                "x_Days_+_1": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "flowSystemMetadata": {
+                  "swaggerOperationId": "HttpRequest"
+                }
+              },
+              "type": "ApiConnection",
+              "inputs": {
+                "host": {
+                  "connection": {
+                    "name": "@parameters('$connections')['shared_sharepointonline']['connectionId']"
+                  }
+                },
+                "method": "post",
+                "body": {
+                  "method": "GET",
+                  "uri": "_api/web/lists/getById('dcff712b-7ba9-41d6-8c7b-2ea3d3690462')?$select=Title",
+                  "headers": {
+                    "Accept": "application/json;odata=nometadata"
+                  }
+                },
+                "path": "/datasets/@{encodeURIComponent(encodeURIComponent('https://labskraft27-my.sharepoint.com/personal/user519_labskraft_com'))}/httprequest",
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Parse_list_name": {
+              "runAfter": {
+                "Get_list_name_by_HTTP_request": [
+                  "Succeeded"
+                ]
+              },
+              "type": "Compose",
+              "inputs": "@body('Get_list_name_by_HTTP_request')['Title']"
+            }
+          },
+          "runAfter": {
+            "Initialize_InterviewersEmails_variable": [
+              "Succeeded"
+            ]
+          },
+          "type": "Scope"
+        },
+        "Get_phone_screens_occurring_in_x_days_and_send_email_reminders": {
+          "actions": {
+            "Get_job_positions_with_phone_screen_occurring_in_x_days": {
+              "runAfter": {},
+              "metadata": {
+                "flowSystemMetadata": {
+                  "swaggerOperationId": "GetItems"
+                }
+              },
+              "type": "ApiConnection",
+              "inputs": {
+                "host": {
+                  "connection": {
+                    "name": "@parameters('$connections')['shared_sharepointonline']['connectionId']"
+                  }
+                },
+                "method": "get",
+                "path": "/datasets/@{encodeURIComponent(encodeURIComponent('https://labskraft27-my.sharepoint.com/personal/user519_labskraft_com'))}/tables/@{encodeURIComponent(encodeURIComponent('dcff712b-7ba9-41d6-8c7b-2ea3d3690462'))}/items",
+                "queries": {
+                  "$filter": "@{concat(concat('PhoneScreenDate',' ge ', '''',outputs('Today_+_x_days')),'''',' and ', concat('PhoneScreenDate',' lt ','''', outputs('x_Days_+_1'),''''))}"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Check_if_no_job_positions_have_phone_screen_occurring_in_x_days": {
+              "actions": {},
+              "runAfter": {
+                "Get_job_positions_with_phone_screen_occurring_in_x_days": [
+                  "Succeeded"
+                ]
+              },
+              "else": {
+                "actions": {
+                  "Apply_to_each_job_position_with_phone_screen_occurring_in_x_days": {
+                    "foreach": "@body('Get_job_positions_with_phone_screen_occurring_in_x_days')?['value']",
+                    "actions": {
+                      "Get_attachments": {
+                        "runAfter": {},
+                        "metadata": {
+                          "flowSystemMetadata": {
+                            "swaggerOperationId": "GetItemAttachments"
+                          }
+                        },
+                        "type": "ApiConnection",
+                        "inputs": {
+                          "host": {
+                            "connection": {
+                              "name": "@parameters('$connections')['shared_sharepointonline']['connectionId']"
+                            }
+                          },
+                          "method": "get",
+                          "path": "/datasets/@{encodeURIComponent(encodeURIComponent('https://labskraft27-my.sharepoint.com/personal/user519_labskraft_com'))}/tables/@{encodeURIComponent(encodeURIComponent('dcff712b-7ba9-41d6-8c7b-2ea3d3690462'))}/items/@{encodeURIComponent(encodeURIComponent(items('Apply_to_each_job_position_with_phone_screen_occurring_in_x_days')?['ID']))}/attachments",
+                          "authentication": "@parameters('$authentication')"
+                        }
+                      },
+                      "Apply_to_each_attachment": {
+                        "foreach": "@body('Get_attachments')",
+                        "actions": {
+                          "Get_attachment_content": {
+                            "runAfter": {},
+                            "metadata": {
+                              "flowSystemMetadata": {
+                                "swaggerOperationId": "GetAttachmentContent"
+                              }
+                            },
+                            "type": "ApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connection": {
+                                  "name": "@parameters('$connections')['shared_sharepointonline']['connectionId']"
+                                }
+                              },
+                              "method": "get",
+                              "path": "/datasets/@{encodeURIComponent(encodeURIComponent('https://labskraft27-my.sharepoint.com/personal/user519_labskraft_com'))}/tables/@{encodeURIComponent(encodeURIComponent('dcff712b-7ba9-41d6-8c7b-2ea3d3690462'))}/items/@{encodeURIComponent(encodeURIComponent(items('Apply_to_each_job_position_with_phone_screen_occurring_in_x_days')?['ID']))}/attachments/@{encodeURIComponent(items('Apply_to_each_attachment')?['Id'])}/$value",
+                              "authentication": "@parameters('$authentication')"
+                            }
+                          },
+                          "Append_to_AttachmentsArray": {
+                            "runAfter": {
+                              "Get_attachment_content": [
+                                "Succeeded"
+                              ]
+                            },
+                            "type": "AppendToArrayVariable",
+                            "inputs": {
+                              "name": "AttachmentsArray",
+                              "value": {
+                                "Name": "@items('Apply_to_each_attachment')?['DisplayName']",
+                                "ContentBytes": "@body('Get_attachment_content')?['$content']"
+                              }
+                            }
+                          }
+                        },
+                        "runAfter": {
+                          "Get_attachments": [
+                            "Succeeded"
+                          ]
+                        },
+                        "type": "Foreach"
+                      },
+                      "Send_phone_screener_a_reminder_email_about_the_phone_screen_date": {
+                        "runAfter": {
+                          "Apply_to_each_attachment": [
+                            "Succeeded"
+                          ]
+                        },
+                        "metadata": {
+                          "flowSystemMetadata": {
+                            "swaggerOperationId": "SendEmailV2"
+                          }
+                        },
+                        "type": "ApiConnection",
+                        "inputs": {
+                          "host": {
+                            "connection": {
+                              "name": "@parameters('$connections')['shared_office365']['connectionId']"
+                            }
+                          },
+                          "method": "post",
+                          "body": {
+                            "To": "@items('Apply_to_each_job_position_with_phone_screen_occurring_in_x_days')?['PhoneScreener']?['Email']",
+                            "Subject": "Phone screen for @{items('Apply_to_each_job_position_with_phone_screen_occurring_in_x_days')?['{Name}']} is in @{outputs('Days_to_remind_me_in')} day(s)",
+                            "Body": "<p>Hello @{items('Apply_to_each_job_position_with_phone_screen_occurring_in_x_days')?['PhoneScreener']?['DisplayName']},<br>\n<br>\nThe phone screen for @{items('Apply_to_each_job_position_with_phone_screen_occurring_in_x_days')?['{Name}']} for the position of @{items('Apply_to_each_job_position_with_phone_screen_occurring_in_x_days')?['Position']?['Value']} is in @{outputs('Days_to_remind_me_in')} day(s) on @{items('Apply_to_each_job_position_with_phone_screen_occurring_in_x_days')?['PhoneScreenDate']}.<br>\n<br>\nPlease review the candidate tracking item in the \"@{outputs('Parse_list_name')}\" list here: <a href=\"@{items('Apply_to_each_job_position_with_phone_screen_occurring_in_x_days')?['{Link}']}\">Link to item</a>.</p>",
+                            "Cc": "@items('Apply_to_each_job_position_with_phone_screen_occurring_in_x_days')?['Recruiter']?['Email']",
+                            "Attachments": "@variables('AttachmentsArray')",
+                            "Importance": "Normal"
+                          },
+                          "path": "/v2/Mail",
+                          "authentication": "@parameters('$authentication')"
+                        }
+                      },
+                      "Reset_AttachmentsArray_variable": {
+                        "runAfter": {
+                          "Send_phone_screener_a_reminder_email_about_the_phone_screen_date": [
+                            "Succeeded"
+                          ]
+                        },
+                        "type": "SetVariable",
+                        "inputs": {
+                          "name": "AttachmentsArray",
+                          "value": []
+                        }
+                      }
+                    },
+                    "runAfter": {},
+                    "type": "Foreach"
+                  }
+                }
+              },
+              "expression": {
+                "equals": [
+                  "@empty(body('Get_job_positions_with_phone_screen_occurring_in_x_days')?['value'])",
+                  true
+                ]
+              },
+              "type": "If"
+            }
+          },
+          "runAfter": {
+            "Set_up_helper_data_operations": [
+              "Succeeded"
+            ]
+          },
+          "type": "Scope"
+        },
+        "Initialize_AttachmentsArray_variable": {
+          "runAfter": {
+            "Days_to_remind_me_in": [
+              "Succeeded"
+            ]
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "AttachmentsArray",
+                "type": "array"
+              }
+            ]
+          }
+        },
+        "Get_interviews_occurring_in_x_days_and_send_email_reminders": {
+          "actions": {
+            "Get_job_positions_with_interviews_occurring_in_x_days": {
+              "runAfter": {},
+              "metadata": {
+                "flowSystemMetadata": {
+                  "swaggerOperationId": "GetItems"
+                }
+              },
+              "type": "ApiConnection",
+              "inputs": {
+                "host": {
+                  "connection": {
+                    "name": "@parameters('$connections')['shared_sharepointonline']['connectionId']"
+                  }
+                },
+                "method": "get",
+                "path": "/datasets/@{encodeURIComponent(encodeURIComponent('https://labskraft27-my.sharepoint.com/personal/user519_labskraft_com'))}/tables/@{encodeURIComponent(encodeURIComponent('dcff712b-7ba9-41d6-8c7b-2ea3d3690462'))}/items",
+                "queries": {
+                  "$filter": "@{concat(concat('InterviewDate', ' ge ', '''', outputs('Today_+_x_days')), '''', ' and ', concat('InterviewDate', ' lt ', '''', outputs('x_Days_+_1'), ''''))}"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Check_if_no_job_positions_have_interviews_occurring_in_x_days": {
+              "actions": {},
+              "runAfter": {
+                "Get_job_positions_with_interviews_occurring_in_x_days": [
+                  "Succeeded"
+                ]
+              },
+              "else": {
+                "actions": {
+                  "Apply_to_each_job_position_with_interviews_occurring_in_x_days": {
+                    "foreach": "@body('Get_job_positions_with_interviews_occurring_in_x_days')?['value']",
+                    "actions": {
+                      "Get_attachments_2": {
+                        "runAfter": {
+                          "Apply_to_each_interviewer": [
+                            "Succeeded"
+                          ]
+                        },
+                        "metadata": {
+                          "flowSystemMetadata": {
+                            "swaggerOperationId": "GetItemAttachments"
+                          }
+                        },
+                        "type": "ApiConnection",
+                        "inputs": {
+                          "host": {
+                            "connection": {
+                              "name": "@parameters('$connections')['shared_sharepointonline']['connectionId']"
+                            }
+                          },
+                          "method": "get",
+                          "path": "/datasets/@{encodeURIComponent(encodeURIComponent('https://labskraft27-my.sharepoint.com/personal/user519_labskraft_com'))}/tables/@{encodeURIComponent(encodeURIComponent('dcff712b-7ba9-41d6-8c7b-2ea3d3690462'))}/items/@{encodeURIComponent(encodeURIComponent(items('Apply_to_each_job_position_with_interviews_occurring_in_x_days')?['ID']))}/attachments",
+                          "authentication": "@parameters('$authentication')"
+                        }
+                      },
+                      "Apply_to_each_attachment_2": {
+                        "foreach": "@body('Get_attachments_2')",
+                        "actions": {
+                          "Get_attachment_content_2": {
+                            "runAfter": {},
+                            "metadata": {
+                              "flowSystemMetadata": {
+                                "swaggerOperationId": "GetAttachmentContent"
+                              }
+                            },
+                            "type": "ApiConnection",
+                            "inputs": {
+                              "host": {
+                                "connection": {
+                                  "name": "@parameters('$connections')['shared_sharepointonline']['connectionId']"
+                                }
+                              },
+                              "method": "get",
+                              "path": "/datasets/@{encodeURIComponent(encodeURIComponent('https://labskraft27-my.sharepoint.com/personal/user519_labskraft_com'))}/tables/@{encodeURIComponent(encodeURIComponent('dcff712b-7ba9-41d6-8c7b-2ea3d3690462'))}/items/@{encodeURIComponent(encodeURIComponent(items('Apply_to_each_job_position_with_interviews_occurring_in_x_days')?['ID']))}/attachments/@{encodeURIComponent(items('Apply_to_each_attachment_2')?['Id'])}/$value",
+                              "authentication": "@parameters('$authentication')"
+                            }
+                          },
+                          "Append_to_AttachmentsArray_2": {
+                            "runAfter": {
+                              "Get_attachment_content_2": [
+                                "Succeeded"
+                              ]
+                            },
+                            "type": "AppendToArrayVariable",
+                            "inputs": {
+                              "name": "AttachmentsArray2",
+                              "value": {
+                                "Name": "@items('Apply_to_each_attachment_2')?['DisplayName']",
+                                "ContentBytes": "@body('Get_attachment_content_2')?['$content']"
+                              }
+                            }
+                          }
+                        },
+                        "runAfter": {
+                          "Get_attachments_2": [
+                            "Succeeded"
+                          ]
+                        },
+                        "type": "Foreach"
+                      },
+                      "Send_interviewer(s)_a_reminder_email_about_the_interview_date": {
+                        "runAfter": {
+                          "Apply_to_each_attachment_2": [
+                            "Succeeded"
+                          ]
+                        },
+                        "metadata": {
+                          "flowSystemMetadata": {
+                            "swaggerOperationId": "SendEmailV2"
+                          }
+                        },
+                        "type": "ApiConnection",
+                        "inputs": {
+                          "host": {
+                            "connection": {
+                              "name": "@parameters('$connections')['shared_office365']['connectionId']"
+                            }
+                          },
+                          "method": "post",
+                          "body": {
+                            "To": "@variables('InterviewersEmails')",
+                            "Subject": "Interview for @{items('Apply_to_each_job_position_with_interviews_occurring_in_x_days')?['{Name}']} is in @{outputs('Days_to_remind_me_in')} day(s)",
+                            "Body": "<p>Hello interviewer(s),<br>\n<br>\nThe interview for @{items('Apply_to_each_job_position_with_interviews_occurring_in_x_days')?['{Name}']} for the position of @{items('Apply_to_each_job_position_with_interviews_occurring_in_x_days')?['Position']?['Value']} is in @{outputs('Days_to_remind_me_in')} day(s) on @{items('Apply_to_each_job_position_with_interviews_occurring_in_x_days')?['InterviewDate']}.<br>\n<br>\nPlease review the candidate tracking item in the \"@{outputs('Parse_list_name')}\" list here: <a href=\"@{items('Apply_to_each_job_position_with_interviews_occurring_in_x_days')?['{Link}']}\">Link to item</a>.</p>",
+                            "Cc": "@items('Apply_to_each_job_position_with_interviews_occurring_in_x_days')?['Recruiter']?['Email']",
+                            "Attachments": "@variables('AttachmentsArray2')",
+                            "Importance": "Normal"
+                          },
+                          "path": "/v2/Mail",
+                          "authentication": "@parameters('$authentication')"
+                        }
+                      },
+                      "Reset_InterviewersEmails_variable": {
+                        "runAfter": {
+                          "Send_interviewer(s)_a_reminder_email_about_the_interview_date": [
+                            "Succeeded"
+                          ]
+                        },
+                        "type": "SetVariable",
+                        "inputs": {
+                          "name": "InterviewersEmails",
+                          "value": "@{null}"
+                        }
+                      },
+                      "Apply_to_each_interviewer": {
+                        "foreach": "@items('Apply_to_each_job_position_with_interviews_occurring_in_x_days')['Interviewers']",
+                        "actions": {
+                          "Append_to_InterviewersEmails_variable": {
+                            "runAfter": {},
+                            "type": "AppendToStringVariable",
+                            "inputs": {
+                              "name": "InterviewersEmails",
+                              "value": "@{items('Apply_to_each_interviewer')?['Email']},"
+                            }
+                          }
+                        },
+                        "runAfter": {},
+                        "type": "Foreach"
+                      },
+                      "Reset_AttachmentsArray2_variable": {
+                        "runAfter": {
+                          "Reset_InterviewersEmails_variable": [
+                            "Succeeded"
+                          ]
+                        },
+                        "type": "SetVariable",
+                        "inputs": {
+                          "name": "AttachmentsArray2",
+                          "value": []
+                        }
+                      }
+                    },
+                    "runAfter": {},
+                    "type": "Foreach"
+                  }
+                }
+              },
+              "expression": {
+                "equals": [
+                  "@empty(body('Get_job_positions_with_interviews_occurring_in_x_days')?['value'])",
+                  true
+                ]
+              },
+              "type": "If"
+            }
+          },
+          "runAfter": {
+            "Set_up_helper_data_operations": [
+              "Succeeded"
+            ]
+          },
+          "type": "Scope"
+        },
+        "Initialize_InterviewersEmails_variable": {
+          "runAfter": {
+            "Initialize_AttachmentsArray2_variable": [
+              "Succeeded"
+            ]
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "InterviewersEmails",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Initialize_AttachmentsArray2_variable": {
+          "runAfter": {
+            "Initialize_AttachmentsArray_variable": [
+              "Succeeded"
+            ]
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "AttachmentsArray2",
+                "type": "array"
+              }
+            ]
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": "SolutionTemplate-Recruitment_tracker_0lbh8"
+  },
+  "schemaVersion": "1.0.0.0"
+}

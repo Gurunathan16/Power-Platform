@@ -1,0 +1,121 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cre96_productlifecycles",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cre96_productlifecycle",
+    "MaxGetRowsCount": 500,
+    "Name": "Product Lifecycles",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "{Attachments}": "Attachments",
+      "cre96_ProductID": "Product",
+      "cre96_productlifecycle_Annotations": "Notes",
+      "cre96_productlifecycle_AsyncOperations": "System Jobs",
+      "cre96_productlifecycle_BulkDeleteFailures": "Bulk Delete Failures",
+      "cre96_productlifecycle_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cre96_productlifecycle_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cre96_productlifecycle_ProcessSession": "Process Sessions",
+      "cre96_productlifecycle_SyncErrors": "Sync Errors",
+      "cre96_productlifecycle1": "Product Lifecycle (cre96_productlifecycle1)",
+      "cre96_productlifecycleid": "Product Lifecycle (cre96_productlifecycleid)",
+      "cre96_stage": "Stage",
+      "cre96_startdate": "Start Date",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Product Lifecycles",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Product Lifecycles (Views)",
+    "Name": "_cre96_productlifecycle_views",
+    "RelatedEntityName": "Product Lifecycles",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "009f5ac0-de6f-4797-8eab-b629022bfa77": "Product Lifecycle Associated View",
+      "062989b5-ed81-48b9-8311-4ddd7916e7bb": "Inactive Product Lifecycles",
+      "0e082f8e-b69a-4de8-8c72-ffb8b047471e": "Product Lifecycle Lookup View",
+      "65535431-209e-4076-b0cf-739e0dfa2799": "Active Product Lifecycles",
+      "9356664d-ad54-4cf0-ae22-f05c628a198c": "Product Lifecycle Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Stage (Product Lifecycles)",
+    "Name": "cre96_productlifecycle_cre96_stage",
+    "OptionSetInfoNameMapping": {
+      "807790000": "Development",
+      "807790001": "Production",
+      "807790002": "Discontinuation"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cre96_stage",
+        "OptionSetReferenceEntityName": "Product Lifecycles"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cre96_stage",
+    "RelatedEntityName": "Product Lifecycles",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Product Lifecycles)_1",
+    "Name": "cre96_productlifecycle_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Product Lifecycles"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Product Lifecycles",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Product Lifecycles)_1",
+    "Name": "cre96_productlifecycle_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Product Lifecycles"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Product Lifecycles",
+    "Type": "OptionSetInfo"
+  }
+]

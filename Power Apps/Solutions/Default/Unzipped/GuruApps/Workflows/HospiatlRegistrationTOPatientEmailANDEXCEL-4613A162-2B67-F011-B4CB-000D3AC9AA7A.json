@@ -1,0 +1,224 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_microsoftforms": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "mca_sharedmicrosoftforms_f47c6"
+        },
+        "api": {
+          "name": "shared_microsoftforms"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "mca_sharedoffice365_48041"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      },
+      "shared_excelonlinebusiness": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "mca_sharedexcelonlinebusiness_fb816"
+        },
+        "api": {
+          "name": "shared_excelonlinebusiness"
+        }
+      },
+      "shared_sharepointonline": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "mca_sharedsharepointonline_6b086"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "When_a_new_response_is_submitted": {
+          "splitOn": "@triggerOutputs()?['body/value']",
+          "metadata": {
+            "operationMetadataId": "1189a692-c1a2-4102-b140-9e80d1feb535"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "parameters": {
+              "form_id": "sKgEsOKHw0OZQMYv7uFf-RxdR6AvZBxAjXRmzMiOXKVUMFdONDRLN0hFVlozM05WS1Q0MlZRR0ZBVC4u"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_microsoftforms",
+              "connectionName": "shared_microsoftforms",
+              "operationId": "CreateFormWebhook"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Get_response_details": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "f6b9a9c3-b16d-4be4-819d-0136e4cd0def"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "form_id": "sKgEsOKHw0OZQMYv7uFf-RxdR6AvZBxAjXRmzMiOXKVUMFdONDRLN0hFVlozM05WS1Q0MlZRR0ZBVC4u",
+              "response_id": "@triggerOutputs()?['body/resourceData/responseId']"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_microsoftforms",
+              "connectionName": "shared_microsoftforms",
+              "operationId": "GetFormResponseById"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Send_an_email_(V2)": {
+          "runAfter": {
+            "Get_response_details": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "6a781fde-8590-4fb4-a250-b813786f1cf7"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "emailMessage/To": "@outputs('Get_response_details')?['body/raf26277b49f248728815d7f2e595ba6e']",
+              "emailMessage/Subject": "Your Hospital Registration is successful!",
+              "emailMessage/Body": "<p class=\"editor-paragraph\"><b><strong class=\"editor-text-bold\" style=\"font-family: Verdana; font-size: 14px;\">Hi </strong></b>@{outputs('Get_response_details')?['body/r614ba7c809324a2a9e322fcb0f2674ad']}<b><strong class=\"editor-text-bold\" style=\"font-family: Verdana; font-size: 14px;\">,</strong></b></p><br><p class=\"editor-paragraph\"><span style=\"font-family: Verdana; font-size: 13px;\">Welcome to </span><b><strong class=\"editor-text-bold\" style=\"font-family: Verdana; font-size: 13px;\">ABC Hospitals</strong></b><span style=\"font-family: Verdana; font-size: 13px;\">. Your registration with our hospital is successful. Please check with the </span><b><strong class=\"editor-text-bold\" style=\"font-family: Verdana; font-size: 13px;\">help desk </strong></b><span style=\"font-family: Verdana; font-size: 13px;\">to get further details. Please show the below </span><b><strong class=\"editor-text-bold\" style=\"font-family: Verdana; font-size: 13px;\">QR</strong></b><span style=\"font-family: Verdana; font-size: 13px;\"> code to the help desk member.</span></p><br><p class=\"editor-paragraph\"><b><strong class=\"editor-text-bold\">Link to help desk: </strong></b>https://maps.app.goo.gl/QoVd291nhccp1byR8</p><p class=\"editor-paragraph\"><br><b><strong class=\"editor-text-bold\" style=\"color: rgb(126, 211, 33); font-family: Verdana; font-size: 13px;\">Your health is the most important thing.</strong></b><br></p><br><p class=\"editor-paragraph\"><b><strong class=\"editor-text-bold\" style=\"font-family: Verdana; font-size: 12px;\">Note: </strong></b><span style=\"font-family: Verdana; font-size: 12px;\">We are lisiting out your important details which you have mentioned in registration form. Check it once and if there is a need for change, Please reach out the registration desk for updation.</span><br><br><b><strong class=\"editor-text-bold\" style=\"font-family: Verdana; font-size: 12px;\">Name: </strong></b>@{outputs('Get_response_details')?['body/r614ba7c809324a2a9e322fcb0f2674ad']}</p><p class=\"editor-paragraph\"><b><strong class=\"editor-text-bold\" style=\"font-family: Verdana; font-size: 12px;\">Phone Number: </strong></b>@{outputs('Get_response_details')?['body/r84464bd49c1a4f249e1fadcc00d2e52a']}</p><p class=\"editor-paragraph\"><b><strong class=\"editor-text-bold\" style=\"font-family: Verdana; font-size: 12px;\">E-mail Address: </strong></b>@{outputs('Get_response_details')?['body/raf26277b49f248728815d7f2e595ba6e']}</p><p class=\"editor-paragraph\"><b><strong class=\"editor-text-bold\" style=\"font-family: Verdana; font-size: 12px;\">Emergency Contact Information: </strong></b>@{outputs('Get_response_details')?['body/r412adb6cb19b49e49e8c70daba10bc0e']}</p><p class=\"editor-paragraph\"><b><strong class=\"editor-text-bold\" style=\"font-family: Verdana; font-size: 12px;\">Date of Last BP Check: </strong></b>@{outputs('Get_response_details')?['body/r963e496d24ad4d619d6885463b8a7cac']}</p><p class=\"editor-paragraph\"><b><strong class=\"editor-text-bold\" style=\"font-family: Verdana; font-size: 12px;\">Covid Vacination Status: </strong></b>@{outputs('Get_response_details')?['body/r6609c6c12f6743b88ab69fa2303f6bcb']}</p><br><p class=\"editor-paragraph\"><span style=\"font-family: Verdana;\">Thank you! Have a nice day😊!</span></p>",
+              "emailMessage/Importance": "High"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+              "connectionName": "shared_office365",
+              "operationId": "SendEmailV2"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Add_a_row_into_a_table": {
+          "runAfter": {
+            "Send_an_email_(V2)": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "01IM3WLTXI5KWVFEWKCRCIP2KNPBGQZWMA": "/Hospital Registration.xlsx",
+            "operationMetadataId": "3bce0070-dc54-4650-b42c-92814debba75",
+            "tableId": "{63F5C5C1-E0BC-4A2A-8AD2-1891ED9D09D2}",
+            "01IM3WLTXB367J3IO3DVAIYJHRG2PAQQIT": "/Hospital Registration.xlsx"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "source": "me",
+              "drive": "b!a94Au6oOc0mJEMsBeHX3YMEkIapZ8txOveQP2hoYGQXCRhGmXoliQqw1FD5CzutV",
+              "file": "01IM3WLTXB367J3IO3DVAIYJHRG2PAQQIT",
+              "table": "{63F5C5C1-E0BC-4A2A-8AD2-1891ED9D09D2}",
+              "dateTimeFormat": "ISO 8601",
+              "item/Registration date": "@outputs('Get_response_details')?['body/ra446431b3f30447294a24950578467c7']",
+              "item/Full name": "@outputs('Get_response_details')?['body/r614ba7c809324a2a9e322fcb0f2674ad']",
+              "item/Date of birth": "@outputs('Get_response_details')?['body/r7455a01e0eb54a8a807c8e8eef1d461d']",
+              "item/Address": "@outputs('Get_response_details')?['body/rf4016adc548f42718990cad7d5892c93']",
+              "item/Phone number": "@outputs('Get_response_details')?['body/r84464bd49c1a4f249e1fadcc00d2e52a']",
+              "item/E-mail address": "@outputs('Get_response_details')?['body/raf26277b49f248728815d7f2e595ba6e']",
+              "item/Employment Status": "@outputs('Get_response_details')?['body/r0c6a24eb34d44dd384437321994d4da9']",
+              "item/Are you currently taking any medications?": "@outputs('Get_response_details')?['body/r580633643613487391ca9b7d50509dca']",
+              "item/List all medications_x002e_": "@outputs('Get_response_details')?['body/rebe0108e0d3b4c1fb5f430ea5603f908']",
+              "item/Emergency contact information": "@outputs('Get_response_details')?['body/r412adb6cb19b49e49e8c70daba10bc0e']",
+              "item/Special notes": "@outputs('Get_response_details')?['body/r77bc08ecbdbb43c293e773d8e9bf1ce8']",
+              "item/Height": "@outputs('Get_response_details')?['body/r2ff9e31f9df6421dbe6d79cccf052910']",
+              "item/Weight": "@outputs('Get_response_details')?['body/rd42914cc3fee4b5aafd8aa5c81684a96']",
+              "item/Do you drink alcohol?": "@outputs('Get_response_details')?['body/r5acc7b0d397b440bb5abe67e286e5ecf']",
+              "item/Do you smoke cigarettes?": "@outputs('Get_response_details')?['body/ra8c8a1c69a07436782706bd5efa8d7af']",
+              "item/Do you use any recreational drugs?": "@outputs('Get_response_details')?['body/r34d3db4aae3249c394904897180e6166']",
+              "item/Do you have any pre-existing medical conditions?": "@outputs('Get_response_details')?['body/r8c766358673d4111ac958d7151a1014f']",
+              "item/Please specify what kind of medical condition you have_x002e_": "@outputs('Get_response_details')?['body/rc11cf9c63b3341b4b71ffe4459be4125']",
+              "item/Is there a history of serious illness is in your family?": "@outputs('Get_response_details')?['body/ra20fc9f356f04ccab7f3c135b61097c7']",
+              "item/If yes, please specify_x002e_": "@outputs('Get_response_details')?['body/r57a917d59f4d4bcebd5614dd9411a3ef']",
+              "item/Date of last blood pressure check": "@outputs('Get_response_details')?['body/r963e496d24ad4d619d6885463b8a7cac']",
+              "item/Results of last blood pressure check": "@outputs('Get_response_details')?['body/rd44b4586ae8f422eb786d2c10a38519a']",
+              "item/What is your COVID-19 vaccination status?": "@outputs('Get_response_details')?['body/r6609c6c12f6743b88ab69fa2303f6bcb']"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+              "connectionName": "shared_excelonlinebusiness",
+              "operationId": "AddRowV2"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Create_item": {
+          "runAfter": {
+            "Add_a_row_into_a_table": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "7f6fb859-39de-4652-b16e-16356ed7164d"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "https://labskraft27.sharepoint.com/sites/GuruCompany",
+              "table": "21be8079-d1a5-4235-84b1-7cc7136bc3fd",
+              "item/Registrationdate": "@outputs('Get_response_details')?['body/ra446431b3f30447294a24950578467c7']",
+              "item/Fullname": "@outputs('Get_response_details')?['body/r614ba7c809324a2a9e322fcb0f2674ad']",
+              "item/Dateofbirth": "@outputs('Get_response_details')?['body/r7455a01e0eb54a8a807c8e8eef1d461d']",
+              "item/Address": "@outputs('Get_response_details')?['body/rf4016adc548f42718990cad7d5892c93']",
+              "item/Phonenumber": "@outputs('Get_response_details')?['body/r84464bd49c1a4f249e1fadcc00d2e52a']",
+              "item/E_x002d_mailaddress": "@outputs('Get_response_details')?['body/raf26277b49f248728815d7f2e595ba6e']",
+              "item/EmploymentStatus": "@outputs('Get_response_details')?['body/r0c6a24eb34d44dd384437321994d4da9']",
+              "item/Areyoucurrentlytakinganymedicati": "@outputs('Get_response_details')?['body/r580633643613487391ca9b7d50509dca']",
+              "item/Emergencycontactinformation": "@outputs('Get_response_details')?['body/r412adb6cb19b49e49e8c70daba10bc0e']",
+              "item/Doyousmokecigarettes_x003f_": "@outputs('Get_response_details')?['body/ra8c8a1c69a07436782706bd5efa8d7af']",
+              "item/Height_x0028_incm_x0029_": "@outputs('Get_response_details')?['body/r2ff9e31f9df6421dbe6d79cccf052910']",
+              "item/Weight_x0028_inkg_x0029_": "@outputs('Get_response_details')?['body/rd42914cc3fee4b5aafd8aa5c81684a96']",
+              "item/Doyoudrinkalcohol_x003f_": "@outputs('Get_response_details')?['body/r5acc7b0d397b440bb5abe67e286e5ecf']",
+              "item/Doyouuseanyrecreationaldrugs_x00": "@outputs('Get_response_details')?['body/r34d3db4aae3249c394904897180e6166']",
+              "item/Doyouhaveanypre_x002d_existingme": "@outputs('Get_response_details')?['body/r8c766358673d4111ac958d7151a1014f']",
+              "item/Pleasespecifywhatkindofmedicalco": "@outputs('Get_response_details')?['body/rc11cf9c63b3341b4b71ffe4459be4125']",
+              "item/Isthereahistoryofseriousillnessi": "@outputs('Get_response_details')?['body/ra20fc9f356f04ccab7f3c135b61097c7']",
+              "item/Dateoflastbloodpressurecheck": "@outputs('Get_response_details')?['body/r963e496d24ad4d619d6885463b8a7cac']",
+              "item/Resultsoflastbloodpressurecheck": "@outputs('Get_response_details')?['body/rd44b4586ae8f422eb786d2c10a38519a']",
+              "item/WhatisyourCOVID_x002d_19vaccinat": "@outputs('Get_response_details')?['body/r6609c6c12f6743b88ab69fa2303f6bcb']",
+              "item/Employer": "@outputs('Get_response_details')?['body/r67d6e7a0645748acac57407fe74ea099']",
+              "item/Listallmedications_x002e_": "@outputs('Get_response_details')?['body/rebe0108e0d3b4c1fb5f430ea5603f908']",
+              "item/Specialnotes": "@outputs('Get_response_details')?['body/r77bc08ecbdbb43c293e773d8e9bf1ce8']",
+              "item/{ContentType}/Id": "0x0100113F9720CC642341A643883D2CC6E50A00D48434B3C60CAE4FA4BA147CDC6B95CF"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "connectionName": "shared_sharepointonline",
+              "operationId": "PostItem"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

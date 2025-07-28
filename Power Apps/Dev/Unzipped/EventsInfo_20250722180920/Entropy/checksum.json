@@ -1,0 +1,30 @@
+{
+  "ClientPerFileChecksums": {
+    ".gitignore": "C8_VaC8EcEG56Ufcy1DFyC8Ky19iV9xSsXMDIAcmF2GTj8=",
+    "AppCheckerResult.sarif": "C8_C+4WF5b0ga3/+7yCKvcpfKFyflhHIoq+SJhjx9XY/f8=",
+    "Assets\\Images\\18582cbc-db77-48a4-b722-2bbcc9f34865.png": "C8_McKMXs4WX3tYLSbUGwywwMMGQET1a/TgsoSX1Vvf9kg=",
+    "Assets\\Images\\32c7c823-52bc-4d12-b74b-379570873816.png": "C8_7UL/di3bDRM6Z7vzwmHLLFuqdZ4iifb0mfCS2qy8jg0=",
+    "Assets\\Images\\4ba83f5f-1412-4256-afeb-37cd9b183559.png": "C8_NiptjrXIJa34xHW5hPNwjUZJVJ3qY62U900Xi3YA5LI=",
+    "Assets\\Images\\ae811ee1-dd6e-44fa-a95e-fdcf20a511e1.jpg": "C8_Dz2aXwVQwgBvvEiwp+Kdq/inENDXsmdY31iOq0vx3yc=",
+    "Controls\\1.json": "C8_+9bWWWaDtzI/rA9xGR0GFD302+//iUIr6k2V6TsJM50=",
+    "Controls\\158.json": "C8_V6ljTxN1yMe0GJJVX7IzIyJQJn20BbpHmPLzKx7/h7Q=",
+    "Controls\\23.json": "C8_MVJKnexYL6CldH5oulb20STaKJxFi4Mqm20JPzjyHNE=",
+    "Controls\\4.json": "C8_Xe0ppQKRxRjslZg68jPaFtpHlI5Altj0/TmKngYVy7o=",
+    "Controls\\95.json": "C8_zKZ1ivDRVd8lw/pILmL1HIPlfsmr9dh7mPHkDEF2j48=",
+    "Header.json": "C8_oV9VrguLNV/2ycz19TIHaItlajpsPblXWyTjAFrUCVg=",
+    "Properties.json": "C8_5bYORVzrNfbPunwVM+RoYJc5xIxGsM9VqFb+Ui6fSZs=",
+    "References\\DataSources.json": "C8_V15bVr/ng0RML4zR22rJyBgxzYP16URL62G7PM4SxG0=",
+    "References\\ModernThemes.json": "C8_KDQJ/3t27vgKx25iCQB/PGqxkWE34ZB7Eyb+RxNxY0k=",
+    "References\\Resources.json": "C8_Mo1QZ2jLE6DibbwspxR2T5ciOD4T4DKP6VG/SCs36QE=",
+    "References\\Templates.json": "C8_wLhv3GO7FwW6sTaKFRkP9NNTGfSJCmcYfsD3bqbgyhw=",
+    "References\\Themes.json": "C8_RlzfNvNoKW2qW2c4jV29thNehCcuXpqot+zDMsiQue0=",
+    "Resources\\PublishInfo.json": "C8_wJdYwQinaQdT0OfiFDJEX5rXd2DDRb9FMIABN84mxmg=",
+    "Src\\_EditorState.pa.yaml": "C8_McPbJaCx37bGo5kJYuz0nLXMa4nkG8C//EUvifwHqd0=",
+    "Src\\App.pa.yaml": "C8_bmbmTKFFAjAI8CAsH2E6mJG2/qnE2+FYQ86J3ymWT+8=",
+    "Src\\Home Screen.pa.yaml": "C8_El0IQjVoagE2aVFtmQVeXK+r7H9cWEhxFXy68Gi0sVw=",
+    "Src\\Request Approval Screen.pa.yaml": "C8_CU8n6hMjhmZL2v2aVxZb9zw2QKCu5oIZTJzWBX/NiM4=",
+    "Src\\Screen1.pa.yaml": "C8_/YYDeEjOFZsLwVB4wH/dDJRvDA7bABjq+oH5QuAEwdk=",
+    "Src\\Screen2.pa.yaml": "C8_6xWYeiVbSex2R/jM4WjMrG2FfiSyKLc2M22CWSPcJTc="
+  },
+  "ClientStampedChecksum": "C8_WzwZu0xOaB1b7QcFIBRUK1lW53Q34NLv98xPyMxD6vM="
+}

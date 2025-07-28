@@ -1,0 +1,878 @@
+"'Shipement Warehouse' As screen":
+    Fill: =RGBA(244, 246, 248, 1)
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    "'Shipement Warehouse Form Container' As groupContainer.manualLayoutContainer":
+        BorderStyle: =BorderStyle.None
+        Height: =620
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =1208
+        X: =72
+        Y: =72
+        ZIndex: =1
+
+        "'Shipement Warehouse Form' As form":
+            AcceptsFocus: =false
+            BorderColor: =RGBA(245, 245, 245, 1)
+            DataSource: ='Inventory Management'
+            DefaultMode: =FormMode.New
+            Height: =620
+            NumberOfColumns: =2
+            Width: =1366
+            ZIndex: =1
+
+            "'Sign Off DataCard' As typedDataCard.blankCard":
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =203
+                Width: =683
+                X: =1
+                Y: =3
+                ZIndex: =1
+
+                "'Sign Off Key' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Size: =13
+                    Text: ="Sign Off"
+                    X: =60
+                    Y: =8
+                    ZIndex: =1
+
+                "'Error Message - Sign Off' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =2
+
+                "'Sign Off PenInput' As inkControl":
+                    BorderThickness: =1
+                    Color: =RGBA(50, 49, 48, 1)
+                    Fill: =RGBA(244, 246, 248, 1)
+                    Height: =150
+                    Width: =450
+                    X: =30
+                    Y: =53
+                    ZIndex: =3
+
+                Icon10_1 As icon:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 120, 212, 1)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(16, 110, 190, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.Draw
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =25
+                    X: =30
+                    Y: =13
+                    ZIndex: =4
+
+            "'Packed DataCard' As typedDataCard.blankCard":
+                AutoHeight: =true
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =0
+                ContentLanguage: =""
+                DataField: =""
+                DisplayMode: =DisplayMode.Edit
+                DisplayName: =""
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =86
+                LayoutHeight: =0
+                LayoutWidth: =0
+                LayoutX: =0
+                LayoutY: =0
+                maximumHeight: =7680
+                maximumWidth: =1366
+                minimumHeight: =20
+                minimumWidth: =20
+                Required: =false
+                Visible: =true
+                Width: =683
+                WidthFit: =false
+                X: =0
+                Y: =1
+                ZIndex: =2
+
+                "'Error Message - Packed' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =1
+
+                "'Packed Checkbox' As checkbox":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    CheckboxBorderColor: =RGBA(96, 94, 92, 1)
+                    CheckmarkFill: =RGBA(0, 120, 212, 1)
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(50, 49, 48, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(50, 49, 48, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =13
+                    Text: ="Packed"
+                    Width: =450
+                    X: =30
+                    Y: =24
+                    ZIndex: =2
+
+            "'Hub Location DataCard_1' As typedDataCard.blankCard":
+                AutoHeight: =true
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                BorderThickness: =0
+                ContentLanguage: =""
+                DataField: =""
+                DisplayMode: =DisplayMode.Edit
+                DisplayName: =""
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                LayoutHeight: =0
+                LayoutWidth: =0
+                LayoutX: =0
+                LayoutY: =0
+                maximumHeight: =7680
+                maximumWidth: =1366
+                minimumHeight: =20
+                minimumWidth: =20
+                Required: =false
+                Visible: =true
+                Width: =683
+                WidthFit: =false
+                X: =1
+                Y: =0
+                ZIndex: =3
+
+                "'Hub Location Key_1' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Height: =45
+                    Size: =13
+                    Text: ="Hub Location"
+                    Width: =194
+                    X: =60
+                    Y: =8
+                    ZIndex: =1
+
+                "'Error Message - Hub Location_1' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =50
+                    Y: =93
+                    ZIndex: =2
+
+                "'Hub Location Dropdown_1' As Dropdown.pcfdataset":
+                    AccessibleLabel: =""
+                    Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+                    BorderStyle: =""
+                    ContentLanguage: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontSize: =0
+                    Height: =40
+                    Items: =["Bengaluru", "Chennai", "Mumbai", "Kerala"]
+                    OnChange: =false
+                    Required: =true
+                    TabIndex: =0
+                    Tooltip: =""
+                    ValidationState: ="None"
+                    Visible: =true
+                    Width: =450
+                    X: =30
+                    Y: =53
+                    ZIndex: =3
+
+                Icon8_1 As icon:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 120, 212, 1)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(16, 110, 190, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.Location
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =25
+                    X: =30
+                    Y: =15
+                    ZIndex: =4
+
+            "'Delivered To DataCard' As typedDataCard.blankCard":
+                AutoHeight: =true
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =0
+                ContentLanguage: =""
+                DataField: =""
+                DisplayMode: =DisplayMode.Edit
+                DisplayName: =""
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                LayoutHeight: =0
+                LayoutWidth: =0
+                LayoutX: =0
+                LayoutY: =0
+                maximumHeight: =7680
+                maximumWidth: =1366
+                minimumHeight: =20
+                minimumWidth: =20
+                Required: =false
+                Visible: =true
+                Width: =683
+                WidthFit: =false
+                X: =1
+                Y: =1
+                ZIndex: =4
+
+                "'Delivered To Key' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Height: =45
+                    Size: =13
+                    Text: ="Delivered To"
+                    Width: =194
+                    X: =60
+                    Y: =8
+                    ZIndex: =1
+
+                "'Error Message - Delivered To' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =2
+
+                "'Delivered To Value' As text":
+                    BorderColor: =RGBA(245, 245, 245, 1)
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    Default: =
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    DisabledFill: =RGBA(242, 242, 241, 0)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    HintText: =""
+                    HoverBorderColor: =RGBA(16, 110, 190, 1)
+                    HoverColor: =RGBA(50, 49, 48, 1)
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    PressedBorderColor: =RGBA(0, 120, 212, 1)
+                    PressedColor: =RGBA(50, 49, 48, 1)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =13
+                    Width: =450
+                    X: =30
+                    Y: =53
+                    ZIndex: =3
+
+                Icon7_1 As icon:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 120, 212, 1)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(16, 110, 190, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.Person
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =25
+                    X: =30
+                    Y: =15
+                    ZIndex: =4
+
+            "'Arrival Date DataCard' As typedDataCard.blankCard":
+                AutoHeight: =true
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                BorderThickness: =0
+                ContentLanguage: =""
+                DataField: =""
+                DisplayMode: =DisplayMode.Edit
+                DisplayName: =""
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                LayoutHeight: =0
+                LayoutWidth: =0
+                LayoutX: =0
+                LayoutY: =0
+                maximumHeight: =7680
+                maximumWidth: =1366
+                minimumHeight: =20
+                minimumWidth: =20
+                Required: =false
+                Visible: =true
+                Width: =683
+                WidthFit: =false
+                X: =0
+                Y: =0
+                ZIndex: =7
+
+                "'Arrival Date Key' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Height: =45
+                    Size: =13
+                    Text: ="Arrival Date"
+                    Width: =247
+                    X: =60
+                    Y: =8
+                    ZIndex: =1
+
+                "'Error Message - Arrival Date' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =2
+
+                "'Arrival Date DatePicker' As 'Date picker'":
+                    AccessibleLabel: =""
+                    Appearance: ='DatePickerCanvas.Appearance'.FilledLighter
+                    BorderStyle: =""
+                    ContentLanguage: =""
+                    DateTimeZone: ="Local"
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Format: ="Long Abbreviated"
+                    Height: =40
+                    IsEditable: =false
+                    OnChange: =false
+                    Placeholder: ="Select a date..."
+                    Required: =false
+                    StartOfWeek: ="Sunday"
+                    TabIndex: =0
+                    Tooltip: =""
+                    ValidationState: ="None"
+                    Visible: =true
+                    Width: =450
+                    X: =30
+                    Y: =53
+                    ZIndex: =3
+
+                Icon6_2 As icon:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 120, 212, 1)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(16, 110, 190, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.CalendarBlank
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =25
+                    X: =30
+                    Y: =15
+                    ZIndex: =4
+
+            "'Dispatch Date DataCard' As typedDataCard.blankCard":
+                AutoHeight: =true
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                BorderThickness: =0
+                ContentLanguage: =""
+                DataField: =""
+                DisplayMode: =DisplayMode.Edit
+                DisplayName: =""
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                LayoutHeight: =0
+                LayoutWidth: =0
+                LayoutX: =0
+                LayoutY: =0
+                maximumHeight: =7680
+                maximumWidth: =1366
+                minimumHeight: =20
+                minimumWidth: =20
+                Required: =false
+                Visible: =true
+                Width: =683
+                WidthFit: =false
+                X: =0
+                Y: =2
+                ZIndex: =8
+
+                "'Dispatch Date Key' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Height: =45
+                    Size: =13
+                    Text: ="Dispatch Date"
+                    Width: =250
+                    X: =60
+                    Y: =8
+                    ZIndex: =1
+
+                "'Error Message - Dispatch Date' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =2
+
+                "'Dispatch Date DatePicker' As 'Date picker'":
+                    AccessibleLabel: =""
+                    Appearance: ='DatePickerCanvas.Appearance'.FilledLighter
+                    BorderStyle: =""
+                    ContentLanguage: =""
+                    DateTimeZone: ="Local"
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Format: ="Long Abbreviated"
+                    Height: =40
+                    IsEditable: =false
+                    OnChange: =false
+                    Placeholder: ="Select a date..."
+                    Required: =false
+                    StartOfWeek: ="Sunday"
+                    TabIndex: =0
+                    Tooltip: =""
+                    ValidationState: ="None"
+                    Visible: =true
+                    Width: =450
+                    X: =30
+                    Y: =53
+                    ZIndex: =3
+
+                Icon6_3 As icon:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 120, 212, 1)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(16, 110, 190, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.CalendarBlank
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =25
+                    X: =30
+                    Y: =15
+                    ZIndex: =4
+
+            "'Dispatch To Location DataCard' As typedDataCard.blankCard":
+                AutoHeight: =true
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =0
+                ContentLanguage: =""
+                DataField: =""
+                DisplayMode: =DisplayMode.Edit
+                DisplayName: =""
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                LayoutHeight: =0
+                LayoutWidth: =0
+                LayoutX: =0
+                LayoutY: =0
+                maximumHeight: =7680
+                maximumWidth: =1366
+                minimumHeight: =20
+                minimumWidth: =20
+                Required: =false
+                Visible: =true
+                Width: =683
+                WidthFit: =false
+                X: =1
+                Y: =2
+                ZIndex: =9
+
+                "'Dispatch To Location Key' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Height: =45
+                    Size: =13
+                    Text: ="Dispatch To Location"
+                    Width: =284
+                    X: =60
+                    Y: =8
+                    ZIndex: =1
+
+                "'Error Message - Dispatch To Location' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =2
+
+                "'Dispatch To Location Dropdown' As Dropdown.pcfdataset":
+                    Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =40
+                    Items: =["Bengaluru", "Chennai", "Mumbai", "Kerala"]
+                    Width: =450
+                    X: =30
+                    Y: =53
+                    ZIndex: =3
+
+                Icon9 As icon.Home:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 120, 212, 1)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(16, 110, 190, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.Home
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =25
+                    X: =30
+                    Y: =15
+                    ZIndex: =4
+
+            "'Signature DataCard' As typedDataCard.blankCard":
+                AutoHeight: =true
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                BorderThickness: =0
+                ContentLanguage: =""
+                DataField: =""
+                DisplayMode: =DisplayMode.Edit
+                DisplayName: =""
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                LayoutHeight: =0
+                LayoutWidth: =0
+                LayoutX: =0
+                LayoutY: =0
+                maximumHeight: =7680
+                maximumWidth: =1366
+                minimumHeight: =20
+                minimumWidth: =20
+                Required: =false
+                Visible: =true
+                Width: =683
+                WidthFit: =false
+                X: =0
+                Y: =3
+                ZIndex: =10
+
+                "'Signature Key' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Size: =13
+                    Text: ="Signature"
+                    X: =60
+                    Y: =8
+                    ZIndex: =1
+
+                "'Error Message - Signature' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =2
+
+                "'Signature PenInput' As inkControl":
+                    BorderThickness: =1
+                    Color: =RGBA(50, 49, 48, 1)
+                    Fill: =RGBA(244, 246, 248, 1)
+                    Height: =150
+                    Width: =450
+                    X: =30
+                    Y: =53
+                    ZIndex: =3
+
+                Icon10 As icon.Draw:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 120, 212, 1)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(16, 110, 190, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.Draw
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =25
+                    X: =30
+                    Y: =13
+                    ZIndex: =4
+
+    "'Next Button' As Button":
+        AcceptsFocus: =true
+        AccessibleLabel: =""
+        Align: =Align.Center
+        Appearance: ="Primary"
+        BorderStyle: =""
+        ContentLanguage: =""
+        DisplayMode: =DisplayMode.Edit
+        Font: =Font.Verdana
+        FontItalic: =false
+        FontSize: =0
+        FontStrikethrough: =false
+        FontUnderline: =false
+        FontWeight: =FontWeight.Bold
+        Height: =40
+        Icon: ="ArrowRight"
+        IconRotation: =0
+        IconStyle: ="Outline"
+        Layout: ="Icon before"
+        OnSelect: |-
+            =//Set(SignatureBase64, JSON('Signature PenInput'.Image, JSONFormat.IncludeBinaryData));
+            //Set(SignOffBase64, JSON('Sign Off PenInput'.Image, JSONFormat.IncludeBinaryData));
+            
+            UpdateContext({
+                Screen2Data:
+                    {
+                        'Arrival Date': 'Arrival Date DatePicker'.SelectedDate,
+                        'Hub Location': 'Hub Location Dropdown_1'.Selected.Value,
+                        'Packed': 'Packed Checkbox'.Value,
+                        'Delivered To': 'Delivered To Value'.Text,
+                        'Dispatch Date': 'Dispatch Date DatePicker'.SelectedDate,
+                        'Dispatch To Location': 'Dispatch To Location Dropdown'.Selected.Value,
+                        'Signature': 'Signature PenInput'.Image,
+                        'Sign Off': 'Sign Off PenInput'.Image            
+                    }
+                });
+                
+                Navigate('Product Delivery', ScreenTransition.Fade, {Screen1Data: Screen1Data, Screen2Data: Screen2Data})
+        TabIndex: =0
+        Text: ="Next"
+        Tooltip: =""
+        VerticalAlign: =VerticalAlign.Middle
+        Visible: =true
+        Width: =130
+        X: =1150
+        Y: =670
+        ZIndex: =2
+
+    "'Back Button' As Button":
+        AcceptsFocus: =true
+        AccessibleLabel: =""
+        Align: =Align.Center
+        Appearance: ="Primary"
+        BorderStyle: =""
+        ContentLanguage: =""
+        DisplayMode: =DisplayMode.Edit
+        Font: =Font.Verdana
+        FontItalic: =false
+        FontSize: =0
+        FontStrikethrough: =false
+        FontUnderline: =false
+        FontWeight: =FontWeight.Bold
+        Height: =40
+        Icon: ="ArrowLeft"
+        IconRotation: =0
+        IconStyle: ="Outline"
+        Layout: ="Icon before"
+        OnSelect: =Back(ScreenTransition.Fade)
+        TabIndex: =0
+        Text: ="Back"
+        Tooltip: =""
+        VerticalAlign: =VerticalAlign.Middle
+        Visible: =true
+        Width: =130
+        X: =1000
+        Y: =670
+        ZIndex: =3
+

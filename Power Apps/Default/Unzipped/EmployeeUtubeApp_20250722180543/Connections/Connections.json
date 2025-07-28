@@ -1,0 +1,24 @@
+{
+  "2bc703c1-922d-4584-8122-80713d25bd71": {
+    "connectionRef": {
+      "displayName": "SharePoint",
+      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1754/1.0.1754.4231/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
+    },
+    "datasets": {
+      "https://labskraft27.sharepoint.com/sites/GuruCompany": {
+        "dataSources": {
+          "Employee Details": {
+            "tableName": "b0ba27fd-e8df-4f3c-8c53-582164a462bf"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Employee Details"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "2bc703c1-922d-4584-8122-80713d25bd71"
+  }
+}

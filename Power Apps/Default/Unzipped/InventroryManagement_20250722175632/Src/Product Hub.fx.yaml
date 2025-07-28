@@ -1,0 +1,1029 @@
+"'Product Hub' As screen.'autoLayout_HeaderFooter_ver1.0'":
+    Fill: =RGBA(244, 246, 248, 1)
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    "'Product Hub Form Container' As groupContainer.manualLayoutContainer":
+        BorderStyle: =BorderStyle.None
+        Height: =620
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =1208
+        X: =72
+        Y: =90
+        ZIndex: =1
+
+        "'Product Hub Form' As form":
+            BorderColor: =RGBA(245, 245, 245, 1)
+            DataSource: ='Inventory Management'
+            DefaultMode: =FormMode.New
+            Height: =620
+            NumberOfColumns: =2
+            Width: =1366
+            ZIndex: =1
+
+            "'Product Name DataCard' As typedDataCard.blankCard":
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.None
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                Width: =683
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+                "'Product Name Key' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Size: =13
+                    Text: ="Product Name"
+                    X: =60
+                    Y: =8
+                    ZIndex: =1
+
+                "'Error Message - Product Name' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =2
+
+                "'Product Name Value' As 'Text input'":
+                    AccessibleLabel: ="a"
+                    Align: =Align.Left
+                    Appearance: ='TextInputCanvas.Appearance'.FilledLighter
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =40
+                    Placeholder: ="Enter Product Name"
+                    Required: =true
+                    Width: =450
+                    X: =30
+                    Y: =53
+                    ZIndex: =3
+
+                Icon1 As icon:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 120, 212, 1)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(16, 110, 190, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.ForkKnife
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =25
+                    X: =30
+                    Y: =13
+                    ZIndex: =4
+
+            "'Product Quantity DataCard' As typedDataCard.blankCard":
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.None
+                DisplayMode: =Parent.DisplayMode
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                Width: =683
+                X: =1
+                Y: =0
+                ZIndex: =1
+
+                "'Product Quantity Key' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Height: =45
+                    Size: =13
+                    Text: ="Product Quantity"
+                    Width: =194
+                    X: =60
+                    Y: =8
+                    ZIndex: =1
+
+                "'Error Message - Product Quantity' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =2
+
+                "'Product Quantity Value' As 'Number input'":
+                    Appearance: ='NumberInput.Appearance'.FilledLighter
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =40
+                    Min: =0
+                    Precision: ="0"
+                    Width: =450
+                    X: =30
+                    Y: =53
+                    ZIndex: =3
+
+                Icon2 As icon.Items:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 120, 212, 1)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(16, 110, 190, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.Items
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =25
+                    X: =30
+                    Y: =15
+                    ZIndex: =4
+
+            "'Quality Check DataCard' As typedDataCard.blankCard":
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.None
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =86
+                Width: =683
+                X: =0
+                Y: =1
+                ZIndex: =1
+
+                "'Error Message - Quality Checkbox' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =2
+
+                "'Quality Check Checkbox' As checkbox":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    CheckboxBorderColor: =RGBA(96, 94, 92, 1)
+                    CheckmarkFill: =RGBA(0, 120, 212, 1)
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(50, 49, 48, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(50, 49, 48, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =13
+                    Text: ="Quality Check"
+                    Width: =450
+                    X: =30
+                    Y: =24
+                    ZIndex: =3
+
+            "'Hub Location DataCard' As typedDataCard.blankCard":
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                Width: =683
+                X: =1
+                Y: =1
+                ZIndex: =1
+
+                "'Hub Location Key' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Height: =45
+                    Size: =13
+                    Text: ="Hub Location"
+                    Width: =194
+                    X: =60
+                    Y: =8
+                    ZIndex: =3
+
+                "'Error Message - Hub Location' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =50
+                    Y: =93
+                    ZIndex: =4
+
+                "'Hub Location Dropdown' As Dropdown.pcfdataset":
+                    Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =40
+                    Items: =["Bengaluru", "Chennai", "Mumbai", "Kerala"]
+                    Required: =true
+                    Width: =450
+                    X: =30
+                    Y: =53
+                    ZIndex: =5
+
+                Icon8 As icon:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 120, 212, 1)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(16, 110, 190, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.Location
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =25
+                    X: =30
+                    Y: =15
+                    ZIndex: =7
+
+            "'Price DataCard' As typedDataCard.blankCard":
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                Width: =683
+                X: =0
+                Y: =2
+                ZIndex: =1
+
+                "'Price Key' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Height: =45
+                    Size: =13
+                    Text: ="Price"
+                    Width: =194
+                    X: =60
+                    Y: =8
+                    ZIndex: =1
+
+                "'Error Message - Price' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =2
+
+                "'Price Value' As text":
+                    BorderColor: =RGBA(245, 245, 245, 1)
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    Default: ="0"
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    DisabledFill: =RGBA(242, 242, 241, 0)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Format: =TextFormat.Number
+                    HintText: =""
+                    HoverBorderColor: =RGBA(16, 110, 190, 1)
+                    HoverColor: =RGBA(50, 49, 48, 1)
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    PressedBorderColor: =RGBA(0, 120, 212, 1)
+                    PressedColor: =RGBA(50, 49, 48, 1)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =13
+                    Width: =250
+                    X: =30
+                    Y: =53
+                    ZIndex: =3
+
+                Icon4 As icon.Money:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 120, 212, 1)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(16, 110, 190, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.Money
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =25
+                    X: =30
+                    Y: =15
+                    ZIndex: =4
+
+            "'Barcode Reader DataCard' As typedDataCard.blankCard":
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                Width: =683
+                X: =1
+                Y: =2
+                ZIndex: =1
+
+                "'Error Message - Barcode Reader' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =2
+
+                "BarcodeReader As 'Barcode Reader'":
+                    BorderFillColor: =RGBA(47, 81, 151, 1)
+                    BorderRadius: =3
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =0
+                    DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                    DisabledContentColor: =RGBA(166, 166, 166, 1)
+                    DisabledFillColor: =RGBA(244, 244, 244, 1)
+                    DisplayMode: =DisplayMode.Edit
+                    FillColor: =RGBA(56, 96, 178, 1)
+                    Font: =Font.Verdana
+                    Height: =40
+                    HoverBorderColor: =RGBA(88, 115, 171, 1)
+                    HoverContentColor: =RGBA(255, 255, 255, 1)
+                    HoverFillColor: =RGBA(47, 81, 151, 1)
+                    OnCancel: =false
+                    OnScan: |-
+                        =Set(
+                            ScannedBarcodes,
+                            Concat(BarcodeReader.Barcodes, Value, ", ")
+                        );
+                    PressedBorderColor: =RGBA(56, 96, 178, 1)
+                    PressedContentColor: =RGBA(56, 96, 178, 1)
+                    PressedFillColor: =RGBA(255, 255, 255, 1)
+                    TextColor: =RGBA(255, 255, 255, 1)
+                    Width: =350
+                    X: =30
+                    Y: =38
+                    ZIndex: =3
+
+            "'Expiry Date DataCard' As typedDataCard.blankCard":
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.None
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                Width: =683
+                X: =0
+                Y: =3
+                ZIndex: =1
+
+                "'Expiry Date Key' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Height: =45
+                    Size: =13
+                    Text: ="Expiry Date"
+                    Width: =247
+                    X: =60
+                    Y: =8
+                    ZIndex: =1
+
+                "'Error Message - Expiry Date' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =2
+
+                "'Expiry Date DatePicker' As 'Date picker'":
+                    AccessibleLabel: =""
+                    Appearance: ='DatePickerCanvas.Appearance'.FilledLighter
+                    BorderStyle: =""
+                    ContentLanguage: =""
+                    DateTimeZone: ="Local"
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Format: ="Long Abbreviated"
+                    Height: =40
+                    IsEditable: =false
+                    OnChange: =false
+                    Placeholder: ="Select a date..."
+                    Required: =false
+                    StartOfWeek: ="Sunday"
+                    TabIndex: =0
+                    Tooltip: =""
+                    ValidationState: ="None"
+                    Visible: =true
+                    Width: =450
+                    X: =30
+                    Y: =53
+                    ZIndex: =3
+
+                Icon6_1 As icon:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 120, 212, 1)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(16, 110, 190, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.CalendarBlank
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =25
+                    X: =30
+                    Y: =15
+                    ZIndex: =4
+
+            "'Hub Address DataCard' As typedDataCard.blankCard":
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                Width: =683
+                X: =1
+                Y: =3
+                ZIndex: =1
+
+                "'Hub Address Key' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Size: =13
+                    Text: ="Hub Address"
+                    X: =60
+                    Y: =8
+                    ZIndex: =1
+
+                "'Error Message - Hub Address' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =2
+
+                "'Hub Address TextInput' As 'Text input'":
+                    AccessibleLabel: ="a"
+                    Align: =Align.Left
+                    Appearance: ='TextInputCanvas.Appearance'.FilledLighter
+                    BorderStyle: =""
+                    ContentLanguage: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =40
+                    MaxLength: =-1
+                    Mode: ="SingleLine"
+                    OnChange: =false
+                    Placeholder: ="Enter Location Head Name"
+                    Required: =true
+                    TabIndex: =0
+                    Tooltip: =""
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =""
+                    Visible: =true
+                    Width: =450
+                    X: =30
+                    Y: =53
+                    ZIndex: =3
+
+                Icon3 As icon:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 120, 212, 1)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(16, 110, 190, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.OfficeBuilding
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =25
+                    X: =30
+                    Y: =13
+                    ZIndex: =4
+
+            "'Date of Manufacturing DataCard' As typedDataCard.blankCard":
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                Width: =683
+                X: =0
+                Y: =4
+                ZIndex: =1
+
+                "'Date of Manufacturing Key' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Height: =45
+                    Size: =13
+                    Text: ="Date of Manufacturing"
+                    Width: =247
+                    X: =60
+                    Y: =8
+                    ZIndex: =1
+
+                "'Error Message - Date of Manufacturing' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =2
+
+                "'Date of Manufacturing DatePicker' As 'Date picker'":
+                    Appearance: ='DatePickerCanvas.Appearance'.FilledLighter
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =40
+                    Width: =450
+                    X: =30
+                    Y: =53
+                    ZIndex: =3
+
+                Icon6 As icon.CalendarBlank:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 120, 212, 1)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(16, 110, 190, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.CalendarBlank
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =25
+                    X: =30
+                    Y: =15
+                    ZIndex: =4
+
+            "'Location Head DataCard' As typedDataCard.blankCard":
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                Width: =683
+                X: =1
+                Y: =4
+                ZIndex: =1
+
+                "'Location Head Key' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Size: =13
+                    Text: ="Location Head"
+                    X: =60
+                    Y: =8
+                    ZIndex: =1
+
+                "'Error Message - Location Head' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =2
+
+                "'Location Head TextInput' As 'Text input'":
+                    AccessibleLabel: ="a"
+                    Align: =Align.Left
+                    Appearance: ='TextInputCanvas.Appearance'.FilledLighter
+                    BorderStyle: =""
+                    ContentLanguage: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Height: =40
+                    MaxLength: =-1
+                    Mode: ="SingleLine"
+                    OnChange: =false
+                    Placeholder: ="Enter Location Head Name"
+                    Required: =true
+                    TabIndex: =0
+                    Tooltip: =""
+                    TriggerOutput: ="FocusOut"
+                    Type: ="Text"
+                    ValidationState: ="None"
+                    Value: =""
+                    Visible: =true
+                    Width: =450
+                    X: =30
+                    Y: =53
+                    ZIndex: =3
+
+                Icon7 As icon.Person:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 120, 212, 1)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(16, 110, 190, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.Person
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =25
+                    X: =30
+                    Y: =13
+                    ZIndex: =4
+
+            "'Product Image_DataCard1' As typedDataCard.addLargePictureCard":
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="ProductImage"
+                Default: =ThisItem.'Product Image'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Inventory Management'],DataSourceInfo.DisplayName,'ProductImage')
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                Required: =true
+                Update: =Image2.Image
+                Width: =683
+                X: =0
+                Y: =5
+                ZIndex: =1
+
+                DataCardKey2 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =38
+                    PaddingLeft: =0
+                    Size: =13
+                    Text: =Parent.DisplayName
+                    Width: =448
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                StarVisible2 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =DataCardKey2.Height
+                    PaddingLeft: =0
+                    Size: =13
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey2.Y
+                    ZIndex: =2
+
+                AddPicture1 As addMedia:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    DisabledFill: =RGBA(242, 242, 241, 0)
+                    Fill: =RGBA(0, 120, 212, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =50
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(16, 110, 190, 1)
+                    PressedBorderColor: =RGBA(0, 69, 120, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(16, 110, 190, 1)
+                    Size: =15
+                    Width: =448
+                    X: =30
+                    Y: =DataCardKey2.Y + DataCardKey2.Height + 5
+                    ZIndex: =4
+
+                ErrorMessage2 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(168, 0, 0, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(168, 0, 0, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =0
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =13
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =351
+                    X: =30
+                    Y: =Image2.Y + Image2.Height
+                    ZIndex: =5
+
+                Image2 As image:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =280
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Image: =If(IsBlank(AddPicture1.Media), SampleImage, AddPicture1.Media)
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Visible: =If(IsBlank(AddPicture1.Media), false, true)
+                    Width: =450
+                    X: =30
+                    Y: =103
+                    ZIndex: =6
+
+    "'Next Button_1' As Button":
+        Align: =Align.Center
+        DisplayMode: =DisplayMode.Edit
+        Font: =Font.Verdana
+        FontWeight: =FontWeight.Bold
+        Height: =40
+        Icon: ="ArrowRight"
+        OnSelect: |-
+            =UpdateContext({
+                Screen1Data:
+                    {
+                        'Product Name': 'Product Name Value'.Value,
+                        'Product Quantity': 'Product Quantity Value'.Value,
+                        'Quality Check': 'Quality Check Checkbox'.Value,
+                        'Hub Location': 'Hub Location Dropdown'.Selected.Value,
+                        'Price': Int('Price Value'.Text),
+                        'Barcode Scanner': ScannedBarcodes,
+                        'Expiry Date': 'Expiry Date DatePicker'.SelectedDate,
+                        'Hub Address': 'Hub Address TextInput'.Value,
+                        'Date of Manufacturing': 'Date of Manufacturing DatePicker'.SelectedDate,
+                        'Location Head': 'Location Head TextInput'.Value,
+                        'Attachments': colAttachements,
+                        'Product Image': If(!IsBlank(AddPicture1.Media), Image2.Image)
+                    }
+                });
+            
+                //DataCardValue1.Attachments,
+            Navigate('Shipement Warehouse',ScreenTransition.Fade, {
+                Screen1Data: Screen1Data
+                })
+        Text: ="Next"
+        VerticalAlign: =VerticalAlign.Middle
+        Width: =130
+        X: =1150
+        Y: =710
+        ZIndex: =2
+
+    "'Heading Container' As groupContainer.verticalAutoLayoutContainer":
+        BorderStyle: =BorderStyle.None
+        Height: =72
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =1366
+        ZIndex: =3
+
+    Heading As Text:
+        Align: ='TextCanvas.Align'.Center
+        AutoHeight: =false
+        DisplayMode: =DisplayMode.Edit
+        Font: =Font.Georgia
+        FontColor: =RGBA(33, 43, 54, 1)
+        Height: =72
+        Size: =45
+        Text: ="ABC INSTAMART"
+        VerticalAlign: =VerticalAlign.Middle
+        Weight: ='TextCanvas.Weight'.Bold
+        Width: =1366
+        X: =0
+        Y: =0
+        ZIndex: =4
+

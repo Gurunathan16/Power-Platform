@@ -1,0 +1,664 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="gd_Project_SystemUser_SystemUser">
+    <EntityRelationshipType>ManyToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <FirstEntityName>SystemUser</FirstEntityName>
+    <SecondEntityName>gd_Project</SecondEntityName>
+    <IntersectEntityName>gd_Project_SystemUser</IntersectEntityName>
+    <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
+    <EntityRelationshipRoles>
+      <EntityRelationshipRole>
+        <NavPaneDisplayOption>UseCollectionName</NavPaneDisplayOption>
+        <NavPaneArea>Details</NavPaneArea>
+        <NavPaneOrder>10000</NavPaneOrder>
+        <NavigationPropertyName>gd_Project_SystemUser_SystemUser</NavigationPropertyName>
+        <AssociationRoleOrdinal>1</AssociationRoleOrdinal>
+      </EntityRelationshipRole>
+      <EntityRelationshipRole>
+        <NavPaneDisplayOption>UseCollectionName</NavPaneDisplayOption>
+        <NavPaneArea>Details</NavPaneArea>
+        <NavPaneOrder>10000</NavPaneOrder>
+        <NavigationPropertyName>gd_Project_SystemUser_SystemUser</NavigationPropertyName>
+        <AssociationRoleOrdinal>2</AssociationRoleOrdinal>
+      </EntityRelationshipRole>
+    </EntityRelationshipRoles>
+  </EntityRelationship>
+  <EntityRelationship Name="gd_projecttask_AssignedTo_systemuser">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_ProjectTask</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>RemoveLink</CascadeDelete>
+    <CascadeArchive>RemoveLink</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <CascadeRollupView>NoCascade</CascadeRollupView>
+    <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
+    <ReferencingAttributeName>gd_AssignedTo</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="" languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+    <EntityRelationshipRoles>
+      <EntityRelationshipRole>
+        <NavPaneDisplayOption>UseCollectionName</NavPaneDisplayOption>
+        <NavPaneArea>Details</NavPaneArea>
+        <NavPaneOrder>10000</NavPaneOrder>
+        <NavigationPropertyName>gd_AssignedTo</NavigationPropertyName>
+        <RelationshipRoleType>1</RelationshipRoleType>
+      </EntityRelationshipRole>
+      <EntityRelationshipRole>
+        <NavigationPropertyName>gd_projecttask_AssignedTo_systemuser</NavigationPropertyName>
+        <RelationshipRoleType>0</RelationshipRoleType>
+      </EntityRelationshipRole>
+    </EntityRelationshipRoles>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_gd_expensecategorylist_createdby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_ExpenseCategoryList</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_gd_expensecategorylist_modifiedby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_ExpenseCategoryList</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_gd_expenseitemslist_createdby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_ExpenseItemsList</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_gd_expenseitemslist_modifiedby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_ExpenseItemsList</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_gd_incomecategorylists_createdby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_IncomeCategoryLists</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_gd_incomecategorylists_modifiedby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_IncomeCategoryLists</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_gd_incomeitemslists_createdby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_IncomeItemsLists</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_gd_incomeitemslists_modifiedby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_IncomeItemsLists</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_gd_passwordhistory_createdby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_PasswordHistory</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_gd_passwordhistory_modifiedby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_PasswordHistory</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_gd_product_createdby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_product</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_gd_product_modifiedby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_product</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_gd_productcategory_createdby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_ProductCategory</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_gd_productcategory_modifiedby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_ProductCategory</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_gd_project_createdby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_Project</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_gd_project_modifiedby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_Project</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_gd_projecttask_createdby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_ProjectTask</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_gd_projecttask_modifiedby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_ProjectTask</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_gd_userdata_createdby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_UserData</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_gd_userdata_modifiedby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_UserData</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="user_gd_expensecategorylist">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_ExpenseCategoryList</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="user_gd_expenseitemslist">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_ExpenseItemsList</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="user_gd_incomecategorylists">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_IncomeCategoryLists</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="user_gd_incomeitemslists">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_IncomeItemsLists</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="user_gd_passwordhistory">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_PasswordHistory</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="user_gd_product">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_product</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="user_gd_productcategory">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_ProductCategory</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="user_gd_project">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_Project</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="user_gd_projecttask">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_ProjectTask</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="user_gd_userdata">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_UserData</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeArchive>NoCascade</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+</EntityRelationships>

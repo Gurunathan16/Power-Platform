@@ -1,0 +1,191 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Success Screen:
+    Properties:
+      Fill: =RGBA(255, 255, 255, 1)
+      LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+      OnVisible: =Set(currentBalanceSS, LookUp('Balance Log', EntraObjectID = Text(User().EntraObjectId), 'Current Balance'));
+    Children:
+      - SC Screen Container:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =RGBA(245, 245, 245, 1)
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =16
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Width: =Parent.Width
+          Children:
+            - SCS Header Container:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  FillPortions: =0
+                  Height: =75
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                Children:
+                  - SCS Header:
+                      Control: Header@0.0.44
+                      Properties:
+                        Align: =Align.Center
+                        AlignInContainer: =AlignInContainer.Center
+                        BasePaletteColor: =RGBA(227, 106, 244, 1)
+                        Font: =Font.Verdana
+                        OnSelectLogo: =Navigate('Home Screen',ScreenTransition.Fade);
+                        Style: ='Header.Style'.Primary
+                        Title: ="BB - Balance"
+                        TitleFontSize: =30
+            - SCS Main Container:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutGap: =16
+                  LayoutJustifyContent: =LayoutJustifyContent.Center
+                  LayoutWrap: =true
+                  PaddingBottom: =2
+                  PaddingLeft: =2
+                  PaddingRight: =2
+                  PaddingTop: =2
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                  - SCS Balance Container:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        DropShadow: =DropShadow.Semibold
+                        FillPortions: =0
+                        Height: =Parent.Height
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =16
+                        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                        LayoutMinHeight: =50
+                        LayoutOverflowX: =LayoutOverflow.Scroll
+                        LayoutOverflowY: =LayoutOverflow.Scroll
+                        PaddingBottom: =10
+                        PaddingLeft: =10
+                        PaddingRight: =10
+                        PaddingTop: =10
+                        RadiusBottomLeft: =45
+                        RadiusBottomRight: =45
+                        RadiusTopLeft: =45
+                        RadiusTopRight: =45
+                        Width: =Round(Parent.Width * 0.375, 0)
+                      Children:
+                        - SCS Closing Balance Key:
+                            Control: Label@2.5.1
+                            Properties:
+                              Align: =Align.Center
+                              AlignInContainer: =AlignInContainer.Stretch
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.Verdana
+                              FontWeight: =FontWeight.Semibold
+                              Height: =65
+                              Overflow: =Overflow.Scroll
+                              Size: =28
+                              Text: ="Current Balance"
+                              Width: =Round(Parent.Width * 0.38, 0)
+                              X: =Round((Parent.Width - Self.Width ) / 2, 0)
+                        - SCS Current Balance Holder:
+                            Control: Text@0.0.51
+                            Properties:
+                              Align: ='TextCanvas.Align'.Center
+                              AlignInContainer: =AlignInContainer.Center
+                              Font: =Font.Verdana
+                              FontColor: =If(currentBalanceSS < 0, RGBA(215, 58, 60, 1), RGBA(52, 152, 47, 1))
+                              Height: =Round(Parent.Height * 0.1, 0)
+                              PaddingLeft: =5
+                              Size: =25
+                              Text: =If(IsBlank(currentBalanceSS) || currentBalanceSS = 0, "₹ 0", "₹ " & Text(currentBalanceSS, "#,##0.00"))
+                              VerticalAlign: =VerticalAlign.Middle
+                              Weight: ='TextCanvas.Weight'.Semibold
+                              Width: =Round(Parent.Width * 0.5, 0)
+                              X: =Round((Parent.Width - Self.Width ) / 2, 0)
+                              Y: |-
+                                =//Round((Parent.Height - 'EF Buttons Container_2'.Height - Self.Height) / 2, 0)
+                                'SCS Closing Balance Key'.Height + 5
+                        - Error Message - SCS Closing Balance:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              Height: =10
+                              Text: |-
+                                ="
+                                "
+                              Width: =440
+                              X: =30
+                              Y: =24
+                        - EF Buttons Container_2:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              Height: =50
+                              LayoutAlignItems: =LayoutAlignItems.Center
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutGap: =10
+                              LayoutJustifyContent: =LayoutJustifyContent.Center
+                              LayoutMinWidth: =0
+                              PaddingBottom: =10
+                              PaddingLeft: =10
+                              PaddingRight: =10
+                              PaddingTop: =10
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              X: ='SCS Balance Container'.X
+                              Y: ='SCS Balance Container'.Y + 'SCS Balance Container'.Height + 40
+                            Children:
+                              - EF Home Button_2:
+                                  Control: Button@0.0.45
+                                  Properties:
+                                    AccessibleLabel: ="Submit form button"
+                                    Align: =Align.Center
+                                    BasePaletteColor: =RGBA(227, 106, 244, 1)
+                                    Icon: ="Home"
+                                    OnSelect: =Navigate('Home Screen');
+                                    Text: ="Home"
+                                    Width: =120
+                                    X: =40
+                                    Y: =40

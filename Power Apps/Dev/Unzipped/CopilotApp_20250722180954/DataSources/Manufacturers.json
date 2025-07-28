@@ -1,0 +1,100 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cre96_manufacturers",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cre96_manufacturer",
+    "MaxGetRowsCount": 500,
+    "Name": "Manufacturers",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "{Attachments}": "Attachments",
+      "cre96_contactemail": "Contact Email",
+      "cre96_manufacturer_Annotations": "Notes",
+      "cre96_manufacturer_AsyncOperations": "System Jobs",
+      "cre96_manufacturer_BulkDeleteFailures": "Bulk Delete Failures",
+      "cre96_manufacturer_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cre96_manufacturer_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cre96_manufacturer_ProcessSession": "Process Sessions",
+      "cre96_manufacturer_SyncErrors": "Sync Errors",
+      "cre96_manufacturerid": "Manufacturer",
+      "cre96_manufacturername": "Manufacturer Name",
+      "cre96_phone": "Phone",
+      "cre96_Product_cre96_Manufacturer": "Products",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Manufacturers",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Manufacturers (Views)",
+    "Name": "_cre96_manufacturer_views",
+    "RelatedEntityName": "Manufacturers",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "26ab65f7-8c8b-4e34-b650-b276dc98cb3a": "Manufacturer Advanced Find View",
+      "376a08c0-71e8-4f0c-8103-385972ce1fdf": "Manufacturer Associated View",
+      "6231c743-dc19-4d6a-bc8f-d9584a4c730d": "Inactive Manufacturers",
+      "bdcf59bc-9726-4987-911b-6f0dfd1c8877": "Active Manufacturers",
+      "dc078440-8672-4cd2-bf36-859e48f894a1": "Manufacturer Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (Manufacturers)_1",
+    "Name": "cre96_manufacturer_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Manufacturers"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Manufacturers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Manufacturers)_1",
+    "Name": "cre96_manufacturer_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Manufacturers"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Manufacturers",
+    "Type": "OptionSetInfo"
+  }
+]

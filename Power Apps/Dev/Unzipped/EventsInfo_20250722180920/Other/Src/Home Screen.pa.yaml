@@ -1,0 +1,225 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Home Screen:
+    Properties:
+      Fill: =RGBA(255, 255, 255, 1)
+      LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+    Children:
+      - ScreenContainer1:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =RGBA(245, 245, 245, 1)
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =16
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Width: =Parent.Width
+          Children:
+            - HeaderContainer1:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  Height: =75
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                Children:
+                  - Header1:
+                      Control: Header@0.0.44
+                      Properties:
+                        Align: =Align.Center
+                        Font: =Font.'Segoe UI'
+                        Logo: ='135967340_medium'
+                        Title: ="Events Home"
+                        TitleFontSize: =30
+            - Container2:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  Height: =75
+                  X: =40
+                  Y: =40
+                Children:
+                  - Icon1:
+                      Control: Classic/Icon@2.5.0
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        Color: =RGBA(0, 120, 212, 1)
+                        DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                        DisabledColor: =RGBA(225, 223, 221, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        FocusedBorderThickness: =4
+                        Height: =50
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverColor: =RGBA(16, 110, 190, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Icon: =Icon.Reload
+                        OnSelect: =Refresh('Events Info');
+                        PaddingBottom: =10
+                        PaddingLeft: =10
+                        PaddingRight: =10
+                        PaddingTop: =10
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedColor: =RGBA(16, 110, 190, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        Width: =53
+                        X: =27
+                        Y: =13
+                  - ButtonCanvas1:
+                      Control: Button@0.0.45
+                      Properties:
+                        Align: =Align.Center
+                        Font: =Font.'Segoe UI'
+                        FontSize: =20
+                        FontWeight: =FontWeight.Semibold
+                        Height: =40
+                        Icon: ="CalendarAdd"
+                        OnSelect: |-
+                          =ResetForm(ApprovalForm1);
+                          Navigate('Request Approval Screen', ScreenTransition.Fade);
+                        Text: ="Add Event"
+                        VerticalAlign: =VerticalAlign.Middle
+                        Width: =150
+                        X: =Parent.Width - 175
+                        Y: =13
+            - MainContainer1:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                Children:
+                  - Events Info View:
+                      Control: Table@1.0.278
+                      Properties:
+                        Font: =Font.Verdana
+                        FontSize: =15
+                        HeaderFont: =Font.'Segoe UI'
+                        HeaderFontSize: =17
+                        Height: |-
+                          =//If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
+                          Parent.Height
+                        Items: ='Events Info'
+                        OnSelect: |-
+                          =Set(varItem, 'Events Info View'.Selected);
+                          ViewForm(ApprovalForm1);
+                          Navigate('Request Approval Screen', ScreenTransition.Fade);
+                        ShowFooter: ="no"
+                        Width: |-
+                          =//If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
+                          Parent.Width
+                      Children:
+                        - Title1:
+                            Control: TableDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="Title"
+                              FieldName: ="Title"
+                              FieldType: ="s"
+                              Order: =1
+                        - Session Name1:
+                            Control: TableDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="Session Name"
+                              FieldName: ="SessionName"
+                              FieldType: ="s"
+                              Order: =2
+                        - Session Type1:
+                            Control: TableDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="Session Type"
+                              FieldName: ="SessionType"
+                              FieldType: ="E"
+                              Order: =3
+                        - Start Date1:
+                            Control: TableDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="Start Date"
+                              FieldName: ="StartDate"
+                              FieldType: ="d"
+                              Order: =4
+                        - End Date1:
+                            Control: TableDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="End Date"
+                              FieldName: ="EndDate"
+                              FieldType: ="d"
+                              Order: =5
+                        - Status1:
+                            Control: TableDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="Status"
+                              FieldName: ="Status"
+                              FieldType: ="E"
+                              Order: =6
+                        - Assigned To1:
+                            Control: TableDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="Assigned To"
+                              FieldName: ="AssignedTo"
+                              FieldType: ="E"
+                              Order: =7
+                        - Approval History1:
+                            Control: TableDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="Approval History"
+                              FieldName: ="ApprovalHistory"
+                              FieldType: ="s"
+                              Order: =8
+                        - Decisions Taken1:
+                            Control: TableDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="Decisions Taken"
+                              FieldName: ="DecisionsTaken"
+                              FieldType: ="n"
+                              Order: =9
+                        - Approvers1:
+                            Control: TableDataField@1.5.0
+                            Variant: textualColumn
+                            IsLocked: true
+                            Properties:
+                              FieldDisplayName: ="Approvers"
+                              FieldName: ="Approvers"
+                              FieldType: ="E"
+                              Order: =10

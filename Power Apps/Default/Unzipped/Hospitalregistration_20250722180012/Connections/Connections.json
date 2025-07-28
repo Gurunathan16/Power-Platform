@@ -1,0 +1,36 @@
+{
+  "e19e4489-1b9a-45d2-a012-87c7ce86f362": {
+    "connectionRef": {
+      "displayName": "SharePoint",
+      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1754/1.0.1754.4231/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline"
+    },
+    "datasets": {
+      "https://labskraft27.sharepoint.com/sites/GuruCompany": {
+        "dataSources": {
+          "Hospital Reg., Insurance Information 1": {
+            "tableName": "26357b8e-4adf-45a9-aea1-f2f617e679e2"
+          },
+          "Hospital Reg., Patient Emergency Contact Form 1": {
+            "tableName": "f0158716-0bbe-4c0c-a904-d24cf6c5357d"
+          },
+          "Hospital Reg., Patient History 1": {
+            "tableName": "29ce43ca-efc5-4cbc-af57-4d968e6320a9"
+          },
+          "Hospital Reg., Patient Registration Form 1": {
+            "tableName": "864b6279-fbc3-48e7-ba75-ed4517d17f0d"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Hospital Reg., Insurance Information 1",
+      "Hospital Reg., Patient History 1",
+      "Hospital Reg., Patient Registration Form 1",
+      "Hospital Reg., Patient Emergency Contact Form 1"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "e19e4489-1b9a-45d2-a012-87c7ce86f362"
+  }
+}

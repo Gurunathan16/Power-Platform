@@ -1,0 +1,1426 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.4.json",
+  "runs": [
+    {
+      "columnKind": "utf16CodeUnits",
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "results": [
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Home Screen'.'Home Screen Container'.'HS Footer Container'.'New Income Button'.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Home Screen'.'Home Screen Container'.'HS Footer Container'.'New Income Button'.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Home Screen",
+                "type": "'Home Screen'.'Home Screen Container'.'HS Footer Container'.'New Income Button'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Home Screen'.'Home Screen Container'.'HS Footer Container'.'New Expense Button'.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Home Screen'.'Home Screen Container'.'HS Footer Container'.'New Expense Button'.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Home Screen",
+                "type": "'Home Screen'.'Home Screen Container'.'HS Footer Container'.'New Expense Button'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Home Screen'.'Home Screen Container'.'HS Main Container'.'Head Container'.'Balance Button'.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Home Screen'.'Home Screen Container'.'HS Main Container'.'Head Container'.'Balance Button'.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Home Screen",
+                "type": "'Home Screen'.'Home Screen Container'.'HS Main Container'.'Head Container'.'Balance Button'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Home Screen'.'Home Screen Container'.'HS Main Container'.'Head Container'.'Expense Button'.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Home Screen'.'Home Screen Container'.'HS Main Container'.'Head Container'.'Expense Button'.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Home Screen",
+                "type": "'Home Screen'.'Home Screen Container'.'HS Main Container'.'Head Container'.'Expense Button'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Home Screen'.'Home Screen Container'.'HS Main Container'.'Head Container'.'Income Button'.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Home Screen'.'Home Screen Container'.'HS Main Container'.'Head Container'.'Income Button'.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Home Screen",
+                "type": "'Home Screen'.'Home Screen Container'.'HS Main Container'.'Head Container'.'Income Button'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Home Screen'.'Home Screen Container'.'HS Main Container'.Container1_1.'Expense Table'.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Home Screen'.'Home Screen Container'.'HS Main Container'.Container1_1.'Expense Table'.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Home Screen",
+                "type": "'Home Screen'.'Home Screen Container'.'HS Main Container'.Container1_1.'Expense Table'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Home Screen'.'Home Screen Container'.'HS Main Container'.Container1_1.'Income Table'.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Home Screen'.'Home Screen Container'.'HS Main Container'.Container1_1.'Income Table'.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Home Screen",
+                "type": "'Home Screen'.'Home Screen Container'.'HS Main Container'.Container1_1.'Income Table'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Home Screen'.'Home Screen Container'.'HS Main Container'.Container1_1.'Balance Table'.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Home Screen'.'Home Screen Container'.'HS Main Container'.Container1_1.'Balance Table'.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Home Screen",
+                "type": "'Home Screen'.'Home Screen Container'.'HS Main Container'.Container1_1.'Balance Table'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Category Data Card'.'EF Category Key'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Category Data Card'.'EF Category Key'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Expense Form Screen",
+                "type": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Category Data Card'.'EF Category Key'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Category Data Card'.'Error Message - EF Category'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Category Data Card'.'Error Message - EF Category'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Expense Form Screen",
+                "type": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Category Data Card'.'Error Message - EF Category'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Expense Name Date Card'.'Expense Name Key'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Expense Name Date Card'.'Expense Name Key'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Expense Form Screen",
+                "type": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Expense Name Date Card'.'Expense Name Key'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Expense Name Date Card'.'Expense Name Combo box'.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Expense Name Date Card'.'Expense Name Combo box'.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Expense Form Screen",
+                "type": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Expense Name Date Card'.'Expense Name Combo box'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Expense Name Date Card'.'Error Message - Expense Name'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Expense Name Date Card'.'Error Message - Expense Name'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Expense Form Screen",
+                "type": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Expense Name Date Card'.'Error Message - Expense Name'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Amount Data Card'.'EF Amount Key'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Amount Data Card'.'EF Amount Key'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Expense Form Screen",
+                "type": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Amount Data Card'.'EF Amount Key'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Amount Data Card'.'EF Amount Number Input'.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Amount Data Card'.'EF Amount Number Input'.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Expense Form Screen",
+                "type": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Amount Data Card'.'EF Amount Number Input'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Amount Data Card'.'Error Message - EF Amount'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Amount Data Card'.'Error Message - EF Amount'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Expense Form Screen",
+                "type": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Amount Data Card'.'Error Message - EF Amount'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Expense Date Data Card'.'Expense Date Key'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Expense Date Data Card'.'Expense Date Key'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Expense Form Screen",
+                "type": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Expense Date Data Card'.'Expense Date Key'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Expense Date Data Card'.'Expense Date Picker'.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Expense Date Data Card'.'Expense Date Picker'.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Expense Form Screen",
+                "type": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Expense Date Data Card'.'Expense Date Picker'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Expense Date Data Card'.'Error Message - Expense Date'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Expense Date Data Card'.'Error Message - Expense Date'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Expense Form Screen",
+                "type": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Expense Date Data Card'.'Error Message - Expense Date'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Opening Balance Data Card'.'EF Opening Balance Key'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Opening Balance Data Card'.'EF Opening Balance Key'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Expense Form Screen",
+                "type": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Opening Balance Data Card'.'EF Opening Balance Key'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Opening Balance Data Card'.'Error Message - EF Opening Balance'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Opening Balance Data Card'.'Error Message - EF Opening Balance'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Expense Form Screen",
+                "type": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Opening Balance Data Card'.'Error Message - EF Opening Balance'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Bills Choice Data Card'.'Bills Check box'.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Bills Choice Data Card'.'Bills Check box'.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Expense Form Screen",
+                "type": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Bills Choice Data Card'.'Bills Check box'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Bills Choice Data Card'.'Bills Add Media Button'.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Bills Choice Data Card'.'Bills Add Media Button'.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Expense Form Screen",
+                "type": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Bills Choice Data Card'.'Bills Add Media Button'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Bills Choice Data Card'.'Error Message - Bills'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Bills Choice Data Card'.'Error Message - Bills'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Expense Form Screen",
+                "type": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'Bills Choice Data Card'.'Error Message - Bills'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Closing Balance Data Card'.'EF Closing Balance Key'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Closing Balance Data Card'.'EF Closing Balance Key'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Expense Form Screen",
+                "type": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Closing Balance Data Card'.'EF Closing Balance Key'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Closing Balance Data Card'.'Error Message - EF Closing Balance'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Closing Balance Data Card'.'Error Message - EF Closing Balance'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Expense Form Screen",
+                "type": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Closing Balance Data Card'.'Error Message - EF Closing Balance'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Category Data Card'.'IF Category Key'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Category Data Card'.'IF Category Key'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Income Form Screen",
+                "type": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Category Data Card'.'IF Category Key'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Category Data Card'.'Error Message - IF Category'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Category Data Card'.'Error Message - IF Category'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Income Form Screen",
+                "type": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Category Data Card'.'Error Message - IF Category'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'Income Name Date Card'.'Income Name Key'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'Income Name Date Card'.'Income Name Key'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Income Form Screen",
+                "type": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'Income Name Date Card'.'Income Name Key'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'Income Name Date Card'.'Income Name Combo box'.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'Income Name Date Card'.'Income Name Combo box'.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Income Form Screen",
+                "type": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'Income Name Date Card'.'Income Name Combo box'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'Income Name Date Card'.'Error Message - Income Name'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'Income Name Date Card'.'Error Message - Income Name'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Income Form Screen",
+                "type": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'Income Name Date Card'.'Error Message - Income Name'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Amount Data Card'.'IF Amount Key'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Amount Data Card'.'IF Amount Key'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Income Form Screen",
+                "type": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Amount Data Card'.'IF Amount Key'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Amount Data Card'.'IF Amount Number Input'.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Amount Data Card'.'IF Amount Number Input'.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Income Form Screen",
+                "type": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Amount Data Card'.'IF Amount Number Input'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Amount Data Card'.'Error Message - IF Amount'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Amount Data Card'.'Error Message - IF Amount'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Income Form Screen",
+                "type": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Amount Data Card'.'Error Message - IF Amount'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'Income Date Data Card'.'Income Date Key'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'Income Date Data Card'.'Income Date Key'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Income Form Screen",
+                "type": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'Income Date Data Card'.'Income Date Key'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'Income Date Data Card'.'Income Date Picker'.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'Income Date Data Card'.'Income Date Picker'.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Income Form Screen",
+                "type": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'Income Date Data Card'.'Income Date Picker'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'Income Date Data Card'.'Error Message - Income Date'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'Income Date Data Card'.'Error Message - Income Date'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Income Form Screen",
+                "type": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'Income Date Data Card'.'Error Message - Income Date'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Opening Balance Data Card'.'IF Opening Balance Key'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Opening Balance Data Card'.'IF Opening Balance Key'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Income Form Screen",
+                "type": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Opening Balance Data Card'.'IF Opening Balance Key'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Opening Balance Data Card'.'Error Message - IF Opening Balance'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Opening Balance Data Card'.'Error Message - IF Opening Balance'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Income Form Screen",
+                "type": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Opening Balance Data Card'.'Error Message - IF Opening Balance'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Closing Balance Data Card'.'IF Closing Balance Key'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Closing Balance Data Card'.'IF Closing Balance Key'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Income Form Screen",
+                "type": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Closing Balance Data Card'.'IF Closing Balance Key'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Closing Balance Data Card'.'Error Message - IF Closing Balance'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Closing Balance Data Card'.'Error Message - IF Closing Balance'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Income Form Screen",
+                "type": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Closing Balance Data Card'.'Error Message - IF Closing Balance'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Success Screen'.'SC Screen Container'.'SCS Main Container'.'SCS Balance Container'.'SCS Closing Balance Key'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Success Screen'.'SC Screen Container'.'SCS Main Container'.'SCS Balance Container'.'SCS Closing Balance Key'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Success Screen",
+                "type": "'Success Screen'.'SC Screen Container'.'SCS Main Container'.'SCS Balance Container'.'SCS Closing Balance Key'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Success Screen'.'SC Screen Container'.'SCS Main Container'.'SCS Balance Container'.'Error Message - SCS Closing Balance'.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Success Screen'.'SC Screen Container'.'SCS Main Container'.'SCS Balance Container'.'Error Message - SCS Closing Balance'.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Success Screen",
+                "type": "'Success Screen'.'SC Screen Container'.'SCS Main Container'.'SCS Balance Container'.'Error Message - SCS Closing Balance'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Opening Balance Data Card'.'EF Current Balance Holder OB'.Y"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Opening Balance Data Card'.'EF Current Balance Holder OB'.Y",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Y",
+                "module": "Expense Form Screen",
+                "type": "'Expense Form Screen'.'EF Screen Container'.'EF Main Container'.'Expense Form Container'.'Expense Form'.'EF Opening Balance Data Card'.'EF Current Balance Holder OB'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Closing Balance Data Card'.'IF Closing Balance Key'.X"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Closing Balance Data Card'.'IF Closing Balance Key'.X",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "X",
+                "module": "Income Form Screen",
+                "type": "'Income Form Screen'.'IF Screen Container'.'IF Main Container'.'Income Form Container'.'Income Form'.'IF Closing Balance Data Card'.'IF Closing Balance Key'"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 2
+        }
+      ],
+      "tool": {
+        "driver": {
+          "fullName": "PowerApps app checker",
+          "name": "PowerApps app checker",
+          "rules": [
+            {
+              "id": "acc-AccessibleLabelNeeded",
+              "messageStrings": {
+                "issue": {
+                  "text": "Missing accessible label"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Edit the accessible label property to describe the item."
+                ],
+                "level": "Medium",
+                "primaryCategory": "accessibility",
+                "whyFix": "If there's no accessible text, people who can’t see the screen won't understand what’s in images and controls."
+              }
+            },
+            {
+              "id": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+              "messageStrings": {
+                "issue": {
+                  "text": "Missing tab stop"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Set TabIndex to 0 or greater to ensure that interactive elements have a tab stop."
+                ],
+                "level": "Medium",
+                "primaryCategory": "accessibility",
+                "whyFix": "People who use the keyboard with your app will not be able to access this element without a tab stop."
+              }
+            },
+            {
+              "id": "app-InefficientDelayLoading",
+              "messageStrings": {
+                "issue": {
+                  "text": "Inefficient delay loading"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Use variables, collections, and navigation context to share state across screens instead."
+                ],
+                "level": "Medium",
+                "primaryCategory": "performance",
+                "whyFix": "Controls that reference controls on other screens can slow down app loading and navigation. Doing this may force the app to load the other screens immediately, rather than waiting until the user navigates to that screen."
+              }
+            }
+          ],
+          "version": "1.346"
+        }
+      }
+    }
+  ],
+  "version": "2.1.0"
+}

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{2a72d641-3e83-423f-9c25-d28cdfe85e24}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{31ac7d84-9431-47d1-9de3-def79a87853b}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{1da7e985-033a-4596-9edc-10f81167fad9}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{978cb01f-2781-4d8d-9576-a0b2e0acdf3e}">
+                        <labels>
+                          <label description="Category Name" languagecode="1033" />
+                        </labels>
+                        <control id="gd_categoryname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="gd_categoryname" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5af2f753-b169-4d7e-8781-2117d59b98fa}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{135f312b-8ed7-4deb-9659-60d4e006fef5}">
+                        <labels>
+                          <label description="CategoryID" languagecode="1033" />
+                        </labels>
+                        <control id="gd_categoryid" classid="{c6d124ca-7eda-4a60-aea9-7fb8d318b68f}" datafieldname="gd_categoryid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

@@ -1,0 +1,833 @@
+"'Expense Form Screen' As screen.'headerFormLayout_ver1.0'":
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+    OnVisible: =Set(currentBalanceEF, LookUp('Balance Log', EntraObjectID = Text(User().EntraObjectId), 'Current Balance'));
+
+    "'EF Screen Container' As groupContainer.horizontalAutoLayoutContainer":
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(245, 245, 245, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =16
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =16
+        PaddingLeft: =16
+        PaddingRight: =16
+        PaddingTop: =16
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =Parent.Width
+        ZIndex: =1
+
+        "'EF Header Container' As groupContainer.horizontalAutoLayoutContainer":
+            AlignInContainer: =AlignInContainer.SetByContainer
+            DropShadow: =DropShadow.Light
+            FillPortions: =0
+            Height: =75
+            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            ZIndex: =1
+
+            "'EF Header' As Header":
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Center
+                BasePaletteColor: =RGBA(227, 106, 244, 1)
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                FillPortions: =1
+                Font: =Font.Verdana
+                Height: =75
+                IsLogoVisible: =true
+                IsProfilePictureVisible: =true
+                IsTitleVisible: =true
+                LayoutMinHeight: =75
+                LayoutMinWidth: =Parent.Width
+                Logo: =
+                LogoMaxHeight: =70
+                LogoTooltip: ="The logo image"
+                OnSelectLogo: =Navigate('Home Screen',ScreenTransition.Fade);
+                Style: ='Header.Style'.Primary
+                TabIndex: =0
+                Title: ="BB - Add your Expense"
+                TitleFontSize: =30
+                TitleRole: =""
+                Tooltip: =""
+                UserEmail: =User().Email
+                UserImage: =User().Image
+                UserImageAltText: =User().FullName &" profile picture"
+                UserName: =User().FullName
+                Visible: =true
+                Width: =Parent.Width
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+        "'EF Main Container' As groupContainer.horizontalAutoLayoutContainer":
+            AlignInContainer: =AlignInContainer.Center
+            DropShadow: =DropShadow.Regular
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutGap: =10
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutWrap: =true
+            PaddingBottom: =2
+            PaddingLeft: =2
+            PaddingRight: =2
+            PaddingTop: =2
+            RadiusBottomLeft: =45
+            RadiusBottomRight: =45
+            RadiusTopLeft: =45
+            RadiusTopRight: =45
+            ZIndex: =2
+
+            "'Expense Form Container' As groupContainer.horizontalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                DropShadow: =DropShadow.Semibold
+                Fill: =RGBA(255, 255, 255, 1)
+                LayoutAlignItems: =LayoutAlignItems.Stretch
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGap: =16
+                LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                LayoutMinHeight: =50
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                LayoutOverflowX: =LayoutOverflow.Scroll
+                LayoutOverflowY: =LayoutOverflow.Scroll
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Width: =400
+                ZIndex: =2
+
+                "'Expense Form' As form.PowerApps_CoreControls_Form":
+                    AcceptsFocus: =false
+                    AlignInContainer: =AlignInContainer.Center
+                    BorderColor: =RGBA(245, 245, 245, 1)
+                    DataSource: ='Expense Tracker'
+                    DefaultMode: =FormMode.New
+                    LayoutMinHeight: =250
+                    LayoutMinWidth: =0
+                    NumberOfColumns: =1
+                    UseFluentV9Cards: =true
+                    Width: =400
+                    ZIndex: =1
+
+                    "'EF Category Data Card' As typedDataCard.blankCard":
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DisplayMode: =DisplayMode.Edit
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =Round(Parent.Height * 0.162, 0)
+                        Visible: =true
+                        Width: =400
+                        WidthFit: =true
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                        "'EF Category Key' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Verdana
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Parent.Height / 3
+                            Size: =13
+                            Text: ="Category"
+                            Width: =Parent.Width - Self.X
+                            X: ='EF Category Combo box'.X + 30
+                            Y: =8
+                            ZIndex: =1
+
+                        "'Error Message - EF Category' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Height: =10
+                            Size: =13
+                            Text: |-
+                                ="
+                                "
+                            Width: =440
+                            X: =30
+                            Y: =80
+                            ZIndex: =2
+
+                        "'EF Category Combo box' As Combobox.pcfdataset":
+                            AccessibleLabel: ="Find Categories"
+                            Appearance: ='ComboboxCanvas.Appearance'.FilledDarker
+                            BasePaletteColor: =RGBA(227, 106, 244, 1)
+                            BorderColor: =RGBA(214, 221, 224, 1)
+                            BorderRadius: =10
+                            BorderStyle: =BorderStyle.Solid
+                            BorderThickness: =2
+                            DisplayMode: =DisplayMode.Edit
+                            Height: =Round(Parent.Height * 0.36, 0)
+                            InputTextPlaceholder: ="Select categories"
+                            Items: =Filter('Expense Category Lists', 'Expense Category Lists (Views)'.'Active Expense Category Lists')
+                            PaddingBottom: =5
+                            PaddingLeft: =5
+                            PaddingRight: =5
+                            PaddingTop: =5
+                            TriggerOutput: ='ComboboxCanvas.TriggerOutput'.Keypress
+                            Width: =Round(Parent.Width * 0.67, 0)
+                            X: =(Parent.Width - 'EF Category Combo box'.Width) / 2
+                            Y: ='EF Category Key'.Y + 'EF Category Key'.Height + 5
+                            ZIndex: =3
+
+                            "'Category Name1' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                                FieldDisplayName: ="Category Name"
+                                FieldName: ="gd_categoryname"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =1
+                                ZIndex: =1
+
+                    "'Expense Name Date Card' As typedDataCard.blankCard":
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DisplayMode: =DisplayMode.Edit
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =Round(Parent.Height * 0.162, 0)
+                        Visible: =true
+                        Width: =400
+                        WidthFit: =true
+                        X: =0
+                        Y: =1
+                        ZIndex: =1
+
+                        "'Expense Name Key' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Verdana
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Parent.Height / 3
+                            Size: =13
+                            Text: ="Expense Name"
+                            Width: =Parent.Width - Self.X
+                            X: ='Expense Name Combo box'.X + 30
+                            Y: =8
+                            ZIndex: =1
+
+                        "'Error Message - Expense Name' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Height: =10
+                            Size: =13
+                            Text: |-
+                                ="
+                                "
+                            Width: =440
+                            X: =30
+                            Y: =80
+                            ZIndex: =2
+
+                        "'Expense Name Combo box' As Combobox.pcfdataset":
+                            AccessibleLabel: =""
+                            Appearance: ="FilledDarker"
+                            BasePaletteColor: =RGBA(227, 106, 244, 1)
+                            BorderColor: =RGBA(214, 221, 224, 1)
+                            BorderRadius: =10
+                            BorderStyle: =BorderStyle.Solid
+                            BorderThickness: =2
+                            ContentLanguage: =""
+                            DisplayMode: =DisplayMode.Edit
+                            Fill: =
+                            Font: =""
+                            FontItalic: =false
+                            FontSize: =0
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            FontWeight: =""
+                            Height: =Round(Parent.Height * 0.36, 0)
+                            InputTextPlaceholder: ="Select expense name"
+                            IsSearchable: =true
+                            Items: =Filter('Expense Items Lists', 'Category Lookup'.'Category Name' = 'EF Category Combo box'.Selected.'Category Name')
+                            MultiValueDelimiter: =", "
+                            OnChange: =false
+                            Required: =false
+                            SelectMultiple: =false
+                            TabIndex: =0
+                            Tooltip: =""
+                            TriggerOutput: ="Keypress"
+                            ValidationState: ="None"
+                            Visible: =true
+                            Width: =Round(Parent.Width * 0.67, 0)
+                            X: =(Parent.Width - 'Expense Name Combo box'.Width) / 2
+                            Y: ='Expense Name Key'.Y + 'Expense Name Key'.Height + 5
+                            ZIndex: =3
+
+                            ExpenseName1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                                FieldDisplayName: ="ExpenseName"
+                                FieldName: ="gd_expensename"
+                                FieldType: ="s"
+                                FieldVariantName: ="textualColumn"
+                                Order: =1
+                                ZIndex: =1
+
+                            ExpenseID1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                                FieldDisplayName: ="ExpenseID"
+                                FieldName: ="gd_expenseid"
+                                FieldType: ="n"
+                                FieldVariantName: ="textualColumn"
+                                Order: =2
+                                ZIndex: =2
+
+                    "'EF Amount Data Card' As typedDataCard.blankCard":
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DisplayMode: =DisplayMode.Edit
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =Round(Parent.Height * 0.162, 0)
+                        Visible: =true
+                        Width: =400
+                        WidthFit: =true
+                        X: =0
+                        Y: =2
+                        ZIndex: =1
+
+                        "'EF Amount Key' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Verdana
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Parent.Height / 3
+                            Size: =13
+                            Text: ="Amount"
+                            Width: =Parent.Width - Self.X
+                            X: ='EF Amount Number Input'.X + 30
+                            Y: =8
+                            ZIndex: =1
+
+                        "'Error Message - EF Amount' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Height: =10
+                            Size: =13
+                            Text: |-
+                                ="
+                                "
+                            Width: =440
+                            X: =30
+                            Y: =80
+                            ZIndex: =2
+
+                        "'EF Amount Number Input' As 'Number input'":
+                            Align: =Align.Left
+                            BasePaletteColor: =RGBA(227, 106, 244, 1)
+                            BorderColor: =RGBA(214, 221, 224, 1)
+                            BorderRadius: =10
+                            BorderStyle: =BorderStyle.Solid
+                            BorderThickness: =2
+                            DisplayMode: =DisplayMode.Edit
+                            Height: =Round(Parent.Height * 0.36, 0)
+                            Min: =0
+                            Precision: ='NumberInput.Precision'.'2'
+                            Width: =Round(Parent.Width * 0.67, 0)
+                            X: =(Parent.Width - 'EF Amount Number Input'.Width) / 2
+                            Y: ='EF Amount Key'.Y + 'EF Amount Key'.Height + 5
+                            ZIndex: =3
+
+                    "'Expense Date Data Card' As typedDataCard.blankCard":
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DisplayMode: =DisplayMode.Edit
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =Round(Parent.Height * 0.162, 0)
+                        Visible: =true
+                        Width: =400
+                        WidthFit: =true
+                        X: =0
+                        Y: =3
+                        ZIndex: =1
+
+                        "'Expense Date Key' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Verdana
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Parent.Height / 3
+                            Size: =13
+                            Text: ="Expense Date"
+                            Width: =Parent.Width - Self.X
+                            X: ='Expense Date Picker'.X + 30
+                            Y: =8
+                            ZIndex: =1
+
+                        "'Error Message - Expense Date' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Height: =10
+                            Size: =13
+                            Text: |-
+                                ="
+                                "
+                            Width: =440
+                            X: =30
+                            Y: =80
+                            ZIndex: =2
+
+                        "'Expense Date Picker' As 'Date picker'":
+                            BasePaletteColor: =RGBA(227, 106, 244, 1)
+                            BorderColor: =RGBA(214, 221, 224, 1)
+                            BorderRadius: =10
+                            BorderStyle: =BorderStyle.Solid
+                            BorderThickness: =2
+                            DisplayMode: =DisplayMode.Edit
+                            Height: =Round(Parent.Height * 0.36, 0)
+                            Width: =Round(Parent.Width * 0.67, 0)
+                            X: =(Parent.Width - 'Expense Date Picker'.Width) / 2
+                            Y: ='Expense Date Key'.Y + 'Expense Date Key'.Height + 5
+                            ZIndex: =3
+
+                    "'EF Opening Balance Data Card' As typedDataCard.blankCard":
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DisplayMode: =DisplayMode.Edit
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =Round(Parent.Height * 0.162, 0)
+                        Visible: =true
+                        Width: =400
+                        WidthFit: =true
+                        X: =0
+                        Y: =4
+                        ZIndex: =1
+
+                        "'EF Opening Balance Key' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Verdana
+                            FontWeight: =FontWeight.Semibold
+                            Height: =26
+                            Size: =13
+                            Text: ="Opening Balance"
+                            Width: =Parent.Width - Self.X
+                            X: ='Expense Date Key'.X
+                            Y: =8
+                            ZIndex: =1
+
+                        "'Error Message - EF Opening Balance' As label":
+                            Align: =Align.Center
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Height: =10
+                            Size: =13
+                            Text: |-
+                                ="
+                                "
+                            Width: =440
+                            X: =30
+                            Y: =40
+                            ZIndex: =2
+
+                        "'EF Current Balance Holder OB' As Text":
+                            Align: ='TextCanvas.Align'.Center
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =Font.Verdana
+                            FontColor: =If(currentBalanceEF < 0, RGBA(215, 58, 60, 1), RGBA(52, 152, 47, 1))
+                            Height: =32
+                            PaddingLeft: =5
+                            Size: =18
+                            Text: |-
+                                =If(IsBlank(currentBalanceEF) || currentBalanceEF = 0, "₹ 0", "₹ " & Text(currentBalanceEF, "#,##0.00"))
+                            VerticalAlign: =VerticalAlign.Middle
+                            Weight: ='TextCanvas.Weight'.Semibold
+                            Width: =Parent.Width
+                            X: =
+                            Y: =Round((Parent.Height - 'IF Opening Balance Key'.Height) / 2, 0) + 'IF Opening Balance Key'.Y
+                            ZIndex: =3
+
+                    "'Bills Choice Data Card' As typedDataCard.blankCard":
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DisplayMode: =DisplayMode.Edit
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =Round(Parent.Height * 0.1, 0)
+                        Visible: =true
+                        Width: =400
+                        WidthFit: =true
+                        X: =0
+                        Y: =5
+                        ZIndex: =1
+
+                        "'Error Message - Bills' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Height: =10
+                            Size: =13
+                            Text: |-
+                                ="
+                                "
+                            Width: =440
+                            X: =30
+                            Y: =40
+                            ZIndex: =2
+
+                        "'Bills Check box' As Checkbox":
+                            BasePaletteColor: =RGBA(227, 106, 244, 1)
+                            Checked: =false
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =Font.Verdana
+                            FontColor: =RGBA(0, 0, 0, 1)
+                            FontSize: =13
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Round((Parent.Width - 'Bills Check box'.Width) / 3, 0)
+                            Label: ="Do you have bills?"
+                            OnCheck: =false
+                            OnUncheck: =false
+                            Width: =Round(Parent.Width * 0.67, 0)
+                            X: =(Parent.Width - 'Expense Date Picker'.Width) / 2
+                            Y: =0
+                            ZIndex: =4
+
+                        "'Bills Add Media Button' As addMedia":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            ChangePictureText: ="Change"
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            Fill: =RGBA(227, 106, 244, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Verdana
+                            Height: =30
+                            HoverBorderColor: =RGBA(0, 0, 0, 0)
+                            HoverColor: =RGBA(255, 255, 255, 1)
+                            HoverFill: =RGBA(109, 49, 162, 1)
+                            PlaceholderText: ="Tap or click to add a picture"
+                            PressedBorderColor: =RGBA(0, 0, 0, 0)
+                            PressedColor: =RGBA(255, 255, 255, 1)
+                            PressedFill: =RGBA(255, 0, 0, 1)
+                            Size: =15
+                            Text: ="Add Bill"
+                            Visible: ='Bills Check box'.Checked
+                            Width: =100
+                            X: =259
+                            Y: =8
+                            ZIndex: =5
+
+                        Image1 As image:
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledFill: =RGBA(0, 0, 0, 0)
+                            FocusedBorderThickness: =4
+                            Height: =150
+                            HoverBorderColor: =RGBA(0, 0, 0, 0)
+                            HoverFill: =RGBA(0, 0, 0, 0)
+                            Image: =If(IsBlank('Bills Add Media Button'.Media), SampleImage, 'Bills Add Media Button'.Media)
+                            ImagePosition: =ImagePosition.Stretch
+                            PressedBorderColor: =RGBA(0, 0, 0, 0)
+                            PressedFill: =RGBA(0, 0, 0, 0)
+                            Visible: =!IsBlank('Bills Add Media Button'.Media)
+                            Width: =200
+                            X: =60
+                            Y: =50
+                            ZIndex: =6
+
+                    "'EF Closing Balance Data Card' As typedDataCard.blankCard":
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        BorderStyle: =BorderStyle.Solid
+                        DisplayMode: =DisplayMode.Edit
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =12
+                        Visible: =false
+                        Width: =400
+                        WidthFit: =false
+                        X: =0
+                        Y: =6
+                        ZIndex: =1
+
+                        "'Error Message - EF Closing Balance' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.'Segoe UI'
+                            Height: =10
+                            Size: =13
+                            Text: |-
+                                ="
+                                "
+                            Width: =440
+                            X: =30
+                            Y: =40
+                            ZIndex: =2
+
+                        "'EF Current Balance Holder CB' As Text":
+                            Align: ='TextCanvas.Align'.Center
+                            AutoHeight: =false
+                            BorderStyle: =""
+                            ContentLanguage: =""
+                            DisplayMode: =DisplayMode.Edit
+                            Font: =Font.Verdana
+                            FontColor: =If(currentBalanceEF < 0, RGBA(215, 58, 60, 1), RGBA(52, 152, 47, 1))
+                            FontItalic: =false
+                            FontStrikethrough: =false
+                            FontUnderline: =false
+                            Height: =32
+                            PaddingLeft: =5
+                            Size: =18
+                            TabIndex: =0
+                            Text: |-
+                                =If(IsBlank(currentBalanceEF) || currentBalanceEF = 0, "₹ 0", "₹ " & Text(currentBalanceEF, "#,##0.00"))
+                            Tooltip: =""
+                            VerticalAlign: =VerticalAlign.Middle
+                            Visible: =true
+                            Weight: ='TextCanvas.Weight'.Semibold
+                            Width: =Round(Parent.Width * 0.38, 0)
+                            Wrap: =true
+                            X: =159
+                            Y: =38
+                            ZIndex: =3
+
+                        "'EF Closing Balance Key' As label":
+                            BorderColor: =RGBA(0, 0, 0, 0)
+                            BorderStyle: =BorderStyle.None
+                            BorderThickness: =2
+                            Color: =RGBA(50, 49, 48, 1)
+                            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                            DisabledColor: =RGBA(161, 159, 157, 1)
+                            FocusedBorderThickness: =4
+                            Font: =Font.Verdana
+                            FontWeight: =FontWeight.Semibold
+                            Height: =Round(Parent.Height / 3, 0)
+                            Size: =13
+                            Text: ="Current Balance"
+                            Width: =Round(Parent.Width * 0.38, 0)
+                            X: ='Expense Date Picker'.X + 30
+                            Y: =8
+                            ZIndex: =4
+
+                "'EF Buttons Container' As groupContainer.horizontalAutoLayoutContainer":
+                    AlignInContainer: =AlignInContainer.Center
+                    FillPortions: =0
+                    Height: =50
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutGap: =10
+                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =0
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingBottom: =10
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    PaddingTop: =10
+                    Width: ='Expense Form'.Width
+                    X: =40
+                    Y: =40
+                    ZIndex: =2
+
+                    "'EF Cancel Button' As Button":
+                        AcceptsFocus: =true
+                        AccessibleLabel: ="Cancel form button"
+                        Align: =""
+                        Appearance: ='ButtonCanvas.Appearance'.Secondary
+                        BasePaletteColor: =
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =32
+                        Icon: ="Dismiss"
+                        IconRotation: =0
+                        IconStyle: ="Outline"
+                        Layout: ="Icon before"
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        OnSelect: =ResetForm('Expense Form')
+                        TabIndex: =0
+                        Text: ="Cancel"
+                        Tooltip: =""
+                        VerticalAlign: =""
+                        Visible: =true
+                        Width: =Round((Parent.Width / 3), 0) - 10
+                        X: =0
+                        Y: =0
+                        ZIndex: =1
+
+                    "'EF Home Button' As Button":
+                        AcceptsFocus: =true
+                        AccessibleLabel: ="Submit form button"
+                        Align: =Align.Center
+                        Appearance: ="Primary"
+                        BasePaletteColor: =RGBA(227, 106, 244, 1)
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =32
+                        Icon: ="Home"
+                        IconRotation: =0
+                        IconStyle: ="Outline"
+                        Layout: ="Icon before"
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        OnSelect: =Navigate('Home Screen');
+                        TabIndex: =0
+                        Text: ="Home"
+                        Tooltip: =""
+                        VerticalAlign: =""
+                        Visible: =true
+                        Width: =Round((Parent.Width / 3), 0) - 10
+                        X: =40
+                        Y: =40
+                        ZIndex: =2
+
+                    "'EF Submit Button' As Button":
+                        AcceptsFocus: =true
+                        AccessibleLabel: ="Submit form button"
+                        Align: =""
+                        Appearance: ="Primary"
+                        BasePaletteColor: =RGBA(227, 106, 244, 1)
+                        BorderStyle: =""
+                        ContentLanguage: =""
+                        DisplayMode: =DisplayMode.Edit
+                        Font: =""
+                        FontItalic: =false
+                        FontSize: =0
+                        FontStrikethrough: =false
+                        FontUnderline: =false
+                        FontWeight: =""
+                        Height: =32
+                        Icon: ="Save"
+                        IconRotation: =0
+                        IconStyle: ="Outline"
+                        Layout: ="Icon before"
+                        LayoutMinHeight: =32
+                        LayoutMinWidth: =96
+                        OnSelect: |-
+                            =Patch('Expense Tracker', Defaults('Expense Tracker'), 
+                            {
+                                Category:'EF Category Combo box'.Selected.'Category Name',
+                                'Expense Name':'Expense Name Combo box'.Selected.ExpenseName,
+                                Amount:'EF Amount Number Input'.Value,
+                                'Expense Date':'Expense Date Picker'.SelectedDate,
+                                'Do you have bills?':'Bills Check box'.Checked,
+                                'BillCopy': If(!IsBlank('Bills Add Media Button'.Media),'Image1'.Image),
+                                'EntraObjectID': Text(User().EntraObjectId)
+                            });
+                            
+                            Set(currentUserId, Text(User().EntraObjectId));
+                            
+                            With(
+                                {
+                                    existingRecord: LookUp('Balance Log', EntraObjectID = currentUserId)
+                                },
+                                If(
+                                    !IsBlank(existingRecord),
+                                    Patch('Balance Log', existingRecord, 
+                                    {
+                                        'Current Balance': currentBalanceEF  - 'EF Amount Number Input'.Value
+                                    }),
+                                    Patch('Balance Log', Defaults('Balance Log'), 
+                                    {
+                                        EntraObjectID: currentUserId,
+                                        'Current Balance': 'EF Amount Number Input'.Value * -1
+                                    }
+                                )));
+                            
+                            ResetForm('Expense Form');
+                            
+                            Navigate('Loading Screen', ScreenTransition.Fade, {fromWhichScreen: 2});
+                        TabIndex: =0
+                        Text: ="Submit"
+                        Tooltip: =""
+                        VerticalAlign: =""
+                        Visible: =true
+                        Width: =Round((Parent.Width / 3), 0) - 10
+                        X: =0
+                        Y: =0
+                        ZIndex: =3
+

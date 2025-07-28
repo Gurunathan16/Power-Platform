@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{e74f00a9-cf02-465d-9421-9efdb664087c}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="gd_productid1" select="1" icon="1" preview="1">
+        <row name="result" id="gd_productid">
+          <cell name="gd_productid1" width="114" />
+          <cell name="gd_productname" width="150" />
+          <cell name="gd_price" width="150" />
+          <cell name="gd_quantity" width="150" />
+          <cell name="gd_productcategorylookup" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="gd_product">
+          <attribute name="gd_productid" />
+          <attribute name="gd_productid1" />
+          <attribute name="createdon" />
+          <order attribute="gd_productid1" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="gd_productname" />
+          <attribute name="gd_price" />
+          <attribute name="gd_quantity" />
+          <attribute name="gd_productcategorylookup" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Product" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

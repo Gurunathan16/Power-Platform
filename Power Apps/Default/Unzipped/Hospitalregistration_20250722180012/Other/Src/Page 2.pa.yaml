@@ -1,0 +1,1259 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Page 2:
+    Properties:
+      Fill: =RGBA(255, 255, 255, 1)
+      LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+    Children:
+      - Button1:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            DisabledFill: =RGBA(242, 242, 241, 0)
+            Fill: =RGBA(0, 120, 212, 1)
+            Font: =Font.'Segoe UI'
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(16, 110, 190, 1)
+            OnSelect: =Navigate('Page 3', ScreenTransition.Fade);
+            PressedBorderColor: =RGBA(0, 69, 120, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(16, 110, 190, 1)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: ="Next"
+            X: =787
+            Y: =683
+      - Button4_2:
+          Control: Classic/Button@2.2.0
+          Properties:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            DisabledFill: =RGBA(242, 242, 241, 0)
+            Fill: =RGBA(0, 120, 212, 1)
+            Font: =Font.'Segoe UI'
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(16, 110, 190, 1)
+            OnSelect: =ResetForm(Form2);
+            PressedBorderColor: =RGBA(0, 69, 120, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(16, 110, 190, 1)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: ="Cancel"
+            X: =419
+            Y: =683
+      - Button4_3:
+          Control: Classic/Button@2.2.0
+          Properties:
+            AutoDisableOnSelect: =false
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            DisabledFill: =RGBA(242, 242, 241, 0)
+            Fill: =RGBA(0, 120, 212, 1)
+            Font: =Font.'Segoe UI'
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(16, 110, 190, 1)
+            OnSelect: =Back(ScreenTransition.Fade);
+            PressedBorderColor: =RGBA(0, 69, 120, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(16, 110, 190, 1)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: ="Back"
+            X: =603
+            Y: =683
+      - Container3:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(204, 228, 246, 1)
+            Height: =125
+            Width: =1366
+          Children:
+            - Label3:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  BorderThickness: =2
+                  Color: =RGBA(50, 49, 48, 1)
+                  DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                  DisabledColor: =RGBA(161, 159, 157, 1)
+                  FocusedBorderThickness: =4
+                  Font: =Font.Georgia
+                  FontWeight: =FontWeight.Semibold
+                  Height: =49
+                  Size: =23
+                  TabIndex: =0
+                  Text: ="Emergency Contact"
+                  Width: =344
+                  X: =66
+                  Y: =54
+      - Container3_1:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(204, 228, 246, 1)
+            Height: =523
+            Width: =1366
+            Y: =125
+          Children:
+            - Form2:
+                Control: Form@2.4.4
+                Variant: Classic
+                Layout: Vertical
+                Properties:
+                  BorderColor: =RGBA(245, 245, 245, 1)
+                  DataSource: ='Hospital Reg., Patient Emergency Contact Form 1'
+                  DefaultMode: =FormMode.New
+                  Height: =523
+                  NumberOfColumns: =2
+                  Width: =1292
+                  X: =40
+                Children:
+                  - First Name_DataCard2:
+                      Control: TypedDataCard@1.0.7
+                      Variant: ClassicTextualEdit
+                      IsLocked: true
+                      Properties:
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        DataField: ="FirstName"
+                        Default: =ThisItem.'First Name'
+                        DisplayName: =DataSourceInfo([@'Hospital Reg., Patient Emergency Contact Form 1'],DataSourceInfo.DisplayName,FirstName)
+                        MaxLength: =DataSourceInfo([@'Hospital Reg., Patient Emergency Contact Form 1'], DataSourceInfo.MaxLength, FirstName)
+                        Required: =true
+                        Update: =DataCardValue16.Text
+                        Width: =646
+                        X: =0
+                        Y: =0
+                      Children:
+                        - DataCardKey17:
+                            Control: Label@2.5.1
+                            MetadataKey: FieldName
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =34
+                              PaddingLeft: =0
+                              Text: =Parent.DisplayName
+                              Width: =Parent.Width - 60
+                              Wrap: =false
+                              X: =30
+                              Y: =10
+                        - DataCardValue16:
+                            Control: Classic/TextInput@2.3.2
+                            MetadataKey: FieldValue
+                            Properties:
+                              BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                              Color: =RGBA(50, 49, 48, 1)
+                              Default: =Parent.Default
+                              DelayOutput: =true
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              DisabledFill: =RGBA(242, 242, 241, 0)
+                              DisplayMode: =Parent.DisplayMode
+                              Font: =Font.'Segoe UI'
+                              HoverBorderColor: =RGBA(16, 110, 190, 1)
+                              HoverColor: =RGBA(50, 49, 48, 1)
+                              HoverFill: =RGBA(255, 255, 255, 1)
+                              MaxLength: =Parent.MaxLength
+                              PaddingLeft: =5
+                              PressedBorderColor: =RGBA(0, 120, 212, 1)
+                              PressedColor: =RGBA(50, 49, 48, 1)
+                              PressedFill: =RGBA(255, 255, 255, 1)
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Tooltip: =Parent.DisplayName
+                              Width: =Parent.Width - 60
+                              X: =30
+                              Y: =DataCardKey17.Y + DataCardKey17.Height + 5
+                        - ErrorMessage17:
+                            Control: Label@2.5.1
+                            MetadataKey: ErrorMessage
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(168, 0, 0, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(168, 0, 0, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =10
+                              Live: =Live.Assertive
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Text: =Parent.Error
+                              Visible: =Parent.DisplayMode=DisplayMode.Edit
+                              Width: =Parent.Width - 60
+                              X: =30
+                              Y: =DataCardValue16.Y + DataCardValue16.Height
+                        - StarVisible23:
+                            Control: Label@2.5.1
+                            MetadataKey: FieldRequired
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =DataCardKey17.Height
+                              PaddingLeft: =0
+                              Text: ="*"
+                              Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                              Width: =30
+                              Wrap: =false
+                              Y: =DataCardKey17.Y
+                  - Second Name_DataCard2:
+                      Control: TypedDataCard@1.0.7
+                      Variant: ClassicTextualEdit
+                      IsLocked: true
+                      Properties:
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        DataField: ="SecondName"
+                        Default: =ThisItem.'Second Name'
+                        DisplayName: =DataSourceInfo([@'Hospital Reg., Patient Emergency Contact Form 1'],DataSourceInfo.DisplayName,SecondName)
+                        MaxLength: =DataSourceInfo([@'Hospital Reg., Patient Emergency Contact Form 1'], DataSourceInfo.MaxLength, SecondName)
+                        Required: =true
+                        Update: =DataCardValue17.Text
+                        Width: =646
+                        X: =1
+                        Y: =0
+                      Children:
+                        - DataCardKey18:
+                            Control: Label@2.5.1
+                            MetadataKey: FieldName
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =34
+                              PaddingLeft: =0
+                              Text: =Parent.DisplayName
+                              Width: =Parent.Width - 60
+                              Wrap: =false
+                              X: =30
+                              Y: =10
+                        - DataCardValue17:
+                            Control: Classic/TextInput@2.3.2
+                            MetadataKey: FieldValue
+                            Properties:
+                              BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                              Color: =RGBA(50, 49, 48, 1)
+                              Default: =Parent.Default
+                              DelayOutput: =true
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              DisabledFill: =RGBA(242, 242, 241, 0)
+                              DisplayMode: =Parent.DisplayMode
+                              Font: =Font.'Segoe UI'
+                              HoverBorderColor: =RGBA(16, 110, 190, 1)
+                              HoverColor: =RGBA(50, 49, 48, 1)
+                              HoverFill: =RGBA(255, 255, 255, 1)
+                              MaxLength: =Parent.MaxLength
+                              PaddingLeft: =5
+                              PressedBorderColor: =RGBA(0, 120, 212, 1)
+                              PressedColor: =RGBA(50, 49, 48, 1)
+                              PressedFill: =RGBA(255, 255, 255, 1)
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Tooltip: =Parent.DisplayName
+                              Width: =Parent.Width - 60
+                              X: =30
+                              Y: =DataCardKey18.Y + DataCardKey18.Height + 5
+                        - ErrorMessage18:
+                            Control: Label@2.5.1
+                            MetadataKey: ErrorMessage
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(168, 0, 0, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(168, 0, 0, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =10
+                              Live: =Live.Assertive
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Text: =Parent.Error
+                              Visible: =Parent.DisplayMode=DisplayMode.Edit
+                              Width: =Parent.Width - 60
+                              X: =30
+                              Y: =DataCardValue17.Y + DataCardValue17.Height
+                        - StarVisible24:
+                            Control: Label@2.5.1
+                            MetadataKey: FieldRequired
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =DataCardKey18.Height
+                              PaddingLeft: =0
+                              Text: ="*"
+                              Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                              Width: =30
+                              Wrap: =false
+                              Y: =DataCardKey18.Y
+                  - Relationship_DataCard1:
+                      Control: TypedDataCard@1.0.7
+                      Variant: ClassicTextualEdit
+                      IsLocked: true
+                      Properties:
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        DataField: ="Relationship"
+                        Default: =ThisItem.Relationship
+                        DisplayName: =DataSourceInfo([@'Hospital Reg., Patient Emergency Contact Form 1'],DataSourceInfo.DisplayName,Relationship)
+                        MaxLength: =DataSourceInfo([@'Hospital Reg., Patient Emergency Contact Form 1'], DataSourceInfo.MaxLength, Relationship)
+                        Required: =true
+                        Update: =DataCardValue18.Text
+                        Width: =646
+                        X: =0
+                        Y: =1
+                      Children:
+                        - DataCardKey19:
+                            Control: Label@2.5.1
+                            MetadataKey: FieldName
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =34
+                              PaddingLeft: =0
+                              Text: =Parent.DisplayName
+                              Width: =Parent.Width - 60
+                              Wrap: =false
+                              X: =30
+                              Y: =10
+                        - DataCardValue18:
+                            Control: Classic/TextInput@2.3.2
+                            MetadataKey: FieldValue
+                            Properties:
+                              BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                              Color: =RGBA(50, 49, 48, 1)
+                              Default: =Parent.Default
+                              DelayOutput: =true
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              DisabledFill: =RGBA(242, 242, 241, 0)
+                              DisplayMode: =Parent.DisplayMode
+                              Font: =Font.'Segoe UI'
+                              HoverBorderColor: =RGBA(16, 110, 190, 1)
+                              HoverColor: =RGBA(50, 49, 48, 1)
+                              HoverFill: =RGBA(255, 255, 255, 1)
+                              MaxLength: =Parent.MaxLength
+                              PaddingLeft: =5
+                              PressedBorderColor: =RGBA(0, 120, 212, 1)
+                              PressedColor: =RGBA(50, 49, 48, 1)
+                              PressedFill: =RGBA(255, 255, 255, 1)
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Tooltip: =Parent.DisplayName
+                              Width: =Parent.Width - 60
+                              X: =30
+                              Y: =DataCardKey19.Y + DataCardKey19.Height + 5
+                        - ErrorMessage19:
+                            Control: Label@2.5.1
+                            MetadataKey: ErrorMessage
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(168, 0, 0, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(168, 0, 0, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =10
+                              Live: =Live.Assertive
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Text: =Parent.Error
+                              Visible: =Parent.DisplayMode=DisplayMode.Edit
+                              Width: =Parent.Width - 60
+                              X: =30
+                              Y: =DataCardValue18.Y + DataCardValue18.Height
+                        - StarVisible25:
+                            Control: Label@2.5.1
+                            MetadataKey: FieldRequired
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =DataCardKey19.Height
+                              PaddingLeft: =0
+                              Text: ="*"
+                              Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                              Width: =30
+                              Wrap: =false
+                              Y: =DataCardKey19.Y
+                  - Contact Number_DataCard1:
+                      Control: TypedDataCard@1.0.7
+                      Variant: ClassicNumberEdit
+                      IsLocked: true
+                      Properties:
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        DataField: ="ContactNumber"
+                        Default: =ThisItem.'Contact Number'
+                        DisplayName: =DataSourceInfo([@'Hospital Reg., Patient Emergency Contact Form 1'],DataSourceInfo.DisplayName,ContactNumber)
+                        Required: =true
+                        Update: =Value(DataCardValue19.Text)
+                        Width: =646
+                        X: =1
+                        Y: =1
+                      Children:
+                        - DataCardKey20:
+                            Control: Label@2.5.1
+                            MetadataKey: FieldName
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =34
+                              PaddingLeft: =0
+                              Text: =Parent.DisplayName
+                              Width: =Parent.Width - 60
+                              Wrap: =false
+                              X: =30
+                              Y: =10
+                        - DataCardValue19:
+                            Control: Classic/TextInput@2.3.2
+                            MetadataKey: FieldValue
+                            Properties:
+                              BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                              Color: =RGBA(50, 49, 48, 1)
+                              Default: =Parent.Default
+                              DelayOutput: =true
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              DisabledFill: =RGBA(242, 242, 241, 0)
+                              DisplayMode: =Parent.DisplayMode
+                              Font: =Font.'Segoe UI'
+                              Format: =TextFormat.Number
+                              HoverBorderColor: =RGBA(16, 110, 190, 1)
+                              HoverColor: =RGBA(50, 49, 48, 1)
+                              HoverFill: =RGBA(255, 255, 255, 1)
+                              PaddingLeft: =5
+                              PressedBorderColor: =RGBA(0, 120, 212, 1)
+                              PressedColor: =RGBA(50, 49, 48, 1)
+                              PressedFill: =RGBA(255, 255, 255, 1)
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Tooltip: =Parent.DisplayName
+                              Width: =Parent.Width - 60
+                              X: =30
+                              Y: =DataCardKey20.Y + DataCardKey20.Height + 5
+                        - ErrorMessage20:
+                            Control: Label@2.5.1
+                            MetadataKey: ErrorMessage
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(168, 0, 0, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(168, 0, 0, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =10
+                              Live: =Live.Assertive
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Text: =Parent.Error
+                              Visible: =Parent.DisplayMode=DisplayMode.Edit
+                              Width: =Parent.Width - 60
+                              X: =30
+                              Y: =DataCardValue19.Y + DataCardValue19.Height
+                        - StarVisible26:
+                            Control: Label@2.5.1
+                            MetadataKey: FieldRequired
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =DataCardKey20.Height
+                              PaddingLeft: =0
+                              Text: ="*"
+                              Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                              Width: =30
+                              Wrap: =false
+                              Y: =DataCardKey20.Y
+                  - Emergency Contact Mail ID_DataCard1:
+                      Control: TypedDataCard@1.0.7
+                      Variant: ClassicTextualEdit
+                      IsLocked: true
+                      Properties:
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        DataField: ="EmergencyContactMailID"
+                        Default: =ThisItem.'Emergency Contact Mail ID'
+                        DisplayName: =DataSourceInfo([@'Hospital Reg., Patient Emergency Contact Form 1'],DataSourceInfo.DisplayName,EmergencyContactMailID)
+                        MaxLength: =DataSourceInfo([@'Hospital Reg., Patient Emergency Contact Form 1'], DataSourceInfo.MaxLength, EmergencyContactMailID)
+                        Required: =true
+                        Update: =DataCardValue20.Text
+                        Width: =646
+                        X: =0
+                        Y: =2
+                      Children:
+                        - DataCardKey21:
+                            Control: Label@2.5.1
+                            MetadataKey: FieldName
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =34
+                              PaddingLeft: =0
+                              Text: =Parent.DisplayName
+                              Width: =Parent.Width - 60
+                              Wrap: =false
+                              X: =30
+                              Y: =10
+                        - DataCardValue20:
+                            Control: Classic/TextInput@2.3.2
+                            MetadataKey: FieldValue
+                            Properties:
+                              BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                              Color: =RGBA(50, 49, 48, 1)
+                              Default: =Parent.Default
+                              DelayOutput: =true
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              DisabledFill: =RGBA(242, 242, 241, 0)
+                              DisplayMode: =Parent.DisplayMode
+                              Font: =Font.'Segoe UI'
+                              HoverBorderColor: =RGBA(16, 110, 190, 1)
+                              HoverColor: =RGBA(50, 49, 48, 1)
+                              HoverFill: =RGBA(255, 255, 255, 1)
+                              MaxLength: =Parent.MaxLength
+                              PaddingLeft: =5
+                              PressedBorderColor: =RGBA(0, 120, 212, 1)
+                              PressedColor: =RGBA(50, 49, 48, 1)
+                              PressedFill: =RGBA(255, 255, 255, 1)
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Tooltip: =Parent.DisplayName
+                              Width: =Parent.Width - 60
+                              X: =30
+                              Y: =DataCardKey21.Y + DataCardKey21.Height + 5
+                        - ErrorMessage21:
+                            Control: Label@2.5.1
+                            MetadataKey: ErrorMessage
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(168, 0, 0, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(168, 0, 0, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =10
+                              Live: =Live.Assertive
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Text: =Parent.Error
+                              Visible: =Parent.DisplayMode=DisplayMode.Edit
+                              Width: =Parent.Width - 60
+                              X: =30
+                              Y: =DataCardValue20.Y + DataCardValue20.Height
+                        - StarVisible27:
+                            Control: Label@2.5.1
+                            MetadataKey: FieldRequired
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =DataCardKey21.Height
+                              PaddingLeft: =0
+                              Text: ="*"
+                              Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                              Width: =30
+                              Wrap: =false
+                              Y: =DataCardKey21.Y
+                  - Doctor's First Name_DataCard1:
+                      Control: TypedDataCard@1.0.7
+                      Variant: ClassicTextualEdit
+                      IsLocked: true
+                      Properties:
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        DataField: ="DoctorsFirstName"
+                        Default: =ThisItem.'Doctor''s First Name'
+                        DisplayName: =DataSourceInfo([@'Hospital Reg., Patient Emergency Contact Form 1'],DataSourceInfo.DisplayName,DoctorsFirstName)
+                        MaxLength: =DataSourceInfo([@'Hospital Reg., Patient Emergency Contact Form 1'], DataSourceInfo.MaxLength, DoctorsFirstName)
+                        Required: =true
+                        Update: =DataCardValue22.Text
+                        Width: =646
+                        X: =1
+                        Y: =2
+                      Children:
+                        - DataCardKey23:
+                            Control: Label@2.5.1
+                            MetadataKey: FieldName
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =34
+                              PaddingLeft: =0
+                              Text: =Parent.DisplayName
+                              Width: =Parent.Width - 60
+                              Wrap: =false
+                              X: =30
+                              Y: =10
+                        - DataCardValue22:
+                            Control: Classic/TextInput@2.3.2
+                            MetadataKey: FieldValue
+                            Properties:
+                              BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                              Color: =RGBA(50, 49, 48, 1)
+                              Default: =Parent.Default
+                              DelayOutput: =true
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              DisabledFill: =RGBA(242, 242, 241, 0)
+                              DisplayMode: =Parent.DisplayMode
+                              Font: =Font.'Segoe UI'
+                              HoverBorderColor: =RGBA(16, 110, 190, 1)
+                              HoverColor: =RGBA(50, 49, 48, 1)
+                              HoverFill: =RGBA(255, 255, 255, 1)
+                              MaxLength: =Parent.MaxLength
+                              PaddingLeft: =5
+                              PressedBorderColor: =RGBA(0, 120, 212, 1)
+                              PressedColor: =RGBA(50, 49, 48, 1)
+                              PressedFill: =RGBA(255, 255, 255, 1)
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Tooltip: =Parent.DisplayName
+                              Width: =Parent.Width - 60
+                              X: =30
+                              Y: =DataCardKey23.Y + DataCardKey23.Height + 5
+                        - ErrorMessage23:
+                            Control: Label@2.5.1
+                            MetadataKey: ErrorMessage
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(168, 0, 0, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(168, 0, 0, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =10
+                              Live: =Live.Assertive
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Text: =Parent.Error
+                              Visible: =Parent.DisplayMode=DisplayMode.Edit
+                              Width: =Parent.Width - 60
+                              X: =30
+                              Y: =DataCardValue22.Y + DataCardValue22.Height
+                        - StarVisible29:
+                            Control: Label@2.5.1
+                            MetadataKey: FieldRequired
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =DataCardKey23.Height
+                              PaddingLeft: =0
+                              Text: ="*"
+                              Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                              Width: =30
+                              Wrap: =false
+                              Y: =DataCardKey23.Y
+                  - Doctor's Last Name_DataCard1:
+                      Control: TypedDataCard@1.0.7
+                      Variant: ClassicTextualEdit
+                      IsLocked: true
+                      Properties:
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        DataField: ="DoctorsLastName"
+                        Default: =ThisItem.'Doctor''s Last Name'
+                        DisplayName: =DataSourceInfo([@'Hospital Reg., Patient Emergency Contact Form 1'],DataSourceInfo.DisplayName,DoctorsLastName)
+                        MaxLength: =DataSourceInfo([@'Hospital Reg., Patient Emergency Contact Form 1'], DataSourceInfo.MaxLength, DoctorsLastName)
+                        Required: =true
+                        Update: =DataCardValue23.Text
+                        Width: =646
+                        X: =0
+                        Y: =3
+                      Children:
+                        - DataCardKey24:
+                            Control: Label@2.5.1
+                            MetadataKey: FieldName
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =34
+                              PaddingLeft: =0
+                              Text: =Parent.DisplayName
+                              Width: =Parent.Width - 60
+                              Wrap: =false
+                              X: =30
+                              Y: =10
+                        - DataCardValue23:
+                            Control: Classic/TextInput@2.3.2
+                            MetadataKey: FieldValue
+                            Properties:
+                              BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                              Color: =RGBA(50, 49, 48, 1)
+                              Default: =Parent.Default
+                              DelayOutput: =true
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              DisabledFill: =RGBA(242, 242, 241, 0)
+                              DisplayMode: =Parent.DisplayMode
+                              Font: =Font.'Segoe UI'
+                              HoverBorderColor: =RGBA(16, 110, 190, 1)
+                              HoverColor: =RGBA(50, 49, 48, 1)
+                              HoverFill: =RGBA(255, 255, 255, 1)
+                              MaxLength: =Parent.MaxLength
+                              PaddingLeft: =5
+                              PressedBorderColor: =RGBA(0, 120, 212, 1)
+                              PressedColor: =RGBA(50, 49, 48, 1)
+                              PressedFill: =RGBA(255, 255, 255, 1)
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Tooltip: =Parent.DisplayName
+                              Width: =Parent.Width - 60
+                              X: =30
+                              Y: =DataCardKey24.Y + DataCardKey24.Height + 5
+                        - ErrorMessage24:
+                            Control: Label@2.5.1
+                            MetadataKey: ErrorMessage
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(168, 0, 0, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(168, 0, 0, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =10
+                              Live: =Live.Assertive
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Text: =Parent.Error
+                              Visible: =Parent.DisplayMode=DisplayMode.Edit
+                              Width: =Parent.Width - 60
+                              X: =30
+                              Y: =DataCardValue23.Y + DataCardValue23.Height
+                        - StarVisible30:
+                            Control: Label@2.5.1
+                            MetadataKey: FieldRequired
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =DataCardKey24.Height
+                              PaddingLeft: =0
+                              Text: ="*"
+                              Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                              Width: =30
+                              Wrap: =false
+                              Y: =DataCardKey24.Y
+                  - Family Doctor Phone Number_DataCard1:
+                      Control: TypedDataCard@1.0.7
+                      Variant: ClassicNumberEdit
+                      IsLocked: true
+                      Properties:
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        DataField: ="FamilyDoctorPhoneNumber"
+                        Default: =ThisItem.'Family Doctor Phone Number'
+                        DisplayName: =DataSourceInfo([@'Hospital Reg., Patient Emergency Contact Form 1'],DataSourceInfo.DisplayName,FamilyDoctorPhoneNumber)
+                        Required: =true
+                        Update: =Value(DataCardValue24.Text)
+                        Width: =646
+                        X: =1
+                        Y: =3
+                      Children:
+                        - DataCardKey25:
+                            Control: Label@2.5.1
+                            MetadataKey: FieldName
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =34
+                              PaddingLeft: =0
+                              Text: =Parent.DisplayName
+                              Width: =Parent.Width - 60
+                              Wrap: =false
+                              X: =30
+                              Y: =10
+                        - DataCardValue24:
+                            Control: Classic/TextInput@2.3.2
+                            MetadataKey: FieldValue
+                            Properties:
+                              BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                              Color: =RGBA(50, 49, 48, 1)
+                              Default: =Parent.Default
+                              DelayOutput: =true
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              DisabledFill: =RGBA(242, 242, 241, 0)
+                              DisplayMode: =Parent.DisplayMode
+                              Font: =Font.'Segoe UI'
+                              Format: =TextFormat.Number
+                              HoverBorderColor: =RGBA(16, 110, 190, 1)
+                              HoverColor: =RGBA(50, 49, 48, 1)
+                              HoverFill: =RGBA(255, 255, 255, 1)
+                              PaddingLeft: =5
+                              PressedBorderColor: =RGBA(0, 120, 212, 1)
+                              PressedColor: =RGBA(50, 49, 48, 1)
+                              PressedFill: =RGBA(255, 255, 255, 1)
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Tooltip: =Parent.DisplayName
+                              Width: =Parent.Width - 60
+                              X: =30
+                              Y: =DataCardKey25.Y + DataCardKey25.Height + 5
+                        - ErrorMessage25:
+                            Control: Label@2.5.1
+                            MetadataKey: ErrorMessage
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(168, 0, 0, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(168, 0, 0, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =10
+                              Live: =Live.Assertive
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Text: =Parent.Error
+                              Visible: =Parent.DisplayMode=DisplayMode.Edit
+                              Width: =Parent.Width - 60
+                              X: =30
+                              Y: =DataCardValue24.Y + DataCardValue24.Height
+                        - StarVisible31:
+                            Control: Label@2.5.1
+                            MetadataKey: FieldRequired
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =DataCardKey25.Height
+                              PaddingLeft: =0
+                              Text: ="*"
+                              Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                              Width: =30
+                              Wrap: =false
+                              Y: =DataCardKey25.Y
+                  - Preferred Pharmacy_DataCard1:
+                      Control: TypedDataCard@1.0.7
+                      Variant: ClassicTextualEdit
+                      IsLocked: true
+                      Properties:
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        DataField: ="PreferredPharmacy"
+                        Default: =ThisItem.'Preferred Pharmacy'
+                        DisplayName: =DataSourceInfo([@'Hospital Reg., Patient Emergency Contact Form 1'],DataSourceInfo.DisplayName,PreferredPharmacy)
+                        MaxLength: =DataSourceInfo([@'Hospital Reg., Patient Emergency Contact Form 1'], DataSourceInfo.MaxLength, PreferredPharmacy)
+                        Required: =true
+                        Update: =DataCardValue25.Text
+                        Width: =646
+                        X: =0
+                        Y: =4
+                      Children:
+                        - DataCardKey26:
+                            Control: Label@2.5.1
+                            MetadataKey: FieldName
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =34
+                              PaddingLeft: =0
+                              Text: =Parent.DisplayName
+                              Width: =Parent.Width - 60
+                              Wrap: =false
+                              X: =30
+                              Y: =10
+                        - DataCardValue25:
+                            Control: Classic/TextInput@2.3.2
+                            MetadataKey: FieldValue
+                            Properties:
+                              BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                              Color: =RGBA(50, 49, 48, 1)
+                              Default: =Parent.Default
+                              DelayOutput: =true
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              DisabledFill: =RGBA(242, 242, 241, 0)
+                              DisplayMode: =Parent.DisplayMode
+                              Font: =Font.'Segoe UI'
+                              HoverBorderColor: =RGBA(16, 110, 190, 1)
+                              HoverColor: =RGBA(50, 49, 48, 1)
+                              HoverFill: =RGBA(255, 255, 255, 1)
+                              MaxLength: =Parent.MaxLength
+                              PaddingLeft: =5
+                              PressedBorderColor: =RGBA(0, 120, 212, 1)
+                              PressedColor: =RGBA(50, 49, 48, 1)
+                              PressedFill: =RGBA(255, 255, 255, 1)
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Tooltip: =Parent.DisplayName
+                              Width: =Parent.Width - 60
+                              X: =30
+                              Y: =DataCardKey26.Y + DataCardKey26.Height + 5
+                        - ErrorMessage26:
+                            Control: Label@2.5.1
+                            MetadataKey: ErrorMessage
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(168, 0, 0, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(168, 0, 0, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =10
+                              Live: =Live.Assertive
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Text: =Parent.Error
+                              Visible: =Parent.DisplayMode=DisplayMode.Edit
+                              Width: =Parent.Width - 60
+                              X: =30
+                              Y: =DataCardValue25.Y + DataCardValue25.Height
+                        - StarVisible32:
+                            Control: Label@2.5.1
+                            MetadataKey: FieldRequired
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =DataCardKey26.Height
+                              PaddingLeft: =0
+                              Text: ="*"
+                              Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                              Width: =30
+                              Wrap: =false
+                              Y: =DataCardKey26.Y
+                  - Pharmacy Phone Number_DataCard1:
+                      Control: TypedDataCard@1.0.7
+                      Variant: ClassicNumberEdit
+                      IsLocked: true
+                      Properties:
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        DataField: ="PharmacyPhoneNumber1"
+                        Default: =ThisItem.'Pharmacy Phone Number'
+                        DisplayName: =DataSourceInfo([@'Hospital Reg., Patient Emergency Contact Form 1'],DataSourceInfo.DisplayName,PharmacyPhoneNumber1)
+                        Required: =true
+                        Update: =Value(DataCardValue26.Text)
+                        Width: =646
+                        X: =1
+                        Y: =4
+                      Children:
+                        - DataCardKey27:
+                            Control: Label@2.5.1
+                            MetadataKey: FieldName
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =34
+                              PaddingLeft: =0
+                              Text: =Parent.DisplayName
+                              Width: =Parent.Width - 60
+                              Wrap: =false
+                              X: =30
+                              Y: =10
+                        - DataCardValue26:
+                            Control: Classic/TextInput@2.3.2
+                            MetadataKey: FieldValue
+                            Properties:
+                              BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                              Color: =RGBA(50, 49, 48, 1)
+                              Default: =Parent.Default
+                              DelayOutput: =true
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              DisabledFill: =RGBA(242, 242, 241, 0)
+                              DisplayMode: =Parent.DisplayMode
+                              Font: =Font.'Segoe UI'
+                              Format: =TextFormat.Number
+                              HoverBorderColor: =RGBA(16, 110, 190, 1)
+                              HoverColor: =RGBA(50, 49, 48, 1)
+                              HoverFill: =RGBA(255, 255, 255, 1)
+                              PaddingLeft: =5
+                              PressedBorderColor: =RGBA(0, 120, 212, 1)
+                              PressedColor: =RGBA(50, 49, 48, 1)
+                              PressedFill: =RGBA(255, 255, 255, 1)
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Tooltip: =Parent.DisplayName
+                              Width: =Parent.Width - 60
+                              X: =30
+                              Y: =DataCardKey27.Y + DataCardKey27.Height + 5
+                        - ErrorMessage27:
+                            Control: Label@2.5.1
+                            MetadataKey: ErrorMessage
+                            Properties:
+                              AutoHeight: =true
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(168, 0, 0, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(168, 0, 0, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =10
+                              Live: =Live.Assertive
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Text: =Parent.Error
+                              Visible: =Parent.DisplayMode=DisplayMode.Edit
+                              Width: =Parent.Width - 60
+                              X: =30
+                              Y: =DataCardValue26.Y + DataCardValue26.Height
+                        - StarVisible33:
+                            Control: Label@2.5.1
+                            MetadataKey: FieldRequired
+                            Properties:
+                              Align: =Align.Center
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(50, 49, 48, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Semibold
+                              Height: =DataCardKey27.Height
+                              PaddingLeft: =0
+                              Text: ="*"
+                              Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                              Width: =30
+                              Wrap: =false
+                              Y: =DataCardKey27.Y

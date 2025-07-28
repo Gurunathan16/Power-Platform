@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{bc2a5ec4-72b5-4be9-876c-2b2202b2a3f2}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{40089b31-5c69-412f-b532-63d27fbbbba0}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{1e71a7f3-c3b8-4607-a8df-2d2bf279384e}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{da9a3096-3c09-4b21-8f9e-cdcb3fc1073a}">
+                        <labels>
+                          <label description="Username" languagecode="1033" />
+                        </labels>
+                        <control id="gd_username" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="gd_username" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{31c2a572-73d5-4a7d-9f62-0ed46ce4c7be}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{227b669d-207f-43af-afb7-1d87811cb94a}">
+                        <labels>
+                          <label description="Title" languagecode="1033" />
+                        </labels>
+                        <control id="gd_title" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="gd_title" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{96d5d33d-bb18-462e-b6ce-0ca689d8c540}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="gd_name" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="gd_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2966900d-4d72-42a8-a3ab-102576f72368}">
+                        <labels>
+                          <label description="Email" languagecode="1033" />
+                        </labels>
+                        <control id="gd_email" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="gd_email" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2fba0631-5386-4244-8915-8d7c5b492cda}">
+                        <labels>
+                          <label description="Band" languagecode="1033" />
+                        </labels>
+                        <control id="gd_grade" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="gd_grade" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{08d6476f-5826-449e-8315-ce8d16949a06}">
+                        <labels>
+                          <label description="Role" languagecode="1033" />
+                        </labels>
+                        <control id="gd_role" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="gd_role" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5ec87808-34f1-4e80-9d34-c579b5af7fd3}">
+                        <labels>
+                          <label description="Manager" languagecode="1033" />
+                        </labels>
+                        <control id="gd_manager" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="gd_manager" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ce326b3b-4c70-421c-baba-147fa40cc8f5}">
+                        <labels>
+                          <label description="Password" languagecode="1033" />
+                        </labels>
+                        <control id="gd_hashedpassword" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="gd_hashedpassword" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f1ae6db4-881e-4d68-a11c-ca4463c3e37f}">
+                        <labels>
+                          <label description="PasswordResetRequired" languagecode="1033" />
+                        </labels>
+                        <control id="gd_passwordresetrequired" classid="{67fac785-cd58-4f9f-abb3-4b7ddc6ed5ed}" datafieldname="gd_passwordresetrequired" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

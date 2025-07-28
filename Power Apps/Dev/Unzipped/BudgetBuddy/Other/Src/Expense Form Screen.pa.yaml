@@ -1,0 +1,660 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Expense Form Screen:
+    Properties:
+      Fill: =RGBA(255, 255, 255, 1)
+      LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+      OnVisible: =Set(currentBalanceEF, LookUp('Balance Log', EntraObjectID = Text(User().EntraObjectId), 'Current Balance'));
+    Children:
+      - EF Screen Container:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =RGBA(245, 245, 245, 1)
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =16
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Width: =Parent.Width
+          Children:
+            - EF Header Container:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  FillPortions: =0
+                  Height: =75
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                Children:
+                  - EF Header:
+                      Control: Header@0.0.44
+                      Properties:
+                        Align: =Align.Center
+                        AlignInContainer: =AlignInContainer.Center
+                        BasePaletteColor: =RGBA(227, 106, 244, 1)
+                        FillPortions: =1
+                        Font: =Font.Verdana
+                        OnSelectLogo: =Navigate('Home Screen',ScreenTransition.Fade);
+                        Style: ='Header.Style'.Primary
+                        Title: ="BB - Add your Expense"
+                        TitleFontSize: =30
+            - EF Main Container:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.Center
+                  DropShadow: =DropShadow.Regular
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutGap: =10
+                  LayoutJustifyContent: =LayoutJustifyContent.Center
+                  LayoutWrap: =true
+                  PaddingBottom: =2
+                  PaddingLeft: =2
+                  PaddingRight: =2
+                  PaddingTop: =2
+                  RadiusBottomLeft: =45
+                  RadiusBottomRight: =45
+                  RadiusTopLeft: =45
+                  RadiusTopRight: =45
+                Children:
+                  - Expense Form Container:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        DropShadow: =DropShadow.Semibold
+                        Fill: =RGBA(255, 255, 255, 1)
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =16
+                        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                        LayoutMinHeight: =50
+                        LayoutOverflowX: =LayoutOverflow.Scroll
+                        LayoutOverflowY: =LayoutOverflow.Scroll
+                        PaddingBottom: =10
+                        PaddingLeft: =10
+                        PaddingRight: =10
+                        PaddingTop: =10
+                        Width: =400
+                      Children:
+                        - Expense Form:
+                            Control: Form@2.4.4
+                            Layout: Vertical
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Center
+                              BorderColor: =RGBA(245, 245, 245, 1)
+                              DataSource: ='Expense Tracker'
+                              DefaultMode: =FormMode.New
+                              LayoutMinWidth: =0
+                              NumberOfColumns: =1
+                              Width: =400
+                            Children:
+                              - EF Category Data Card:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: BlankCard
+                                  Properties:
+                                    BorderColor: =RGBA(245, 245, 245, 1)
+                                    Height: =Round(Parent.Height * 0.162, 0)
+                                    Width: =400
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =0
+                                  Children:
+                                    - EF Category Key:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          Color: =RGBA(50, 49, 48, 1)
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(161, 159, 157, 1)
+                                          FocusedBorderThickness: =4
+                                          Font: =Font.Verdana
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =Parent.Height / 3
+                                          Text: ="Category"
+                                          Width: =Parent.Width - Self.X
+                                          X: ='EF Category Combo box'.X + 30
+                                          Y: =8
+                                    - Error Message - EF Category:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          Color: =RGBA(50, 49, 48, 1)
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(161, 159, 157, 1)
+                                          FocusedBorderThickness: =4
+                                          Font: =Font.'Segoe UI'
+                                          Height: =10
+                                          Text: |-
+                                            ="
+                                            "
+                                          Width: =440
+                                          X: =30
+                                          Y: =80
+                                    - EF Category Combo box:
+                                        Control: ComboBox@0.0.51
+                                        Properties:
+                                          AccessibleLabel: ="Find Categories"
+                                          Appearance: ='ComboboxCanvas.Appearance'.FilledDarker
+                                          BasePaletteColor: =RGBA(227, 106, 244, 1)
+                                          BorderColor: =RGBA(214, 221, 224, 1)
+                                          BorderRadius: =10
+                                          BorderStyle: =BorderStyle.Solid
+                                          BorderThickness: =2
+                                          Height: =Round(Parent.Height * 0.36, 0)
+                                          InputTextPlaceholder: ="Select categories"
+                                          Items: =Filter('Expense Category Lists', 'Expense Category Lists (Views)'.'Active Expense Category Lists')
+                                          PaddingBottom: =5
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PaddingTop: =5
+                                          TriggerOutput: ='ComboboxCanvas.TriggerOutput'.Keypress
+                                          Width: =Round(Parent.Width * 0.67, 0)
+                                          X: =(Parent.Width - 'EF Category Combo box'.Width) / 2
+                                          Y: ='EF Category Key'.Y + 'EF Category Key'.Height + 5
+                                        Children:
+                                          - Category Name1:
+                                              Control: ComboBoxDataField@1.5.0
+                                              Variant: textualColumn
+                                              IsLocked: true
+                                              Properties:
+                                                FieldDisplayName: ="Category Name"
+                                                FieldName: ="gd_categoryname"
+                                                FieldType: ="s"
+                                                Order: =1
+                              - Expense Name Date Card:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: BlankCard
+                                  Properties:
+                                    BorderColor: =RGBA(245, 245, 245, 1)
+                                    Height: =Round(Parent.Height * 0.162, 0)
+                                    Width: =400
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =1
+                                  Children:
+                                    - Expense Name Key:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          Color: =RGBA(50, 49, 48, 1)
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(161, 159, 157, 1)
+                                          FocusedBorderThickness: =4
+                                          Font: =Font.Verdana
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =Parent.Height / 3
+                                          Text: ="Expense Name"
+                                          Width: =Parent.Width - Self.X
+                                          X: ='Expense Name Combo box'.X + 30
+                                          Y: =8
+                                    - Error Message - Expense Name:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          Color: =RGBA(50, 49, 48, 1)
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(161, 159, 157, 1)
+                                          FocusedBorderThickness: =4
+                                          Font: =Font.'Segoe UI'
+                                          Height: =10
+                                          Text: |-
+                                            ="
+                                            "
+                                          Width: =440
+                                          X: =30
+                                          Y: =80
+                                    - Expense Name Combo box:
+                                        Control: ComboBox@0.0.51
+                                        Properties:
+                                          BasePaletteColor: =RGBA(227, 106, 244, 1)
+                                          BorderColor: =RGBA(214, 221, 224, 1)
+                                          BorderRadius: =10
+                                          BorderStyle: =BorderStyle.Solid
+                                          BorderThickness: =2
+                                          Height: =Round(Parent.Height * 0.36, 0)
+                                          InputTextPlaceholder: ="Select expense name"
+                                          Items: =Filter('Expense Items Lists', 'Category Lookup'.'Category Name' = 'EF Category Combo box'.Selected.'Category Name')
+                                          Width: =Round(Parent.Width * 0.67, 0)
+                                          X: =(Parent.Width - 'Expense Name Combo box'.Width) / 2
+                                          Y: ='Expense Name Key'.Y + 'Expense Name Key'.Height + 5
+                                        Children:
+                                          - ExpenseName1:
+                                              Control: ComboBoxDataField@1.5.0
+                                              Variant: textualColumn
+                                              IsLocked: true
+                                              Properties:
+                                                FieldDisplayName: ="ExpenseName"
+                                                FieldName: ="gd_expensename"
+                                                FieldType: ="s"
+                                                Order: =1
+                                          - ExpenseID1:
+                                              Control: ComboBoxDataField@1.5.0
+                                              Variant: textualColumn
+                                              IsLocked: true
+                                              Properties:
+                                                FieldDisplayName: ="ExpenseID"
+                                                FieldName: ="gd_expenseid"
+                                                FieldType: ="n"
+                                                Order: =2
+                              - EF Amount Data Card:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: BlankCard
+                                  Properties:
+                                    BorderColor: =RGBA(245, 245, 245, 1)
+                                    Height: =Round(Parent.Height * 0.162, 0)
+                                    Width: =400
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =2
+                                  Children:
+                                    - EF Amount Key:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          Color: =RGBA(50, 49, 48, 1)
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(161, 159, 157, 1)
+                                          FocusedBorderThickness: =4
+                                          Font: =Font.Verdana
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =Parent.Height / 3
+                                          Text: ="Amount"
+                                          Width: =Parent.Width - Self.X
+                                          X: ='EF Amount Number Input'.X + 30
+                                          Y: =8
+                                    - Error Message - EF Amount:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          Color: =RGBA(50, 49, 48, 1)
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(161, 159, 157, 1)
+                                          FocusedBorderThickness: =4
+                                          Font: =Font.'Segoe UI'
+                                          Height: =10
+                                          Text: |-
+                                            ="
+                                            "
+                                          Width: =440
+                                          X: =30
+                                          Y: =80
+                                    - EF Amount Number Input:
+                                        Control: NumberInput@2.9.12
+                                        Properties:
+                                          Align: =Align.Left
+                                          BasePaletteColor: =RGBA(227, 106, 244, 1)
+                                          BorderColor: =RGBA(214, 221, 224, 1)
+                                          BorderRadius: =10
+                                          BorderStyle: =BorderStyle.Solid
+                                          BorderThickness: =2
+                                          Height: =Round(Parent.Height * 0.36, 0)
+                                          Min: =0
+                                          Precision: ='NumberInput.Precision'.'2'
+                                          Width: =Round(Parent.Width * 0.67, 0)
+                                          X: =(Parent.Width - 'EF Amount Number Input'.Width) / 2
+                                          Y: ='EF Amount Key'.Y + 'EF Amount Key'.Height + 5
+                              - Expense Date Data Card:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: BlankCard
+                                  Properties:
+                                    BorderColor: =RGBA(245, 245, 245, 1)
+                                    Height: =Round(Parent.Height * 0.162, 0)
+                                    Width: =400
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =3
+                                  Children:
+                                    - Expense Date Key:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          Color: =RGBA(50, 49, 48, 1)
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(161, 159, 157, 1)
+                                          FocusedBorderThickness: =4
+                                          Font: =Font.Verdana
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =Parent.Height / 3
+                                          Text: ="Expense Date"
+                                          Width: =Parent.Width - Self.X
+                                          X: ='Expense Date Picker'.X + 30
+                                          Y: =8
+                                    - Error Message - Expense Date:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          Color: =RGBA(50, 49, 48, 1)
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(161, 159, 157, 1)
+                                          FocusedBorderThickness: =4
+                                          Font: =Font.'Segoe UI'
+                                          Height: =10
+                                          Text: |-
+                                            ="
+                                            "
+                                          Width: =440
+                                          X: =30
+                                          Y: =80
+                                    - Expense Date Picker:
+                                        Control: DatePicker@0.0.46
+                                        Properties:
+                                          BasePaletteColor: =RGBA(227, 106, 244, 1)
+                                          BorderColor: =RGBA(214, 221, 224, 1)
+                                          BorderRadius: =10
+                                          BorderStyle: =BorderStyle.Solid
+                                          BorderThickness: =2
+                                          Height: =Round(Parent.Height * 0.36, 0)
+                                          Width: =Round(Parent.Width * 0.67, 0)
+                                          X: =(Parent.Width - 'Expense Date Picker'.Width) / 2
+                                          Y: ='Expense Date Key'.Y + 'Expense Date Key'.Height + 5
+                              - EF Opening Balance Data Card:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: BlankCard
+                                  Properties:
+                                    BorderColor: =RGBA(245, 245, 245, 1)
+                                    Height: =Round(Parent.Height * 0.162, 0)
+                                    Width: =400
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =4
+                                  Children:
+                                    - EF Opening Balance Key:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          Color: =RGBA(50, 49, 48, 1)
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(161, 159, 157, 1)
+                                          FocusedBorderThickness: =4
+                                          Font: =Font.Verdana
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =26
+                                          Text: ="Opening Balance"
+                                          Width: =Parent.Width - Self.X
+                                          X: ='Expense Date Key'.X
+                                          Y: =8
+                                    - Error Message - EF Opening Balance:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          Align: =Align.Center
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          Color: =RGBA(50, 49, 48, 1)
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(161, 159, 157, 1)
+                                          FocusedBorderThickness: =4
+                                          Font: =Font.'Segoe UI'
+                                          Height: =10
+                                          Text: |-
+                                            ="
+                                            "
+                                          Width: =440
+                                          X: =30
+                                          Y: =40
+                                    - EF Current Balance Holder OB:
+                                        Control: Text@0.0.51
+                                        Properties:
+                                          Align: ='TextCanvas.Align'.Center
+                                          Font: =Font.Verdana
+                                          FontColor: =If(currentBalanceEF < 0, RGBA(215, 58, 60, 1), RGBA(52, 152, 47, 1))
+                                          PaddingLeft: =5
+                                          Size: =18
+                                          Text: =If(IsBlank(currentBalanceEF) || currentBalanceEF = 0, "₹ 0", "₹ " & Text(currentBalanceEF, "#,##0.00"))
+                                          VerticalAlign: =VerticalAlign.Middle
+                                          Weight: ='TextCanvas.Weight'.Semibold
+                                          Width: =Parent.Width
+                                          X: =
+                                          Y: =Round((Parent.Height - 'IF Opening Balance Key'.Height) / 2, 0) + 'IF Opening Balance Key'.Y
+                              - Bills Choice Data Card:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: BlankCard
+                                  Properties:
+                                    BorderColor: =RGBA(245, 245, 245, 1)
+                                    Height: =Round(Parent.Height * 0.1, 0)
+                                    Width: =400
+                                    WidthFit: =true
+                                    X: =0
+                                    Y: =5
+                                  Children:
+                                    - Error Message - Bills:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          Color: =RGBA(50, 49, 48, 1)
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(161, 159, 157, 1)
+                                          FocusedBorderThickness: =4
+                                          Font: =Font.'Segoe UI'
+                                          Height: =10
+                                          Text: |-
+                                            ="
+                                            "
+                                          Width: =440
+                                          X: =30
+                                          Y: =40
+                                    - Bills Check box:
+                                        Control: CheckBox@0.0.30
+                                        Properties:
+                                          BasePaletteColor: =RGBA(227, 106, 244, 1)
+                                          Font: =Font.Verdana
+                                          FontColor: =RGBA(0, 0, 0, 1)
+                                          FontSize: =13
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =Round((Parent.Width - 'Bills Check box'.Width) / 3, 0)
+                                          Label: ="Do you have bills?"
+                                          Width: =Round(Parent.Width * 0.67, 0)
+                                          X: =(Parent.Width - 'Expense Date Picker'.Width) / 2
+                                    - Bills Add Media Button:
+                                        Control: AddMedia@2.2.1
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          ChangePictureText: ="Change"
+                                          Color: =RGBA(255, 255, 255, 1)
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(161, 159, 157, 1)
+                                          DisabledFill: =RGBA(0, 0, 0, 0)
+                                          Fill: =RGBA(227, 106, 244, 1)
+                                          FocusedBorderThickness: =4
+                                          Font: =Font.Verdana
+                                          Height: =30
+                                          HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                          HoverColor: =RGBA(255, 255, 255, 1)
+                                          HoverFill: =RGBA(109, 49, 162, 1)
+                                          PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                          PressedColor: =RGBA(255, 255, 255, 1)
+                                          PressedFill: =RGBA(255, 0, 0, 1)
+                                          Size: =15
+                                          Text: ="Add Bill"
+                                          Visible: ='Bills Check box'.Checked
+                                          Width: =100
+                                          X: =259
+                                          Y: =8
+                                    - Image1:
+                                        Control: Image@2.2.3
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledFill: =RGBA(0, 0, 0, 0)
+                                          FocusedBorderThickness: =4
+                                          Height: =150
+                                          HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                          HoverFill: =RGBA(0, 0, 0, 0)
+                                          Image: =If(IsBlank('Bills Add Media Button'.Media), SampleImage, 'Bills Add Media Button'.Media)
+                                          ImagePosition: =ImagePosition.Stretch
+                                          PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                          PressedFill: =RGBA(0, 0, 0, 0)
+                                          Visible: =!IsBlank('Bills Add Media Button'.Media)
+                                          Width: =200
+                                          X: =60
+                                          Y: =50
+                              - EF Closing Balance Data Card:
+                                  Control: TypedDataCard@1.0.7
+                                  Variant: BlankCard
+                                  Properties:
+                                    BorderColor: =RGBA(245, 245, 245, 1)
+                                    Height: =12
+                                    Visible: =false
+                                    Width: =400
+                                    X: =0
+                                    Y: =6
+                                  Children:
+                                    - Error Message - EF Closing Balance:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          Color: =RGBA(50, 49, 48, 1)
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(161, 159, 157, 1)
+                                          FocusedBorderThickness: =4
+                                          Font: =Font.'Segoe UI'
+                                          Height: =10
+                                          Text: |-
+                                            ="
+                                            "
+                                          Width: =440
+                                          X: =30
+                                          Y: =40
+                                    - EF Current Balance Holder CB:
+                                        Control: Text@0.0.51
+                                        Properties:
+                                          Align: ='TextCanvas.Align'.Center
+                                          Font: =Font.Verdana
+                                          FontColor: =If(currentBalanceEF < 0, RGBA(215, 58, 60, 1), RGBA(52, 152, 47, 1))
+                                          PaddingLeft: =5
+                                          Size: =18
+                                          Text: =If(IsBlank(currentBalanceEF) || currentBalanceEF = 0, "₹ 0", "₹ " & Text(currentBalanceEF, "#,##0.00"))
+                                          VerticalAlign: =VerticalAlign.Middle
+                                          Weight: ='TextCanvas.Weight'.Semibold
+                                          Width: =Round(Parent.Width * 0.38, 0)
+                                          X: =159
+                                          Y: =38
+                                    - EF Closing Balance Key:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          Color: =RGBA(50, 49, 48, 1)
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(161, 159, 157, 1)
+                                          FocusedBorderThickness: =4
+                                          Font: =Font.Verdana
+                                          FontWeight: =FontWeight.Semibold
+                                          Height: =Round(Parent.Height / 3, 0)
+                                          Text: ="Current Balance"
+                                          Width: =Round(Parent.Width * 0.38, 0)
+                                          X: ='Expense Date Picker'.X + 30
+                                          Y: =8
+                        - EF Buttons Container:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Center
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              Height: =50
+                              LayoutAlignItems: =LayoutAlignItems.Center
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutGap: =10
+                              LayoutJustifyContent: =LayoutJustifyContent.Center
+                              LayoutMinWidth: =0
+                              PaddingBottom: =10
+                              PaddingLeft: =10
+                              PaddingRight: =10
+                              PaddingTop: =10
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: ='Expense Form'.Width
+                              X: =40
+                              Y: =40
+                            Children:
+                              - EF Cancel Button:
+                                  Control: Button@0.0.45
+                                  Properties:
+                                    AccessibleLabel: ="Cancel form button"
+                                    Appearance: ='ButtonCanvas.Appearance'.Secondary
+                                    Icon: ="Dismiss"
+                                    OnSelect: =ResetForm('Expense Form')
+                                    Text: ="Cancel"
+                                    Width: =Round((Parent.Width / 3), 0) - 10
+                              - EF Home Button:
+                                  Control: Button@0.0.45
+                                  Properties:
+                                    AccessibleLabel: ="Submit form button"
+                                    Align: =Align.Center
+                                    BasePaletteColor: =RGBA(227, 106, 244, 1)
+                                    Icon: ="Home"
+                                    OnSelect: =Navigate('Home Screen');
+                                    Text: ="Home"
+                                    Width: =Round((Parent.Width / 3), 0) - 10
+                                    X: =40
+                                    Y: =40
+                              - EF Submit Button:
+                                  Control: Button@0.0.45
+                                  Properties:
+                                    AccessibleLabel: ="Submit form button"
+                                    BasePaletteColor: =RGBA(227, 106, 244, 1)
+                                    Icon: ="Save"
+                                    OnSelect: |-
+                                      =Patch('Expense Tracker', Defaults('Expense Tracker'), 
+                                      {
+                                          Category:'EF Category Combo box'.Selected.'Category Name',
+                                          'Expense Name':'Expense Name Combo box'.Selected.ExpenseName,
+                                          Amount:'EF Amount Number Input'.Value,
+                                          'Expense Date':'Expense Date Picker'.SelectedDate,
+                                          'Do you have bills?':'Bills Check box'.Checked,
+                                          'BillCopy': If(!IsBlank('Bills Add Media Button'.Media),'Image1'.Image),
+                                          'EntraObjectID': Text(User().EntraObjectId)
+                                      });
+                                      ResetForm('Expense Form');
+                                      Navigate('Loading Screen', ScreenTransition.Fade, {fromWhichScreen: 2});
+                                    Text: ="Submit"
+                                    Width: =Round((Parent.Width / 3), 0) - 10

@@ -1,0 +1,155 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_sharepointonline": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "mca_sharedsharepointonline_6b086"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_an_item_is_created": {
+          "recurrence": {
+            "frequency": "Minute",
+            "interval": 1
+          },
+          "splitOn": "@triggerOutputs()?['body/value']",
+          "metadata": {
+            "operationMetadataId": "ef6c4a6b-7534-4fb2-8759-abf48a669937"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "connectionName": "shared_sharepointonline",
+              "operationId": "GetOnNewItems"
+            },
+            "parameters": {
+              "dataset": "https://labskraft27.sharepoint.com/sites/GuruCompany",
+              "table": "7b8bab00-7a51-4e4a-bcf8-4e6e5d8d9a6e"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Get_items": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "9d6d4d61-96e5-4561-964f-98f1bf910133"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "connectionName": "shared_sharepointonline",
+              "operationId": "GetItems"
+            },
+            "parameters": {
+              "dataset": "https://labskraft27.sharepoint.com/sites/GuruCompany",
+              "table": "f344090b-42a3-4c8e-809b-96204eb9c03b",
+              "$filter": "EntraObjectID eq '@{triggerOutputs()?['body/Username']}'"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Condition": {
+          "actions": {
+            "Apply_to_each": {
+              "foreach": "@outputs('Get_items')?['body/value']",
+              "actions": {
+                "Update_item": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "4652d7e6-df7f-410b-be7e-128e72cf7fb2"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                      "connectionName": "shared_sharepointonline",
+                      "operationId": "PatchItem"
+                    },
+                    "parameters": {
+                      "dataset": "https://labskraft27.sharepoint.com/sites/GuruCompany",
+                      "table": "f344090b-42a3-4c8e-809b-96204eb9c03b",
+                      "id": "@items('Apply_to_each')?['ID']",
+                      "item/EntraObjectID": "@items('Apply_to_each')?['EntraObjectID']",
+                      "item/CurrentBalance": "@sub(items('Apply_to_each')?['CurrentBalance'], triggerOutputs()?['body/Amount'])"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                }
+              },
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "c1fbc4d7-0d1e-45b4-a89f-e9dc089a06ab"
+              },
+              "type": "Foreach"
+            }
+          },
+          "runAfter": {
+            "Get_items": [
+              "Succeeded"
+            ]
+          },
+          "else": {
+            "actions": {
+              "Create_item": {
+                "runAfter": {},
+                "metadata": {
+                  "operationMetadataId": "2fbb912d-f397-44ff-904b-5de71892d8f9"
+                },
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                    "connectionName": "shared_sharepointonline",
+                    "operationId": "PostItem"
+                  },
+                  "parameters": {
+                    "dataset": "https://labskraft27.sharepoint.com/sites/GuruCompany",
+                    "table": "f344090b-42a3-4c8e-809b-96204eb9c03b",
+                    "item/EntraObjectID": "@triggerOutputs()?['body/Username']",
+                    "item/CurrentBalance": "@mul(triggerOutputs()?['body/Amount'], -1) "
+                  },
+                  "authentication": "@parameters('$authentication')"
+                }
+              }
+            }
+          },
+          "expression": {
+            "greater": [
+              "@length(body('Get_items')?['value'])",
+              0
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "a975bb68-062a-44e3-bff0-b1fc08dfef88"
+          },
+          "type": "If"
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

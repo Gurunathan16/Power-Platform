@@ -1,0 +1,98 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "gd_incomecategorylistses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "gd_incomecategorylists",
+    "Name": "Income Category Lists",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "gd_categoryid": "CategoryID",
+      "gd_categoryname": "Category Name",
+      "gd_incomecategorylists_AsyncOperations": "System Jobs",
+      "gd_incomecategorylists_BulkDeleteFailures": "Bulk Delete Failures",
+      "gd_incomecategorylists_DuplicateBaseRecord": "Duplicate Records (gd_incomecategorylists_DuplicateBaseRecord)",
+      "gd_incomecategorylists_DuplicateMatchingRecord": "Duplicate Records (gd_incomecategorylists_DuplicateMatchingRecord)",
+      "gd_incomecategorylists_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "gd_incomecategorylists_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "gd_incomecategorylists_ProcessSession": "Process Sessions",
+      "gd_incomecategorylists_SyncErrors": "Sync Errors",
+      "gd_incomecategorylistsid": "Income Category Lists",
+      "gd_incomeitemslists_CategoryLookup_gd_incomecategorylists": "Income Items Lists",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Income Category Lists",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Income Category Lists (Views)",
+    "Name": "_gd_incomecategorylists_views",
+    "RelatedEntityName": "Income Category Lists",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "09b202c2-8b7f-4024-9bc4-fd282590d07b": "Active Income Category Lists",
+      "0d6680f0-17c4-4724-bb97-0798ae1f3f5d": "Income Category Lists Advanced Find View",
+      "4605163b-86bc-4a7e-a703-6e77544c6e95": "Inactive Income Category Lists",
+      "80f79f12-a3b0-4da4-b5e6-0f6640038bc5": "Income Category Lists Associated View",
+      "a5bea35c-c6dd-4f49-800a-37a910f7122a": "Income Category Lists Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (Income Category Lists)",
+    "Name": "gd_incomecategorylists_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Income Category Lists"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Income Category Lists",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Income Category Lists)",
+    "Name": "gd_incomecategorylists_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Income Category Lists"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Income Category Lists",
+    "Type": "OptionSetInfo"
+  }
+]

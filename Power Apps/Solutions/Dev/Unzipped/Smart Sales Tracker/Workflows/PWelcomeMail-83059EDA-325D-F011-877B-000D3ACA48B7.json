@@ -1,0 +1,89 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "marv_Office365Outlookconnection"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      },
+      "shared_sharepointonline": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "marv_SharePointconnection"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_an_item_is_created": {
+          "recurrence": {
+            "interval": 1,
+            "frequency": "Minute"
+          },
+          "splitOn": "@triggerOutputs()?['body/value']",
+          "metadata": {
+            "operationMetadataId": "bcf51d0e-44d8-48c9-bf91-509bf89a2ca5"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_sharepointonline",
+              "operationId": "GetOnNewItems",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+            },
+            "parameters": {
+              "dataset": "https://labskraft27.sharepoint.com/sites/Project",
+              "table": "4138dde9-53b8-4235-8616-3196b0c6c9f9"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Send_an_email_(V2)": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "4539544b-fb58-4289-989c-3c9558f3b26d"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_office365",
+              "operationId": "SendEmailV2",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+            },
+            "parameters": {
+              "emailMessage/To": "@triggerOutputs()?['body/Email']",
+              "emailMessage/Subject": "Welcome to the Smart Sales Report App – Let’s Get Started!",
+              "emailMessage/Body": "<!DOCTYPE html>\n<html>\n<head>\n  <style>\n    body {\n      font-family: Arial, sans-serif;\n      color: #333333;\n      background-color: #f4f4f4;\n      padding: 20px;\n    }\n    .email-container {\n      background-color: #ffffff;\n      padding: 30px;\n      border-radius: 8px;\n      box-shadow: 0 0 10px rgba(0,0,0,0.05);\n      max-width: 650px;\n      margin: auto;\n    }\n    h2 {\n      color: #2c3e50;\n    }\n    ul {\n      padding-left: 20px;\n    }\n    li {\n      margin-bottom: 6px;\n    }\n    .role-section {\n      margin-top: 20px;\n      background-color: #f9f9f9;\n      padding: 15px;\n      border-left: 4px solid #0078D4;\n      border-radius: 4px;\n    }\n    .footer {\n      font-size: 12px;\n      color: #888888;\n      margin-top: 30px;\n    }\n    .emoji {\n      font-size: 1.2em;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"email-container\">\n    <p>Hi @{triggerBody()?['Name']}, <span class=\"emoji\">👋</span></p>\n\n    <p>\n      Welcome aboard! You’ve been successfully registered to the <strong>Smart Sales Report App</strong> – your new hub for streamlined sales tracking, team collaboration, and performance insights.\n    </p>\n\n    <p>As a <strong>@{triggerBody()?['Role/Value']}</strong>, here's how you’ll use the app to drive efficiency and results:</p>\n\n    <div class=\"role-section\">\n@{if(equals(triggerBody()?['Role'], 'Sales Rep'), '\n  <div class=\"role-section\">\n    <strong>🔹 Your Role: Sales Rep</strong><br><br>\n    Stay on top of your game with our intuitive daily workflow:<br><br>\n    - Log in and plan your daily visits<br>\n    - Record detailed order info at each outlet (product, quantity, price)<br>\n    - Check stock availability instantly<br>\n    - Submit a daily sales report in just a few taps<br>\n    - Monitor your progress with your personal performance dashboard<br>\n  </div>\n', '')}\n\n@{if(equals(triggerBody()?['Role'], 'Manager'), '\n  <div class=\"role-section\">\n    <strong>🔹 Your Role: Manager</strong><br><br>\n    Lead with data and make faster decisions:<br><br>\n    - Access your team’s real-time sales dashboard<br>\n    - Approve visit plans or special discount requests on the go<br>\n    - Get automated alerts when performance deviates<br>\n    - Share insights with built-in feedback options<br>\n  </div>\n', '')}\n\n@{if(equals(triggerBody()?['Role'], 'System Admin'), '\n  <div class=\"role-section\">\n    <strong>🔹 Your Role: System Admin</strong><br><br>\n    Stay in control with robust management tools:<br><br>\n    - Add or remove users via Power Platform Admin Center<br>\n    - Define access levels with Dataverse security roles<br>\n    - Monitor performance logs and maintain app health<br>\n    - Manage and update master data efficiently<br>\n  </div>\n', '')}\n    </div>\n\n    <br>\n\n    <p><strong>🔧 Need Help Getting Started?</strong><br>\n    We’ve got you covered with detailed onboarding guides and support.<br><br>\n    📘 <a href=\"https://i3l-my.sharepoint.com/:w:/r/personal/64012_itcinfotech_com/Documents/Smart%20Sales%20Tracker%20%26%20Automated%20Reporting%20System.docx?d=webbda1c46b1a47fa83af1d87c82574c7&csf=1&web=1&e=4ADn5D\" target=\"_blank\">User Guide</a><br>\n    🛠️ <strong>Support:</strong> 044-1234567</p>\n\n    <p>\n      We’re excited to have you with us. Let’s power up your productivity and sales performance!\n    </p>\n\n    <p>Best regards,<br>\n    <strong>The Smart Sales Report App</strong><br>\n    TeamABC Pvt. Ltd.</p>\n\n    <div class=\"footer\">\n      <p><small>This is an automated message. Please do not reply directly to this email.</small></p>\n    </div>\n  </div>\n</body>\n</html>",
+              "emailMessage/Importance": "Normal"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

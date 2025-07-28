@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25071.164" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25071.00164">
+  <Entities />
+  <Roles />
+  <Workflows />
+  <FieldSecurityProfiles />
+  <Templates />
+  <EntityMaps />
+  <EntityRelationships />
+  <OrganizationSettings />
+  <optionsets />
+  <CustomControls />
+  <EntityDataProviders />
+  <CanvasApps />
+  <connectionreferences>
+    <connectionreference connectionreferencelogicalname="marv_Office365Outlookconnection">
+      <connectionreferencedisplayname>Office365 Outlook connection</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_office365</connectorid>
+      <description>connection to Office365 Outlook </description>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="marv_SharePointconnection">
+      <connectionreferencedisplayname>SharePoint connection</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_sharepointonline</connectorid>
+      <description>connection to sharepoint</description>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="mca_sharedexcelonlinebusiness_fb816">
+      <connectionreferencedisplayname>Excel Online (Business) Guru_Apps-fb816</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="mca_sharedmicrosoftforms_f47c6">
+      <connectionreferencedisplayname>Microsoft Forms Guru_Apps-f47c6</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_microsoftforms</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="mca_sharedoffice365_48041">
+      <connectionreferencedisplayname>Office 365 Outlook Guru_Apps-48041</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_office365</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="mca_sharedoffice365users_890cb">
+      <connectionreferencedisplayname>Office 365 Users Guru_Apps-890cb</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_office365users</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="mca_sharedsharepointonline_6b086">
+      <connectionreferencedisplayname>SharePoint Guru_Apps-6b086</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_sharepointonline</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="msdyn_Office365Outlook_0lbh8">
+      <connectionreferencedisplayname>dcff712b-7ba9-41d6-8c7b-2ea3d3690462 - Office 365 Outlook</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_office365</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="msdyn_SharePoint_0lbh8">
+      <connectionreferencedisplayname>dcff712b-7ba9-41d6-8c7b-2ea3d3690462 - SharePoint</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_sharepointonline</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+  </connectionreferences>
+  <Languages>
+    <Language>1033</Language>
+  </Languages>
+</ImportExportXml>

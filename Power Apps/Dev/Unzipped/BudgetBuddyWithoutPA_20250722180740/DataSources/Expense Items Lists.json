@@ -1,0 +1,99 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "gd_expenseitemslists",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "gd_expenseitemslist",
+    "MaxGetRowsCount": 500,
+    "Name": "Expense Items Lists",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "gd_CategoryLookup": "Category Lookup",
+      "gd_expenseid": "ExpenseID",
+      "gd_expenseitemslist_AsyncOperations": "System Jobs",
+      "gd_expenseitemslist_BulkDeleteFailures": "Bulk Delete Failures",
+      "gd_expenseitemslist_DuplicateBaseRecord": "Duplicate Records (gd_expenseitemslist_DuplicateBaseRecord)",
+      "gd_expenseitemslist_DuplicateMatchingRecord": "Duplicate Records (gd_expenseitemslist_DuplicateMatchingRecord)",
+      "gd_expenseitemslist_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "gd_expenseitemslist_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "gd_expenseitemslist_ProcessSession": "Process Sessions",
+      "gd_expenseitemslist_SyncErrors": "Sync Errors",
+      "gd_expenseitemslistid": "Expense Items List",
+      "gd_expensename": "ExpenseName",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Expense Items Lists",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Expense Items Lists (Views)",
+    "Name": "_gd_expenseitemslist_views",
+    "RelatedEntityName": "Expense Items Lists",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1534622c-c954-422e-9203-da43add2cb2b": "Expense Items List Advanced Find View",
+      "59a594ed-8504-4ad1-a4b8-8657b3ef7738": "Inactive Expense Items Lists",
+      "89f39f41-63fd-4aec-9d9d-2d20d823a80a": "Expense Items List Lookup View",
+      "c8752745-6d12-45fa-bd02-3509281dc22e": "Active Expense Items Lists",
+      "e516c3b3-1526-48e6-827f-7fa65ef9fc7c": "Expense Items List Associated View"
+    }
+  },
+  {
+    "DisplayName": "Status (Expense Items Lists)",
+    "Name": "gd_expenseitemslist_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Expense Items Lists"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Expense Items Lists",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Expense Items Lists)",
+    "Name": "gd_expenseitemslist_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Expense Items Lists"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Expense Items Lists",
+    "Type": "OptionSetInfo"
+  }
+]

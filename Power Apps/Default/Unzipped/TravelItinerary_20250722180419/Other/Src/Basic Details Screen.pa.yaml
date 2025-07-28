@@ -1,0 +1,827 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Basic Details Screen:
+    Properties:
+      Fill: =RGBA(255, 255, 255, 1)
+      LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+    Children:
+      - BDS Container:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            Height: =App.Height
+            Width: =App.Width
+            X: =
+          Children:
+            - BDS Header:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  Height: =Round(Parent.Height * 0.2, 0)
+                  LayoutAlignItems: =LayoutAlignItems.Center
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutGap: =16
+                  LayoutJustifyContent: =LayoutJustifyContent.Center
+                  Width: ='BDS Container'.Width
+                  X: =Parent.X
+                  Y: =Parent.Y
+                Children:
+                  - BG Image:
+                      Control: Image@2.2.3
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        FillPortions: =1
+                        FocusedBorderThickness: =4
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Image: ='155359133_super'
+                        ImagePosition: =ImagePosition.Stretch
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+            - Heading Label:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  BorderThickness: =2
+                  Color: =RGBA(50, 49, 48, 1)
+                  DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                  DisabledColor: =RGBA(161, 159, 157, 1)
+                  FocusedBorderThickness: =4
+                  Font: =Font.Verdana
+                  FontWeight: =FontWeight.Bold
+                  Height: =Round(Parent.Height * 0.2, 0)
+                  Size: =40
+                  Text: ="Travel Itinerary"
+                  Width: ='BDS Container'.Width
+                  Wrap: =false
+                  X: =Parent.X
+                  Y: =Parent.Y
+      - Main Container Form:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            BorderStyle: =BorderStyle.None
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height - 'BDS Header'.Height
+            LayoutDirection: =LayoutDirection.Horizontal
+            LayoutGap: =16
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width
+            Y: ='BDS Header'.Height
+          Children:
+            - BD Form Container:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  LayoutDirection: =LayoutDirection.Vertical
+                Children:
+                  - BD Form:
+                      Control: Form@2.4.4
+                      Layout: Horizontal
+                      Properties:
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        BorderStyle: =BorderStyle.None
+                        DataSource: ='Travel Itinerary Basic Details'
+                        DefaultMode: =FormMode.New
+                        NumberOfColumns: =2
+                      Children:
+                        - Title_DataCard2:
+                            Control: TypedDataCard@1.0.7
+                            Variant: TextualEdit
+                            Properties:
+                              BorderColor: =RGBA(245, 245, 245, 1)
+                              DataField: ="Title"
+                              Default: =ThisItem.Title
+                              DisplayName: =DataSourceInfo([@'Travel Itinerary Basic Details'],DataSourceInfo.DisplayName,Title)
+                              Height: =Round(Parent.Height / 4.2, 0)
+                              MaxLength: =DataSourceInfo([@'Travel Itinerary Basic Details'], DataSourceInfo.MaxLength, Title)
+                              Required: =false
+                              Update: =DataCardValue9.Value
+                              Width: =Round(Parent.Width / 2, 0)
+                              X: =0
+                              Y: =0
+                            Children:
+                              - DataCardKey9:
+                                  Control: Text@0.0.51
+                                  MetadataKey: FieldName
+                                  Properties:
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Round(Parent.Height * 0.32, 0)
+                                    PaddingBottom: =2
+                                    PaddingLeft: =2
+                                    PaddingRight: =2
+                                    PaddingTop: =2
+                                    Size: =20
+                                    Text: =Parent.DisplayName
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Weight: ='TextCanvas.Weight'.Semibold
+                                    Width: =Round(Parent.Width * 0.2928, 0)
+                                    Wrap: =false
+                                    X: =Round(Parent.Width * 0.114, 0)
+                                    Y: =Round((Parent.Height - DataCardValue9.Height) / 2,0)
+                              - DataCardValue9:
+                                  Control: TextInput@0.0.54
+                                  MetadataKey: FieldValue
+                                  Properties:
+                                    AccessibleLabel: =Parent.DisplayName
+                                    Appearance: ='TextInputCanvas.Appearance'.Outline
+                                    BasePaletteColor: =RGBA(227, 106, 244, 1)
+                                    BorderRadius: =10
+                                    BorderThickness: =2
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.'Segoe UI'
+                                    FontSize: =20
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =Round(Parent.Height * 0.32, 0)
+                                    Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                    Required: =Parent.Required
+                                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                    Value: =Parent.Default
+                                    Width: =Round((Parent.Width - 48) * 0.45, 0)
+                                    X: =DataCardKey9.X + DataCardKey9.Width + 16
+                                    Y: =Round((Parent.Height - DataCardValue9.Height) / 2,0)
+                              - ErrorMessage9:
+                                  Control: Text@0.0.51
+                                  MetadataKey: ErrorMessage
+                                  Properties:
+                                    Height: =30
+                                    Text: =Parent.Error
+                                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                    Width: =Parent.Width - 48
+                                    X: =24
+                                    Y: =DataCardValue9.Y + DataCardValue9.Height
+                        - Name_DataCard2:
+                            Control: TypedDataCard@1.0.7
+                            Variant: TextualEdit
+                            Properties:
+                              BorderColor: =RGBA(245, 245, 245, 1)
+                              DataField: ="Name"
+                              Default: =ThisItem.Name
+                              DisplayName: =DataSourceInfo([@'Travel Itinerary Basic Details'],DataSourceInfo.DisplayName,Name)
+                              Height: =Round(Parent.Height / 4.2, 0)
+                              MaxLength: =DataSourceInfo([@'Travel Itinerary Basic Details'], DataSourceInfo.MaxLength, Name)
+                              Required: =true
+                              Update: =DataCardValue10.Value
+                              Width: =Round(Parent.Width / 2, 0)
+                              X: =1
+                              Y: =0
+                            Children:
+                              - DataCardKey10:
+                                  Control: Text@0.0.51
+                                  MetadataKey: FieldName
+                                  Properties:
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Round(Parent.Height * 0.32, 0)
+                                    PaddingBottom: =2
+                                    PaddingLeft: =2
+                                    PaddingRight: =2
+                                    PaddingTop: =2
+                                    Size: =20
+                                    Text: =Parent.DisplayName
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Weight: ='TextCanvas.Weight'.Semibold
+                                    Width: =Round(Parent.Width * 0.2928, 0)
+                                    Wrap: =false
+                                    X: =Round(Parent.Width * 0.114, 0)
+                                    Y: =Round((Parent.Height - DataCardValue10.Height) / 2,0)
+                              - DataCardValue10:
+                                  Control: TextInput@0.0.54
+                                  MetadataKey: FieldValue
+                                  Properties:
+                                    AccessibleLabel: =Parent.DisplayName
+                                    Appearance: ='TextInputCanvas.Appearance'.Outline
+                                    BasePaletteColor: =RGBA(227, 106, 244, 1)
+                                    BorderRadius: =10
+                                    BorderStyle: =BorderStyle.Solid
+                                    BorderThickness: =2
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.'Segoe UI'
+                                    FontSize: =20
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =Round(Parent.Height * 0.32, 0)
+                                    Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                    Required: =Parent.Required
+                                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                    Value: =Parent.Default
+                                    Width: =Round((Parent.Width - 48) * 0.45, 0)
+                                    X: =DataCardKey10.X + DataCardKey10.Width + 16
+                                    Y: =Round((Parent.Height - DataCardValue10.Height) / 2,0)
+                              - ErrorMessage10:
+                                  Control: Text@0.0.51
+                                  MetadataKey: ErrorMessage
+                                  Properties:
+                                    Height: =30
+                                    Text: =Parent.Error
+                                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                    Width: =Parent.Width - 48
+                                    X: =24
+                                    Y: =DataCardValue10.Y + DataCardValue10.Height
+                              - Icon1_1:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    Color: =RGBA(0, 120, 212, 1)
+                                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                                    DisabledColor: =RGBA(225, 223, 221, 1)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    FocusedBorderThickness: =4
+                                    Height: =Round(Parent.Height * 0.30, 0)
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =RGBA(16, 110, 190, 1)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Icon: =Icon.Person
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedColor: =RGBA(16, 110, 190, 1)
+                                    PressedFill: =RGBA(0, 0, 0, 0)
+                                    Width: =Round(Parent.Width * 0.0439, 0)
+                                    X: =Round((Parent.Width * 0.114) - (Self.Width * 1.3), 0)
+                                    Y: =Round((Parent.Height - DataCardValue10.Height) / 2,0)
+                        - Phone Number_DataCard2:
+                            Control: TypedDataCard@1.0.7
+                            Variant: NumberEdit
+                            Properties:
+                              BorderColor: =RGBA(245, 245, 245, 1)
+                              DataField: ="PhoneNumber"
+                              Default: =ThisItem.'Phone Number'
+                              DisplayName: =DataSourceInfo([@'Travel Itinerary Basic Details'],DataSourceInfo.DisplayName,PhoneNumber)
+                              Height: =Round(Parent.Height / 4.2, 0)
+                              Required: =true
+                              Update: =Value(DataCardValue14.Value)
+                              Width: =Round(Parent.Width / 2, 0)
+                              X: =0
+                              Y: =1
+                            Children:
+                              - DataCardKey16:
+                                  Control: Text@0.0.51
+                                  MetadataKey: FieldName
+                                  Properties:
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Round(Parent.Height * 0.32, 0)
+                                    PaddingBottom: =2
+                                    PaddingLeft: =2
+                                    PaddingRight: =2
+                                    PaddingTop: =2
+                                    Size: =20
+                                    Text: =Parent.DisplayName
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Weight: ='TextCanvas.Weight'.Semibold
+                                    Width: =Round(Parent.Width * 0.2928, 0)
+                                    Wrap: =false
+                                    X: =Round(Parent.Width * 0.114, 0)
+                                    Y: =Round((Parent.Height - DataCardValue14.Height) / 2,0)
+                              - DataCardValue14:
+                                  Control: NumberInput@2.9.12
+                                  MetadataKey: FieldValue
+                                  Properties:
+                                    AccessibleLabel: =Parent.DisplayName
+                                    Appearance: ='NumberInput.Appearance'.Outline
+                                    BasePaletteColor: =RGBA(227, 106, 244, 1)
+                                    BorderRadius: =10
+                                    BorderStyle: =BorderStyle.Solid
+                                    BorderThickness: =2
+                                    DisplayMode: =Parent.DisplayMode
+                                    FontSize: =20
+                                    Height: =Round(Parent.Height * 0.32, 0)
+                                    Max: =Blank()
+                                    Min: =Blank()
+                                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                    Value: =Parent.Default
+                                    Width: =Round((Parent.Width - 48) * 0.45, 0)
+                                    X: =DataCardKey16.X + DataCardKey16.Width + 16
+                                    Y: =Round((Parent.Height - DataCardValue14.Height) / 2,0)
+                              - ErrorMessage16:
+                                  Control: Text@0.0.51
+                                  MetadataKey: ErrorMessage
+                                  Properties:
+                                    Height: =30
+                                    Text: =Parent.Error
+                                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                    Width: =Parent.Width - 48
+                                    X: =24
+                                    Y: =DataCardValue14.Y + DataCardValue14.Height
+                              - Icon6_1:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    Color: =RGBA(0, 120, 212, 1)
+                                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                                    DisabledColor: =RGBA(225, 223, 221, 1)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    FocusedBorderThickness: =4
+                                    Height: =Round(Parent.Height * 0.30, 0)
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =RGBA(16, 110, 190, 1)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Icon: =Icon.PhoneHangUp
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedColor: =RGBA(16, 110, 190, 1)
+                                    PressedFill: =RGBA(0, 0, 0, 0)
+                                    Width: =Round(Parent.Width * 0.0439, 0)
+                                    X: =Round((Parent.Width * 0.114) - (Self.Width * 1.3), 0)
+                                    Y: =Round((Parent.Height - DataCardValue10.Height) / 2,0)
+                        - Start Date_DataCard2:
+                            Control: TypedDataCard@1.0.7
+                            Variant: DateEdit
+                            Properties:
+                              BorderColor: =RGBA(245, 245, 245, 1)
+                              DataField: ="StartDate"
+                              Default: =ThisItem.'Start Date'
+                              DisplayName: =DataSourceInfo([@'Travel Itinerary Basic Details'],DataSourceInfo.DisplayName,StartDate)
+                              Height: =Round(Parent.Height / 4.2, 0)
+                              Required: =true
+                              Update: =DataCardValue15.SelectedDate
+                              Width: =Round(Parent.Width / 2, 0)
+                              X: =1
+                              Y: =1
+                            Children:
+                              - DataCardKey17:
+                                  Control: Text@0.0.51
+                                  MetadataKey: FieldName
+                                  Properties:
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Round(Parent.Height * 0.32, 0)
+                                    PaddingBottom: =2
+                                    PaddingLeft: =2
+                                    PaddingRight: =2
+                                    PaddingTop: =2
+                                    Size: =20
+                                    Text: =Parent.DisplayName
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Weight: ='TextCanvas.Weight'.Semibold
+                                    Width: =Round(Parent.Width * 0.2928, 0)
+                                    Wrap: =false
+                                    X: =Round(Parent.Width * 0.114, 0)
+                                    Y: =Round((Parent.Height - DataCardValue15.Height) / 2,0)
+                              - DataCardValue15:
+                                  Control: DatePicker@0.0.46
+                                  MetadataKey: FieldValue
+                                  Properties:
+                                    AccessibleLabel: =Parent.DisplayName
+                                    Appearance: ='DatePickerCanvas.Appearance'.Outline
+                                    BasePaletteColor: =RGBA(227, 106, 244, 1)
+                                    BorderRadius: =10
+                                    BorderStyle: =BorderStyle.Solid
+                                    BorderThickness: =2
+                                    DisplayMode: =Parent.DisplayMode
+                                    EndDate: =Date(Year(Today())+100, 12, 31)
+                                    Font: =Font.'Segoe UI'
+                                    FontSize: =20
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =Round(Parent.Height * 0.32, 0)
+                                    SelectedDate: =Parent.Default
+                                    StartDate: =Date(1900, 1, 1)
+                                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                    Width: =Round((Parent.Width - 48) * 0.45, 0)
+                                    X: =DataCardKey17.X + DataCardKey17.Width + 16
+                                    Y: =Round((Parent.Height - DataCardValue15.Height) / 2,0)
+                              - ErrorMessage17:
+                                  Control: Text@0.0.51
+                                  MetadataKey: ErrorMessage
+                                  Properties:
+                                    Height: =30
+                                    Text: =Parent.Error
+                                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                    Width: =Parent.Width - 48
+                                    X: =24
+                                    Y: =DataCardValue15.Y + DataCardValue15.Height
+                              - Icon3_3:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    Color: =RGBA(0, 120, 212, 1)
+                                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                                    DisabledColor: =RGBA(225, 223, 221, 1)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    FocusedBorderThickness: =4
+                                    Height: =Round(Parent.Height * 0.30, 0)
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =RGBA(16, 110, 190, 1)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Icon: =Icon.CalendarBlank
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedColor: =RGBA(16, 110, 190, 1)
+                                    PressedFill: =RGBA(0, 0, 0, 0)
+                                    Width: =Round(Parent.Width * 0.0439, 0)
+                                    X: =Round((Parent.Width * 0.114) - (Self.Width * 1.3), 0)
+                                    Y: =Round((Parent.Height - DataCardValue15.Height) / 2,0)
+                        - End Date_DataCard2:
+                            Control: TypedDataCard@1.0.7
+                            Variant: DateEdit
+                            Properties:
+                              BorderColor: =RGBA(245, 245, 245, 1)
+                              DataField: ="EndDate"
+                              Default: =ThisItem.'End Date'
+                              DisplayName: =DataSourceInfo([@'Travel Itinerary Basic Details'],DataSourceInfo.DisplayName,EndDate)
+                              Height: =Round(Parent.Height / 4.2, 0)
+                              Required: =true
+                              Update: =DataCardValue19.SelectedDate
+                              Width: =Round(Parent.Width / 2, 0)
+                              X: =0
+                              Y: =2
+                            Children:
+                              - DataCardKey23:
+                                  Control: Text@0.0.51
+                                  MetadataKey: FieldName
+                                  Properties:
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Round(Parent.Height * 0.32, 0)
+                                    PaddingBottom: =2
+                                    PaddingLeft: =2
+                                    PaddingRight: =2
+                                    PaddingTop: =2
+                                    Size: =20
+                                    Text: =Parent.DisplayName
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Weight: ='TextCanvas.Weight'.Semibold
+                                    Width: =Round(Parent.Width * 0.2928, 0)
+                                    Wrap: =false
+                                    X: =Round(Parent.Width * 0.114, 0)
+                                    Y: =Round((Parent.Height - DataCardValue19.Height) / 2,0)
+                              - DataCardValue19:
+                                  Control: DatePicker@0.0.46
+                                  MetadataKey: FieldValue
+                                  Properties:
+                                    AccessibleLabel: =Parent.DisplayName
+                                    Appearance: ='DatePickerCanvas.Appearance'.Outline
+                                    BasePaletteColor: =RGBA(227, 106, 244, 1)
+                                    BorderRadius: =10
+                                    BorderStyle: =BorderStyle.Solid
+                                    BorderThickness: =2
+                                    DisplayMode: =Parent.DisplayMode
+                                    EndDate: =Date(Year(Today())+100, 12, 31)
+                                    Font: =Font.'Segoe UI'
+                                    FontSize: =20
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =Round(Parent.Height * 0.32, 0)
+                                    SelectedDate: =Parent.Default
+                                    StartDate: =Date(1900, 1, 1)
+                                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                    Width: =Round((Parent.Width - 48) * 0.45, 0)
+                                    X: =DataCardKey23.X + DataCardKey23.Width + 16
+                                    Y: =Round((Parent.Height - DataCardValue19.Height) / 2,0)
+                              - ErrorMessage23:
+                                  Control: Text@0.0.51
+                                  MetadataKey: ErrorMessage
+                                  Properties:
+                                    Height: =30
+                                    Text: =Parent.Error
+                                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                    Width: =Parent.Width - 48
+                                    X: =24
+                                    Y: =DataCardValue19.Y + DataCardValue19.Height
+                              - Icon3_2:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    Color: =RGBA(0, 120, 212, 1)
+                                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                                    DisabledColor: =RGBA(225, 223, 221, 1)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    FocusedBorderThickness: =4
+                                    Height: =Round(Parent.Height * 0.30, 0)
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =RGBA(16, 110, 190, 1)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Icon: =Icon.CalendarBlank
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedColor: =RGBA(16, 110, 190, 1)
+                                    PressedFill: =RGBA(0, 0, 0, 0)
+                                    Width: =Round(Parent.Width * 0.0439, 0)
+                                    X: =Round((Parent.Width * 0.114) - (Self.Width * 1.3), 0)
+                                    Y: =Round((Parent.Height - DataCardValue19.Height) / 2,0)
+                        - Email_DataCard2:
+                            Control: TypedDataCard@1.0.7
+                            Variant: TextualEdit
+                            Properties:
+                              BorderColor: =RGBA(245, 245, 245, 1)
+                              DataField: ="Email"
+                              Default: =ThisItem.Email
+                              DisplayName: =DataSourceInfo([@'Travel Itinerary Basic Details'],DataSourceInfo.DisplayName,Email)
+                              Height: =Round(Parent.Height / 4.2, 0)
+                              MaxLength: =DataSourceInfo([@'Travel Itinerary Basic Details'], DataSourceInfo.MaxLength, Email)
+                              Required: =true
+                              Update: =DataCardValue20.Value
+                              Width: =Round(Parent.Width / 2, 0)
+                              X: =1
+                              Y: =2
+                            Children:
+                              - DataCardKey24:
+                                  Control: Text@0.0.51
+                                  MetadataKey: FieldName
+                                  Properties:
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Round(Parent.Height * 0.32, 0)
+                                    PaddingBottom: =2
+                                    PaddingLeft: =2
+                                    PaddingRight: =2
+                                    PaddingTop: =2
+                                    Size: =20
+                                    Text: =Parent.DisplayName
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Weight: ='TextCanvas.Weight'.Semibold
+                                    Width: =Round(Parent.Width * 0.2928, 0)
+                                    Wrap: =false
+                                    X: =Round(Parent.Width * 0.114, 0)
+                                    Y: =Round((Parent.Height - DataCardValue20.Height) / 2,0)
+                              - DataCardValue20:
+                                  Control: TextInput@0.0.54
+                                  MetadataKey: FieldValue
+                                  Properties:
+                                    AccessibleLabel: =Parent.DisplayName
+                                    Appearance: ='TextInputCanvas.Appearance'.Outline
+                                    BasePaletteColor: =RGBA(227, 106, 244, 1)
+                                    BorderRadius: =10
+                                    BorderStyle: =BorderStyle.Solid
+                                    BorderThickness: =2
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.'Segoe UI'
+                                    FontSize: =20
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =Round(Parent.Height * 0.32, 0)
+                                    Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                    Required: =Parent.Required
+                                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                    Value: =Parent.Default
+                                    Width: =Round((Parent.Width - 48) * 0.45, 0)
+                                    X: =DataCardKey24.X + DataCardKey24.Width + 16
+                                    Y: =Round((Parent.Height - DataCardValue20.Height) / 2,0)
+                              - ErrorMessage24:
+                                  Control: Text@0.0.51
+                                  MetadataKey: ErrorMessage
+                                  Properties:
+                                    Height: =30
+                                    Text: =Parent.Error
+                                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                    Width: =Parent.Width - 48
+                                    X: =24
+                                    Y: =DataCardValue20.Y + DataCardValue20.Height
+                              - Icon2_1:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    Color: =RGBA(0, 120, 212, 1)
+                                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                                    DisabledColor: =RGBA(225, 223, 221, 1)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    FocusedBorderThickness: =4
+                                    Height: =Round(Parent.Height * 0.30, 0)
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =RGBA(16, 110, 190, 1)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Icon: =Icon.Mail
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedColor: =RGBA(16, 110, 190, 1)
+                                    PressedFill: =RGBA(0, 0, 0, 0)
+                                    Width: =Round(Parent.Width * 0.0439, 0)
+                                    X: =Round((Parent.Width * 0.114) - (Self.Width * 1.3), 0)
+                                    Y: =Round((Parent.Height - DataCardValue20.Height) / 2,0)
+                        - Address_DataCard3:
+                            Control: TypedDataCard@1.0.7
+                            Variant: TextualEdit
+                            Properties:
+                              BorderColor: =RGBA(245, 245, 245, 1)
+                              DataField: ="Address"
+                              Default: =ThisItem.Address
+                              DisplayName: =DataSourceInfo([@'Travel Itinerary Basic Details'],DataSourceInfo.DisplayName,Address)
+                              Height: =Round(Parent.Height / 4.2, 0)
+                              MaxLength: =DataSourceInfo([@'Travel Itinerary Basic Details'], DataSourceInfo.MaxLength, Address)
+                              Required: =true
+                              Update: =DataCardValue21.Value
+                              Width: =Round(Parent.Width / 2, 0)
+                              X: =0
+                              Y: =3
+                            Children:
+                              - DataCardKey25:
+                                  Control: Text@0.0.51
+                                  MetadataKey: FieldName
+                                  Properties:
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Round(Parent.Height * 0.32, 0)
+                                    PaddingBottom: =2
+                                    PaddingLeft: =2
+                                    PaddingRight: =2
+                                    PaddingTop: =2
+                                    Size: =20
+                                    Text: =Parent.DisplayName
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Weight: ='TextCanvas.Weight'.Semibold
+                                    Width: =Round(Parent.Width * 0.2928, 0)
+                                    Wrap: =false
+                                    X: =Round(Parent.Width * 0.114, 0)
+                                    Y: =Round((Parent.Height - DataCardValue21.Height) / 2,0)
+                              - DataCardValue21:
+                                  Control: TextInput@0.0.54
+                                  MetadataKey: FieldValue
+                                  Properties:
+                                    AccessibleLabel: =Parent.DisplayName
+                                    Appearance: ='TextInputCanvas.Appearance'.Outline
+                                    BasePaletteColor: =RGBA(227, 106, 244, 1)
+                                    BorderRadius: =10
+                                    BorderStyle: =BorderStyle.Solid
+                                    BorderThickness: =2
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.'Segoe UI'
+                                    FontSize: =20
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =Round(Parent.Height * 0.32, 0)
+                                    Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                    Required: =Parent.Required
+                                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                    Value: =Parent.Default
+                                    Width: =Round((Parent.Width - 48) * 0.45, 0)
+                                    X: =DataCardKey25.X + DataCardKey25.Width + 16
+                                    Y: =Round((Parent.Height - DataCardValue21.Height) / 2,0)
+                              - ErrorMessage25:
+                                  Control: Text@0.0.51
+                                  MetadataKey: ErrorMessage
+                                  Properties:
+                                    Height: =30
+                                    Text: =Parent.Error
+                                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                    Width: =Parent.Width - 48
+                                    X: =24
+                                    Y: =DataCardValue21.Y + DataCardValue21.Height
+                              - Icon5_1:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    Color: =RGBA(0, 120, 212, 1)
+                                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                                    DisabledColor: =RGBA(225, 223, 221, 1)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    FocusedBorderThickness: =4
+                                    Height: =Round(Parent.Height * 0.30, 0)
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =RGBA(16, 110, 190, 1)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Icon: =Icon.Home
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedColor: =RGBA(16, 110, 190, 1)
+                                    PressedFill: =RGBA(0, 0, 0, 0)
+                                    Width: =Round(Parent.Width * 0.0439, 0)
+                                    X: =Round((Parent.Width * 0.114) - (Self.Width * 1.3), 0)
+                                    Y: =Round((Parent.Height - DataCardValue21.Height) / 2,0)
+                        - Mode of Transport_DataCard2:
+                            Control: TypedDataCard@1.0.7
+                            Variant: ComboBoxEdit
+                            Properties:
+                              BorderColor: =RGBA(245, 245, 245, 1)
+                              DataField: ="ModeofTransport"
+                              Default: =ThisItem.'Mode of Transport'
+                              DisplayName: =DataSourceInfo([@'Travel Itinerary Basic Details'],DataSourceInfo.DisplayName,ModeofTransport)
+                              Height: =Round(Parent.Height / 4.2, 0)
+                              Required: =true
+                              Update: =DataCardValue22.Selected
+                              Width: =Round(Parent.Width / 2, 0)
+                              X: =1
+                              Y: =3
+                            Children:
+                              - DataCardKey26:
+                                  Control: Text@0.0.51
+                                  MetadataKey: FieldName
+                                  Properties:
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Round(Parent.Height * 0.32, 0)
+                                    PaddingBottom: =2
+                                    PaddingLeft: =2
+                                    PaddingRight: =2
+                                    PaddingTop: =2
+                                    Size: =20
+                                    Text: =Parent.DisplayName
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Weight: ='TextCanvas.Weight'.Semibold
+                                    Width: =Round(Parent.Width * 0.2928, 0)
+                                    Wrap: =false
+                                    X: =Round(Parent.Width * 0.114, 0)
+                                    Y: =Round((Parent.Height - DataCardValue22.Height) / 2,0)
+                              - DataCardValue22:
+                                  Control: ComboBox@0.0.51
+                                  MetadataKey: FieldValue
+                                  Properties:
+                                    AccessibleLabel: =Parent.DisplayName
+                                    Appearance: ='ComboboxCanvas.Appearance'.Outline
+                                    BasePaletteColor: =RGBA(227, 106, 244, 1)
+                                    BorderRadius: =10
+                                    BorderStyle: =BorderStyle.Solid
+                                    BorderThickness: =2
+                                    DefaultSelectedItems: =[Parent.Default]
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.'Segoe UI'
+                                    FontSize: =20
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =Round(Parent.Height * 0.32, 0)
+                                    Items: =Choices([@'Travel Itinerary Basic Details'].ModeofTransport)
+                                    Required: =Parent.Required
+                                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                    Width: =Round((Parent.Width - 48) * 0.45, 0)
+                                    X: =DataCardKey26.X + DataCardKey26.Width + 16
+                                    Y: =Round((Parent.Height - DataCardValue10.Height) / 2,0)
+                              - ErrorMessage26:
+                                  Control: Text@0.0.51
+                                  MetadataKey: ErrorMessage
+                                  Properties:
+                                    Height: =30
+                                    Text: =Parent.Error
+                                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                    Width: =Parent.Width - 48
+                                    X: =24
+                                    Y: =DataCardValue22.Y + DataCardValue22.Height
+                              - Icon4_1:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    Color: =RGBA(0, 120, 212, 1)
+                                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                                    DisabledColor: =RGBA(225, 223, 221, 1)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    FocusedBorderThickness: =4
+                                    Height: =Round(Parent.Height * 0.30, 0)
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =RGBA(16, 110, 190, 1)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Icon: =Icon.Transportation
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedColor: =RGBA(16, 110, 190, 1)
+                                    PressedFill: =RGBA(0, 0, 0, 0)
+                                    Width: =Round(Parent.Width * 0.0439, 0)
+                                    X: =Round((Parent.Width * 0.114) - (Self.Width * 1.3), 0)
+                                    Y: =Round((Parent.Height - DataCardValue22.Height) / 2,0)
+                  - BDS Buttons Container:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Center
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =Round(Parent.Height * 0.12, 0)
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutGap: =16
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMinWidth: =0
+                        PaddingBottom: =10
+                        PaddingLeft: =10
+                        PaddingRight: =10
+                        PaddingTop: =10
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =Parent.Width
+                      Children:
+                        - BD Cancel Button:
+                            Control: Button@0.0.45
+                            Properties:
+                              AccessibleLabel: ="Cancel form button"
+                              Align: =Align.Center
+                              Appearance: ='ButtonCanvas.Appearance'.Secondary
+                              BasePaletteColor: =RGBA(227, 106, 244, 1)
+                              Height: =Round(Parent.Height * 0.5, 0)
+                              Icon: ="Dismiss"
+                              OnSelect: =ResetForm('BD Form')
+                              Text: ="Cancel"
+                              Width: =Round(Parent.Width * 0.09, 0)
+                        - BD Home Button:
+                            Control: Button@0.0.45
+                            Properties:
+                              AccessibleLabel: ="Submit form button"
+                              Align: =Align.Center
+                              BasePaletteColor: =RGBA(227, 106, 244, 1)
+                              Height: =Round(Parent.Height * 0.5, 0)
+                              Icon: ="Home"
+                              OnSelect: =Navigate('Home Screen');
+                              Text: ="Home"
+                              Width: =Round(Parent.Width * 0.09, 0)
+                              X: =40
+                              Y: =40
+                        - BD Submit Button:
+                            Control: Button@0.0.45
+                            Properties:
+                              AccessibleLabel: ="Submit form button"
+                              BasePaletteColor: =RGBA(227, 106, 244, 1)
+                              Height: =Round(Parent.Height * 0.5, 0)
+                              Icon: ="ArrowRight"
+                              OnSelect: |+
+                                =Navigate('MoT and Hotel Screen');
+
+                              Text: ="Next"
+                              Width: =Round(Parent.Width * 0.09, 0)

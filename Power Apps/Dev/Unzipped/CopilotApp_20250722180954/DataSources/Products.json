@@ -1,0 +1,125 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cre96_products",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cre96_product",
+    "MaxGetRowsCount": 500,
+    "Name": "Products",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "{Attachments}": "Attachments",
+      "cre96_category": "Category",
+      "cre96_ManufacturerID": "Manufacturer",
+      "cre96_price": "Price",
+      "cre96_price_base": "Price (Base)",
+      "cre96_product_Annotations": "Notes",
+      "cre96_product_AsyncOperations": "System Jobs",
+      "cre96_product_BulkDeleteFailures": "Bulk Delete Failures",
+      "cre96_product_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cre96_product_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cre96_product_ProcessSession": "Process Sessions",
+      "cre96_product_SyncErrors": "Sync Errors",
+      "cre96_productid": "Product",
+      "cre96_ProductLifecycle_cre96_Product": "Product Lifecycles",
+      "cre96_productname": "Product Name",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Products",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Products (Views)",
+    "Name": "_cre96_product_views",
+    "RelatedEntityName": "Products",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "07b4aa31-ddd9-4ad9-9788-7939154dc921": "Active Products",
+      "20b7fa40-8fd3-4106-b93b-803cb8bafa09": "Product Advanced Find View",
+      "348662e6-d2b0-4ab2-817c-c2dac0535471": "Product Associated View",
+      "820fcf62-85f0-4df1-87ac-612d04c03411": "Product Lookup View",
+      "cb8fbbbc-5b43-484e-8d31-7ad34fb2fb75": "Inactive Products"
+    }
+  },
+  {
+    "DisplayName": "Category (Products)",
+    "Name": "cre96_product_cre96_category",
+    "OptionSetInfoNameMapping": {
+      "807790000": "Electronics",
+      "807790001": "Furniture",
+      "807790002": "Clothing"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cre96_category",
+        "OptionSetReferenceEntityName": "Products"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cre96_category",
+    "RelatedEntityName": "Products",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Products)_1",
+    "Name": "cre96_product_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Products"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Products",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Products)_1",
+    "Name": "cre96_product_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Products"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Products",
+    "Type": "OptionSetInfo"
+  }
+]

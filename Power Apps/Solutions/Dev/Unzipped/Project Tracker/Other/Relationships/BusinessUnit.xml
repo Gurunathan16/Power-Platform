@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_gd_expensecategorylist">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_ExpenseCategoryList</ReferencingEntityName>
+    <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>Restrict</CascadeDelete>
+    <CascadeArchive>Restrict</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningBusinessUnit</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="business_unit_gd_expenseitemslist">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_ExpenseItemsList</ReferencingEntityName>
+    <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>Restrict</CascadeDelete>
+    <CascadeArchive>Restrict</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningBusinessUnit</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="business_unit_gd_incomecategorylists">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_IncomeCategoryLists</ReferencingEntityName>
+    <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>Restrict</CascadeDelete>
+    <CascadeArchive>Restrict</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningBusinessUnit</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="business_unit_gd_incomeitemslists">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_IncomeItemsLists</ReferencingEntityName>
+    <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>Restrict</CascadeDelete>
+    <CascadeArchive>Restrict</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningBusinessUnit</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="business_unit_gd_passwordhistory">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_PasswordHistory</ReferencingEntityName>
+    <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>Restrict</CascadeDelete>
+    <CascadeArchive>Restrict</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningBusinessUnit</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="business_unit_gd_product">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_product</ReferencingEntityName>
+    <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>Restrict</CascadeDelete>
+    <CascadeArchive>Restrict</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningBusinessUnit</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="business_unit_gd_productcategory">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_ProductCategory</ReferencingEntityName>
+    <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>Restrict</CascadeDelete>
+    <CascadeArchive>Restrict</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningBusinessUnit</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="business_unit_gd_project">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_Project</ReferencingEntityName>
+    <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>Restrict</CascadeDelete>
+    <CascadeArchive>Restrict</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningBusinessUnit</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="business_unit_gd_projecttask">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_ProjectTask</ReferencingEntityName>
+    <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>Restrict</CascadeDelete>
+    <CascadeArchive>Restrict</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningBusinessUnit</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="business_unit_gd_userdata">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>gd_UserData</ReferencingEntityName>
+    <ReferencedEntityName>BusinessUnit</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>Restrict</CascadeDelete>
+    <CascadeArchive>Restrict</CascadeArchive>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningBusinessUnit</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the business unit that owns the record" languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+</EntityRelationships>

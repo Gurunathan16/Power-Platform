@@ -1,0 +1,98 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "gd_incomeitemslistses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "gd_incomeitemslists",
+    "Name": "Income Items Lists",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "gd_CategoryLookup": "Category Lookup",
+      "gd_incomeid": "IncomeID",
+      "gd_incomeitemslists_AsyncOperations": "System Jobs",
+      "gd_incomeitemslists_BulkDeleteFailures": "Bulk Delete Failures",
+      "gd_incomeitemslists_DuplicateBaseRecord": "Duplicate Records (gd_incomeitemslists_DuplicateBaseRecord)",
+      "gd_incomeitemslists_DuplicateMatchingRecord": "Duplicate Records (gd_incomeitemslists_DuplicateMatchingRecord)",
+      "gd_incomeitemslists_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "gd_incomeitemslists_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "gd_incomeitemslists_ProcessSession": "Process Sessions",
+      "gd_incomeitemslists_SyncErrors": "Sync Errors",
+      "gd_incomeitemslistsid": "Income Items Lists",
+      "gd_incomename": "IncomeName",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Income Items Lists",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Income Items Lists (Views)",
+    "Name": "_gd_incomeitemslists_views",
+    "RelatedEntityName": "Income Items Lists",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "4f628793-e765-4c94-b20a-b479360d18bd": "Income Items Lists Associated View",
+      "5148cf4d-7977-4037-9174-d8d029c6da68": "Income Items Lists Advanced Find View",
+      "64498ecc-7984-4649-9827-59deecb15843": "Active Income Items Lists",
+      "bdcac9ff-b192-440a-8054-59d6a980e317": "Inactive Income Items Lists",
+      "e5869f31-85db-48c0-aa25-6bf61ec3ea15": "Income Items Lists Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (Income Items Lists)",
+    "Name": "gd_incomeitemslists_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Income Items Lists"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Income Items Lists",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Income Items Lists)",
+    "Name": "gd_incomeitemslists_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Income Items Lists"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Income Items Lists",
+    "Type": "OptionSetInfo"
+  }
+]

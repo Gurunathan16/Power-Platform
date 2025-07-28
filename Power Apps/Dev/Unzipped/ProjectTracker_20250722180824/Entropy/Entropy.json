@@ -1,0 +1,51 @@
+{
+  "ComponentIndexes": {},
+  "ControlUniqueGuids": {},
+  "ControlUniqueIds": {
+    "App": 1,
+    "Host": 3,
+    "Screen1": 4
+  },
+  "FunctionParamsInvariantScripts": {},
+  "FunctionParamsInvariantScriptsOnInstances": {},
+  "HeaderLastSavedDateTimeUTC": "07/18/2025 16:36:44",
+  "IsLegacyComponentAllowGlobalScopeCase": false,
+  "LocalConnectionIDReferences": {},
+  "LocalDatabaseReferencesAsEmpty": false,
+  "LocalResourceFileNames": {},
+  "LocalResourceRootPaths": {},
+  "OrderComponentMetadata": {},
+  "OrderComponentTemplate": {},
+  "OrderDataSource": {
+    "Project Tasks": 5,
+    "Project Tasks\\default.cds_gd_projecttask_views": 4,
+    "Project Tasks\\gd_prioritychoices": 0,
+    "Project Tasks\\gd_projecttask_statecode": 2,
+    "Project Tasks\\gd_projecttask_statuscode": 3,
+    "Project Tasks\\gd_taskstatuschoices": 1
+  },
+  "OrderGroupControls": {},
+  "OrderPcfTemplate": {},
+  "OrderTemplate": {},
+  "OrderXMLTemplate": {},
+  "OverridablePropertiesEntry": {
+    "App": {},
+    "Host": {},
+    "Screen1": {}
+  },
+  "PCFDynamicSchemaForIRRetrievalEntry": {},
+  "PCFTemplateEntry": {},
+  "PublishOrderIndices": {
+    "App": 0,
+    "Host": 0,
+    "Screen1": 0
+  },
+  "ResourcesJsonIndices": {},
+  "RuleScreenIdWithoutScreen": {},
+  "TemplateVersions": {},
+  "VolatileProperties": {
+    "AnalysisLoadTime": 0.080782999999999994,
+    "ControlCount": {}
+  },
+  "WasLocalDatabaseReferencesEmpty": false
+}

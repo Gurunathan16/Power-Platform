@@ -1,0 +1,89 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_sharepointonline": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "mca_sharedsharepointonline_6b086"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "mca_sharedoffice365_48041"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "When_an_item_is_created": {
+          "recurrence": {
+            "frequency": "Minute",
+            "interval": 5
+          },
+          "splitOn": "@triggerOutputs()?['body/value']",
+          "metadata": {
+            "operationMetadataId": "5e112fa5-3e7e-4ab4-a2f1-141c001f6f10"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "https://labskraft27.sharepoint.com/sites/GuruCompany",
+              "table": "cb341a02-53b1-41b3-ab27-7c3626378f29"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "connectionName": "shared_sharepointonline",
+              "operationId": "GetOnNewItems"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Send_an_email_(V2)": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "0ec49ba9-2c67-426f-ac87-11721fc2698b"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "emailMessage/To": "user10@labskraft.com;user11@labskraft.com;user12@labskraft.com;user18@labskraft.com",
+              "emailMessage/Subject": "New Reimburesement zrequest from Employee",
+              "emailMessage/Body": "<p><span style=\"font-family: verdana\"><strong>Hello team,<br>\n<br>\n</strong></span><span style=\"font-family: verdana\">We have a new request from&nbsp;</span></p>",
+              "emailMessage/Importance": "Normal"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+              "connectionName": "shared_office365",
+              "operationId": "SendEmailV2"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

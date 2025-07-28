@@ -1,0 +1,105 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_sharepointonline": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "mca_sharedsharepointonline_6b086"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "mca_sharedoffice365_48041"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "When_an_item_is_created": {
+          "recurrence": {
+            "frequency": "Minute",
+            "interval": 1
+          },
+          "splitOn": "@triggerOutputs()?['body/value']",
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "https://labskraft27.sharepoint.com/sites/GuruCompany",
+              "table": "cb341a02-53b1-41b3-ab27-7c3626378f29"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "connectionName": "shared_sharepointonline",
+              "operationId": "GetOnNewItems"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "To_the_approver": {
+          "runAfter": {},
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "emailMessage/To": "user519@labskraft.com",
+              "emailMessage/Subject": "New Reimbursement Request for Approval",
+              "emailMessage/Body": "<p class=\"editor-paragraph\"><b><strong class=\"editor-text-bold\" style=\"font-family: Verdana;\">Hello Team,</strong></b></p><br><p class=\"editor-paragraph\">We have a new reimburesement request from @{triggerBody()?['Name']} for the amount of @{triggerBody()?['Amount']}. Just adding few important details for your reference!<br></p><br><p class=\"editor-paragraph\"><b><strong class=\"editor-text-bold\">Employee ID: </strong></b>@{triggerBody()?['EmployeeID']}</p><p class=\"editor-paragraph\"><br><b><strong class=\"editor-text-bold\">Department: </strong></b>@{triggerBody()?['Department']}</p><p class=\"editor-paragraph\"><br><b><strong class=\"editor-text-bold\">Reporting Manager: </strong></b>@{triggerBody()?['ReportingManager/DisplayName']}</p><p class=\"editor-paragraph\"><br><b><strong class=\"editor-text-bold\">Expense Type: </strong></b>@{triggerBody()?['Expensetype/Value']}<br><br>Kindly look into it and act asap. Thank you!</p>",
+              "emailMessage/Importance": "High"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+              "connectionName": "shared_office365",
+              "operationId": "SendEmailV2"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Self_Mail": {
+          "runAfter": {
+            "To_the_approver": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "emailMessage/To": "@triggerBody()?['Author/Email']",
+              "emailMessage/Subject": "Your Reimburesement Request Details",
+              "emailMessage/Body": "<p class=\"editor-paragraph\"><b><strong class=\"editor-text-bold\">Hi</strong></b> @{triggerBody()?['Name']},</p><br><p class=\"editor-paragraph\">We have received a new reimburesement request from you. Here are the details:<br><br><b><strong class=\"editor-text-bold\">Employee ID: </strong></b>@{triggerBody()?['EmployeeID']}<br><br><b><strong class=\"editor-text-bold\">Department: </strong></b>@{triggerBody()?['Department']}<br><br><b><strong class=\"editor-text-bold\">Reporting Manager: </strong></b>@{triggerBody()?['ReportingManager/DisplayName']}<br><br><b><strong class=\"editor-text-bold\">Expense Type: </strong></b>@{triggerBody()?['Expensetype/Value']}</p><br><p class=\"editor-paragraph\"><b><strong class=\"editor-text-bold\">Amount: </strong></b>@{triggerBody()?['Amount']}</p><br><p class=\"editor-paragraph\">We have sent the request for approval to your manager. In meantime, if you want to edit the details felle free to reach out us! Thank you!</p>",
+              "emailMessage/Importance": "Low"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+              "connectionName": "shared_office365",
+              "operationId": "SendEmailV2"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

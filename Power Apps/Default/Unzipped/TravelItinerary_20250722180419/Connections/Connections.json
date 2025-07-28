@@ -1,0 +1,43 @@
+{
+  "86d12609-d39c-48b6-aab5-8290e26210ad": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/v1.0.1754/1.0.1754.4231/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://labskraft27.sharepoint.com/sites/GuruCompany": {
+        "dataSources": {
+          "Travel Itinerary Activity": {
+            "tableName": "16cf0203-27f1-4331-b857-a5b51aefa206"
+          },
+          "Travel Itinerary Basic Details": {
+            "tableName": "a3e34e57-022f-49fa-b465-891f98b59563"
+          },
+          "Travel Itinerary Hotel Details": {
+            "tableName": "6a899153-cc15-4969-b792-d47d7067999e"
+          },
+          "Travel Itinerary MoT Details": {
+            "tableName": "a1d1e90b-675b-45fd-bf17-eac94e7723e2"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Travel Itinerary Basic Details",
+      "Travel Itinerary MoT Details",
+      "Travel Itinerary Hotel Details",
+      "Travel Itinerary Activity"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "86d12609-d39c-48b6-aab5-8290e26210ad"
+  }
+}

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{909724fb-2a29-4e31-8bd7-4e765476299a}" Name="dcff712b-7ba9-41d6-8c7b-2ea3d3690462 - Interview date reminders" Description="This Power Automate flow will remind the phone screener and recruiter 3 days before the phone screen date, and remind the interviewers and recruiter 3 days before the interview date." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <JsonFileName>/Workflows/dcff712b-7ba9-41d6-8c7b-2ea3d3690462-Interviewdate-909724FB-2A29-4E31-8BD7-4E765476299A.json</JsonFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>5</Category>
+  <Mode>0</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <RunAs>1</RunAs>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ModernFlowType>0</ModernFlowType>
+  <PrimaryEntity>none</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="dcff712b-7ba9-41d6-8c7b-2ea3d3690462 - Interview date reminders" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description languagecode="1033" description="This Power Automate flow will remind the phone screener and recruiter 3 days before the phone screen date, and remind the interviewers and recruiter 3 days before the interview date." />
+  </Descriptions>
+</Workflow>

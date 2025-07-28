@@ -1,0 +1,114 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "mca_sharedoffice365_48041"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      },
+      "shared_sharepointonline": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "mca_sharedsharepointonline_6b086"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_an_item_or_a_file_is_modified": {
+          "recurrence": {
+            "frequency": "Minute",
+            "interval": 5
+          },
+          "splitOn": "@triggerOutputs()?['body/value']",
+          "metadata": {
+            "operationMetadataId": "04f94ddf-9851-484e-9d53-696d98df6084"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "https://labskraft27.sharepoint.com/sites/GuruCompany",
+              "table": "cb341a02-53b1-41b3-ab27-7c3626378f29"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+              "connectionName": "shared_sharepointonline",
+              "operationId": "GetOnChangedItems"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "To_the_approver": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "74fa09de-87a1-462f-adf6-2d393a11ddf2"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+              "connectionName": "shared_office365",
+              "operationId": "SendEmailV2"
+            },
+            "parameters": {
+              "emailMessage/To": "user519@labskraft.com",
+              "emailMessage/Subject": "Modification in an Reimburesement Request",
+              "emailMessage/Body": "<p class=\"editor-paragraph\">Hello Team,<br><br>We have a modified reimburesement request from @{triggerBody()?['Name']} for the amount of @{triggerBody()?['Amount']}. Just adding few important details for your reference!<br><br><br>Employee ID: @{triggerBody()?['EmployeeID']}<br><br>Department: @{triggerBody()?['Department']}<br><br>Reporting Manager: @{triggerBody()?['ReportingManager/DisplayName']}<br><br>Expense Type: @{triggerBody()?['Expensetype/Value']}<br><br>Kindly look into it and act asap. Thank you!</p>",
+              "emailMessage/Importance": "Normal"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Self_Mail": {
+          "runAfter": {
+            "To_the_approver": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "7c4945fa-4939-4154-a661-42aa77da314b"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365",
+              "connectionName": "shared_office365",
+              "operationId": "SendEmailV2"
+            },
+            "parameters": {
+              "emailMessage/To": "@triggerBody()?['Author/Email']",
+              "emailMessage/Subject": "You have modified a reimburesement request",
+              "emailMessage/Body": "<p class=\"editor-paragraph\">Hi @{triggerBody()?['Name']},<br><br>We have received a modified reimburesement request from you. Here are the details:<br><br>Employee ID: @{triggerBody()?['EmployeeID']}<br><br>Department: @{triggerBody()?['Department']}<br><br>Reporting Manager: @{triggerBody()?['ReportingManager/DisplayName']}<br><br>Expense Type: @{triggerBody()?['Expensetype/Value']}<br><br>Amount: @{triggerBody()?['Amount']}<br><br>We have sent the request for approval to your manager. In meantime, if you want to edit the details felle free to reach out us! Thank you!</p>",
+              "emailMessage/Importance": "Normal"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

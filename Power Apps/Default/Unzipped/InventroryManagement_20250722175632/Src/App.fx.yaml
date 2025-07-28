@@ -1,0 +1,12 @@
+App As appinfo:
+    BackEnabled: =true
+    OnStart: =ClearCollect(colAttachements, Defaults('Inventory Management').Attachments);
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

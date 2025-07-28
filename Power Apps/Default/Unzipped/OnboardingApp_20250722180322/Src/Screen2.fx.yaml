@@ -1,0 +1,383 @@
+Screen2 As screen:
+    BackgroundImage: ='855936706_medium'
+    ImagePosition: =ImagePosition.Stretch
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    "'Employee Form 2' As groupContainer.horizontalAutoLayoutContainer":
+        DropShadow: =DropShadow.Light
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =16
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowX: =LayoutOverflow.Scroll
+        LayoutOverflowY: =LayoutOverflow.Scroll
+        PaddingBottom: =16
+        PaddingLeft: =16
+        PaddingRight: =16
+        PaddingTop: =16
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =Parent.Width
+        ZIndex: =1
+
+        "'HR NAME' As groupContainer.manualLayoutContainer":
+            BorderStyle: =BorderStyle.None
+            DropShadow: =DropShadow.Light
+            FillPortions: =0
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =1
+
+            HR_NAME_LABEL As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.Verdana
+                FontWeight: =FontWeight.Semibold
+                Height: =42
+                Size: =13
+                Text: ="HR NAME"
+                Width: =130
+                X: =40
+                Y: =40
+                ZIndex: =1
+
+            HR_NAME_INPUT As text:
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                Default: =
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                DisabledFill: =RGBA(242, 242, 241, 0)
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Font: =Font.Verdana
+                HintText: =""
+                HoverBorderColor: =RGBA(16, 110, 190, 1)
+                HoverColor: =RGBA(204, 204, 204, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                PressedBorderColor: =RGBA(0, 120, 212, 1)
+                PressedColor: =RGBA(50, 49, 48, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =50
+                RadiusBottomRight: =50
+                RadiusTopLeft: =50
+                RadiusTopRight: =50
+                Size: =13
+                X: =40
+                Y: =82
+                ZIndex: =2
+
+        "'PHONE NUMBER' As groupContainer.manualLayoutContainer":
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =20
+            FillPortions: =0
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            X: =40
+            Y: =40
+            ZIndex: =2
+
+            PHONE_NUMBER_LABEL As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.Verdana
+                FontWeight: =FontWeight.Semibold
+                Size: =13
+                Text: ="PHONE NUMBER"
+                Width: =247
+                X: =40
+                Y: =40
+                ZIndex: =1
+
+            PHONE_NUMBER_INPUT As text:
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                Default: ="+91"
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                DisabledFill: =RGBA(242, 242, 241, 0)
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Font: =Font.Verdana
+                Format: =TextFormat.Number
+                HintText: =""
+                HoverBorderColor: =RGBA(16, 110, 190, 1)
+                HoverColor: =RGBA(204, 204, 204, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                PressedBorderColor: =RGBA(0, 120, 212, 1)
+                PressedColor: =RGBA(50, 49, 48, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =50
+                RadiusBottomRight: =50
+                RadiusTopLeft: =50
+                RadiusTopRight: =50
+                Size: =13
+                X: =40
+                Y: =82
+                ZIndex: =2
+
+        "'EMAIL ID' As groupContainer.manualLayoutContainer":
+            BorderStyle: =BorderStyle.None
+            DropShadow: =DropShadow.Light
+            FillPortions: =0
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =7
+
+            EMAIL_ID_LABEL As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.Verdana
+                FontWeight: =FontWeight.Semibold
+                Height: =42
+                Size: =13
+                Text: ="EMAIL ID"
+                Width: =152
+                X: =40
+                Y: =40
+                ZIndex: =1
+
+            EMAIL_ID_INPUT As text:
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                Default: =
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                DisabledFill: =RGBA(242, 242, 241, 0)
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Font: =Font.Verdana
+                HintText: =""
+                HoverBorderColor: =RGBA(16, 110, 190, 1)
+                HoverColor: =RGBA(204, 204, 204, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                PressedBorderColor: =RGBA(0, 120, 212, 1)
+                PressedColor: =RGBA(50, 49, 48, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =50
+                RadiusBottomRight: =50
+                RadiusTopLeft: =50
+                RadiusTopRight: =50
+                Size: =13
+                X: =40
+                Y: =82
+                ZIndex: =2
+
+        "'LINKEDIN URL' As groupContainer.manualLayoutContainer":
+            BorderStyle: =BorderStyle.None
+            DropShadow: =DropShadow.Light
+            FillPortions: =0
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =8
+
+            LINKEDIN_LABEL As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.Verdana
+                FontWeight: =FontWeight.Semibold
+                Height: =42
+                Size: =13
+                Text: ="LINKEDIN URL"
+                Width: =188
+                X: =40
+                Y: =40
+                ZIndex: =1
+
+            LINKEDIN_URL_INPUT As text:
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                Default: =
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                DisabledFill: =RGBA(242, 242, 241, 0)
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Font: =Font.Verdana
+                HintText: =""
+                HoverBorderColor: =RGBA(16, 110, 190, 1)
+                HoverColor: =RGBA(204, 204, 204, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                PressedBorderColor: =RGBA(0, 120, 212, 1)
+                PressedColor: =RGBA(50, 49, 48, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =50
+                RadiusBottomRight: =50
+                RadiusTopLeft: =50
+                RadiusTopRight: =50
+                Size: =13
+                X: =40
+                Y: =82
+                ZIndex: =2
+
+        "'INSTAGRAM URL' As groupContainer.manualLayoutContainer":
+            BorderStyle: =BorderStyle.None
+            DropShadow: =DropShadow.Light
+            FillPortions: =0
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =9
+
+            INSTAGRAM_LABEL As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.Verdana
+                FontWeight: =FontWeight.Semibold
+                Height: =42
+                Size: =13
+                Text: ="INSTAGRAM URL"
+                Width: =223
+                X: =40
+                Y: =40
+                ZIndex: =1
+
+            INSTAGRAM_URL_INPUT As text:
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                Default: =
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                DisabledFill: =RGBA(242, 242, 241, 0)
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Font: =Font.Verdana
+                HintText: =""
+                HoverBorderColor: =RGBA(16, 110, 190, 1)
+                HoverColor: =RGBA(204, 204, 204, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                PressedBorderColor: =RGBA(0, 120, 212, 1)
+                PressedColor: =RGBA(50, 49, 48, 1)
+                PressedFill: =RGBA(255, 255, 255, 1)
+                RadiusBottomLeft: =50
+                RadiusBottomRight: =50
+                RadiusTopLeft: =50
+                RadiusTopRight: =50
+                Size: =13
+                X: =40
+                Y: =82
+                ZIndex: =2
+
+        "'PASSPORT STATUS' As groupContainer.manualLayoutContainer":
+            BorderStyle: =BorderStyle.None
+            DropShadow: =DropShadow.Light
+            FillPortions: =0
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =11
+
+            PASSPORT_STATUS_LABEL As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.Verdana
+                FontWeight: =FontWeight.Semibold
+                Height: =29
+                Size: =13
+                Text: ="Do you have Passport?"
+                Width: =405
+                X: =40
+                Y: =40
+                ZIndex: =1
+
+            PASSPORT_STATUS_INPUT As toggleSwitch:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                FalseFill: =RGBA(96, 94, 92, 1)
+                FalseHoverFill: =RGBA(50, 49, 48, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                HandleFill: =RGBA(255, 255, 255, 1)
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                Size: =13
+                TrueFill: =RGBA(0, 120, 212, 1)
+                TrueHoverFill: =RGBA(16, 110, 190, 1)
+                X: =40
+                Y: =81
+                ZIndex: =2
+
+        SUBMIT As button:
+            AlignInContainer: =AlignInContainer.Center
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            DisabledFill: =RGBA(242, 242, 241, 0)
+            Fill: =RGBA(0, 120, 212, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(16, 110, 190, 1)
+            OnSelect: =
+            PressedBorderColor: =RGBA(0, 69, 120, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(16, 110, 190, 1)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: ="SUBMIT"
+            ZIndex: =12
+

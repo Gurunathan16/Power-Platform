@@ -1,0 +1,363 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Screen1:
+    Properties:
+      BackgroundImage: ='855936706_medium'
+      Fill: =RGBA(255, 255, 255, 1)
+      ImagePosition: =ImagePosition.Stretch
+      LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+    Children:
+      - Employee Form:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =16
+            LayoutOverflowX: =LayoutOverflow.Scroll
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Width: =Parent.Width
+          Children:
+            - NAME:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  FillPortions: =0
+                Children:
+                  - NAME_LABEL:
+                      Control: Label@2.5.1
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Semibold
+                        Text: ="NAME"
+                        Width: =69
+                        X: =40
+                        Y: =40
+                  - NAME_INPUT:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        Default: =
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.Verdana
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(204, 204, 204, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =50
+                        RadiusBottomRight: =50
+                        RadiusTopLeft: =50
+                        RadiusTopRight: =50
+                        X: =40
+                        Y: =82
+            - AGE:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  BorderThickness: =20
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  X: =40
+                  Y: =40
+                Children:
+                  - AGE_LABEL:
+                      Control: Label@2.5.1
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Semibold
+                        Text: ="AGE"
+                        Width: =69
+                        X: =40
+                        Y: =40
+                  - AGE_INPUT:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        Default: =
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.Verdana
+                        Format: =TextFormat.Number
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(204, 204, 204, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =50
+                        RadiusBottomRight: =50
+                        RadiusTopLeft: =50
+                        RadiusTopRight: =50
+                        X: =40
+                        Y: =82
+            - GENDER:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  FillPortions: =0
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  X: =40
+                  Y: =40
+                Children:
+                  - GENDER_LABEL:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Semibold
+                        Height: =51
+                        Text: ="GENDER"
+                        Width: =146
+                        X: =40
+                        Y: =40
+                  - GENDER_INPUT:
+                      Control: Classic/Radio@2.3.0
+                      Properties:
+                        BorderColor: =RGBA(50, 49, 48, 1)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(255, 255, 255, 1)
+                        Default: ="GENDER"
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.Verdana
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Items.Value: =Value
+                        PaddingBottom: =5
+                        PaddingTop: =5
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        RadioBorderColor: =RGBA(50, 49, 48, 1)
+                        RadioSelectionFill: =RGBA(0, 120, 212, 1)
+                        X: =40
+                        Y: =91
+            - DOB:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  BorderThickness: =2
+                  FillPortions: =0
+                  X: =40
+                  Y: =40
+                Children:
+                  - DATE_OF_BIRTH_LABEL:
+                      Control: Label@2.5.1
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Semibold
+                        Text: ="DOB"
+                        Width: =69
+                        X: =40
+                        Y: =40
+                  - DOB_INPUT:
+                      Control: Classic/DatePicker@2.6.0
+                      Properties:
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =0
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Segoe UI'
+                        IconBackground: =RGBA(0, 120, 212, 1)
+                        IconFill: =RGBA(255, 255, 255, 1)
+                        PaddingTop: =5
+                        Size: =13
+                        X: =40
+                        Y: =83
+            - PERMANENT ADDRESS:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  FillPortions: =0
+                Children:
+                  - PERMANENT_ADDRESS_LABEL:
+                      Control: Label@2.5.1
+                      Properties:
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Semibold
+                        Text: ="Permanent Address"
+                        Width: =210
+                        X: =40
+                        Y: =40
+                  - PERMANENT_ADDRESS_INPUT_1:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        Default: =
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.Verdana
+                        Height: =38
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(204, 204, 204, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =50
+                        RadiusBottomRight: =50
+                        RadiusTopLeft: =50
+                        RadiusTopRight: =50
+                        Width: =807
+                        X: =40
+                        Y: =82
+            - COMMUNICATION ADDRESS:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  FillPortions: =0
+                Children:
+                  - COMMUNICATION_ADDRESS_LABEL:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.Verdana
+                        FontWeight: =FontWeight.Semibold
+                        Height: =42
+                        Text: ="Communication Address"
+                        Width: =286
+                        X: =40
+                        Y: =40
+                  - COMMUNICATION_ADDRESS_INPUT:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(245, 245, 245, 1)
+                        Color: =RGBA(255, 255, 255, 1)
+                        Default: =
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.Verdana
+                        Height: =41
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(204, 204, 204, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =50
+                        RadiusBottomRight: =50
+                        RadiusTopLeft: =50
+                        RadiusTopRight: =50
+                        Width: =801
+                        X: =40
+                        Y: =82
+            - NEXT:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  AlignInContainer: =AlignInContainer.Center
+                  BorderColor: =RGBA(0, 0, 0, 0)
+                  BorderStyle: =BorderStyle.None
+                  Color: =RGBA(255, 255, 255, 1)
+                  DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                  DisabledColor: =RGBA(161, 159, 157, 1)
+                  DisabledFill: =RGBA(242, 242, 241, 0)
+                  Fill: =RGBA(0, 120, 212, 1)
+                  Font: =Font.'Segoe UI'
+                  FontWeight: =FontWeight.Bold
+                  HoverBorderColor: =RGBA(0, 0, 0, 0)
+                  HoverColor: =RGBA(255, 255, 255, 1)
+                  HoverFill: =RGBA(16, 110, 190, 1)
+                  OnSelect: =
+                  PressedBorderColor: =RGBA(0, 69, 120, 1)
+                  PressedColor: =RGBA(255, 255, 255, 1)
+                  PressedFill: =RGBA(16, 110, 190, 1)
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Text: ="NEXT"

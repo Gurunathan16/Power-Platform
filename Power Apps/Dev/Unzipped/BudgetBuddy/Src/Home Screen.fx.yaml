@@ -1,0 +1,523 @@
+"'Home Screen' As screen":
+    ContentLanguage: =""
+    Fill: =RGBA(249, 250, 251, 1)
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+    OnVisible: |-
+        =Refresh('Expense Tracker');
+        Refresh('Income Tracker');
+        Refresh('Balance Log');
+        Set(step, 1)
+
+    "'Home Screen Container' As groupContainer.horizontalAutoLayoutContainer":
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(245, 245, 245, 1)
+        Height: =Parent.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =16
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =16
+        PaddingLeft: =16
+        PaddingRight: =16
+        PaddingTop: =16
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =Parent.Width
+        ZIndex: =1
+
+        "'HS Header Container' As groupContainer.horizontalAutoLayoutContainer":
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =75
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            ZIndex: =1
+
+            "'HS Header' As Header":
+                Align: =Align.Center
+                AlignInContainer: =AlignInContainer.Center
+                BasePaletteColor: =RGBA(227, 106, 244, 1)
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =Font.Verdana
+                Height: =75
+                IsLogoVisible: =true
+                IsProfilePictureVisible: =true
+                IsTitleVisible: =true
+                LayoutMinHeight: =75
+                LayoutMinWidth: =Parent.Width
+                Logo: =
+                LogoMaxHeight: =70
+                LogoTooltip: ="The logo image"
+                OnSelectLogo: =Navigate('Home Screen',ScreenTransition.Fade);
+                Style: ='Header.Style'.Primary
+                TabIndex: =0
+                Title: ="BudgetBuddy"
+                TitleFontSize: =30
+                TitleRole: =""
+                Tooltip: =""
+                UserEmail: =User().Email
+                UserImage: =User().Image
+                UserImageAltText: =User().FullName &" profile picture"
+                UserName: =User().FullName
+                Visible: =true
+                Width: =Parent.Width
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+        "'HS Footer Container' As groupContainer.horizontalAutoLayoutContainer":
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 1)
+            FillPortions: =0
+            Height: =75
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutGap: =16
+            LayoutJustifyContent: =LayoutJustifyContent.End
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingRight: =20
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            ZIndex: =2
+
+            "'New Income Button' As Button":
+                AcceptsFocus: =true
+                AccessibleLabel: =""
+                Align: =""
+                Appearance: ="Primary"
+                BasePaletteColor: =RGBA(8, 222, 8, 1)
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =Font.Verdana
+                FontItalic: =false
+                FontSize: =15
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                Icon: =""
+                IconRotation: =0
+                IconStyle: ="Outline"
+                Layout: ="Icon before"
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                OnSelect: |-
+                    =ResetForm('Income Form');
+                    Navigate('Income Form',ScreenTransition.Fade);
+                TabIndex: =0
+                Text: ="New Income"
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Width: =140
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            "'New Expense Button' As Button":
+                AcceptsFocus: =true
+                AccessibleLabel: =""
+                Align: =""
+                Appearance: ="Primary"
+                BasePaletteColor: =RGBA(249, 83, 109, 1)
+                BorderStyle: =""
+                ContentLanguage: =""
+                DisplayMode: =DisplayMode.Edit
+                Font: =Font.Verdana
+                FontItalic: =false
+                FontSize: =15
+                FontStrikethrough: =false
+                FontUnderline: =false
+                FontWeight: =FontWeight.Semibold
+                Height: =32
+                Icon: =""
+                IconRotation: =0
+                IconStyle: ="Outline"
+                Layout: ="Icon before"
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                OnSelect: |-
+                    =ResetForm('Expense Form');
+                    Navigate('Expense Form',ScreenTransition.Fade);
+                TabIndex: =0
+                Text: ="New Expense"
+                Tooltip: =""
+                VerticalAlign: =""
+                Visible: =true
+                Width: =140
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+        "'HS Main Container' As groupContainer.horizontalAutoLayoutContainer":
+            DropShadow: =DropShadow.Light
+            Fill: =RGBA(255, 255, 255, 1)
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            ZIndex: =3
+
+            "'Head Container' As groupContainer.verticalAutoLayoutContainer":
+                BorderStyle: =BorderStyle.None
+                FillPortions: =0
+                Height: =50
+                LayoutAlignItems: =LayoutAlignItems.Stretch
+                LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                LayoutMinHeight: =50
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                ZIndex: =1
+
+                "'Balance Button' As Button":
+                    Align: =Align.Center
+                    AlignInContainer: =AlignInContainer.Center
+                    Appearance: ='ButtonCanvas.Appearance'.Outline
+                    BasePaletteColor: =RGBA(227, 106, 244, 1)
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =Font.'Segoe UI'
+                    FontSize: =25
+                    FontWeight: =FontWeight.Bold
+                    Height: =Parent.Height
+                    Icon: ="Money"
+                    IconStyle: ='ButtonCanvas.IconStyle'.Outline
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    OnSelect: =Set(step, 1)
+                    Text: ="Balance"
+                    VerticalAlign: =VerticalAlign.Middle
+                    Width: =Parent.Width / 3
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                "'Expense Button' As Button":
+                    AcceptsFocus: =true
+                    AccessibleLabel: =""
+                    Align: =Align.Center
+                    AlignInContainer: =AlignInContainer.Center
+                    Appearance: ='ButtonCanvas.Appearance'.Outline
+                    BasePaletteColor: =RGBA(227, 106, 244, 1)
+                    BorderStyle: =""
+                    ContentLanguage: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =Font.'Segoe UI'
+                    FontItalic: =false
+                    FontSize: =25
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =FontWeight.Bold
+                    Height: =Parent.Height
+                    Icon: ="ArrowDown"
+                    IconRotation: =0
+                    IconStyle: ="Outline"
+                    Layout: ="Icon before"
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    OnSelect: =Set(step, 2)
+                    TabIndex: =0
+                    Text: ="Expense"
+                    Tooltip: =""
+                    VerticalAlign: =VerticalAlign.Middle
+                    Visible: =true
+                    Width: =Parent.Width / 3
+                    X: =0
+                    Y: =0
+                    ZIndex: =2
+
+                "'Income Button' As Button":
+                    AcceptsFocus: =true
+                    AccessibleLabel: =""
+                    Align: =Align.Center
+                    AlignInContainer: =AlignInContainer.Center
+                    Appearance: ='ButtonCanvas.Appearance'.Outline
+                    BasePaletteColor: =RGBA(227, 106, 244, 1)
+                    BorderStyle: =""
+                    ContentLanguage: =""
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =Font.'Segoe UI'
+                    FontItalic: =false
+                    FontSize: =25
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =FontWeight.Bold
+                    Height: =Parent.Height
+                    Icon: ="ArrowUp"
+                    IconRotation: =0
+                    IconStyle: ="Outline"
+                    Layout: ="Icon before"
+                    LayoutMinHeight: =32
+                    LayoutMinWidth: =96
+                    OnSelect: =Set(step, 3)
+                    TabIndex: =0
+                    Text: ="Income"
+                    Tooltip: =""
+                    VerticalAlign: =VerticalAlign.Middle
+                    Visible: =true
+                    Width: =Parent.Width / 3
+                    X: =0
+                    Y: =0
+                    ZIndex: =3
+
+            Container1_1 As groupContainer.horizontalAutoLayoutContainer:
+                DropShadow: =DropShadow.Light
+                Height: =50
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutGap: =16
+                LayoutMinHeight: =50
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                ZIndex: =2
+
+                "'Expense Table' As Table.pcfdataset":
+                    AccessibleLabel: =""
+                    AlignInContainer: =AlignInContainer.Stretch
+                    BasePaletteColor: =RGBA(227, 106, 244, 1)
+                    ContentLanguage: =""
+                    ContextualLookupColumnFilters: ="yes"
+                    DateOnlyFormat: ='PowerAppsOneGrid.DateOnlyFormat'.ShortDate
+                    DateTimeFormat: ='PowerAppsOneGrid.DateTimeFormat'.ShortDateTime
+                    DisableChildItemsEditing: ="no"
+                    DisableStatusColumn: =""
+                    DisableStatusColumnSavingIcons: =""
+                    DisplayMode: =DisplayMode.Edit
+                    EnableAggregation: ="no"
+                    EnableColumnMoving: ="no"
+                    EnableDropdownColor: ="no"
+                    EnableEditing: ="no"
+                    EnableFiltering: ="no"
+                    EnableGrouping: ="no"
+                    EnableJumpBar: ="no"
+                    EnableMultipleSelection: ="no"
+                    EnablePagination: ="no"
+                    EnableRangeSelection: ="yes"
+                    EnableSorting: ="yes"
+                    EnableStatusColumn: ="yes"
+                    EnableStatusIcons: ="no"
+                    EnableTypeIcons: ="no"
+                    FillPortions: =1
+                    Font: =Font.'Segoe UI'
+                    FontSize: =15
+                    FontWeight: =FontWeight.Normal
+                    GridCustomizerControlFullName: =""
+                    HeaderFont: =Font.'Segoe UI'
+                    HeaderFontSize: =17
+                    HeaderFontWeight: =FontWeight.Bold
+                    Height: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
+                    Items: ='Expense Tracker'
+                    LayoutMinHeight: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
+                    LayoutMinWidth: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
+                    LookupFilterBeginsWith: ="no"
+                    NavigationTypesAllowed: ="none"
+                    NoDataText: =""
+                    onCellValueChange: =false
+                    onFilter: =false
+                    onNavigate: =false
+                    onRowSelect: =false
+                    onSave: =false
+                    OnSelect: =false
+                    ReflowBehavior: ='PowerAppsOneGrid.ReflowBehavior'.Reflow
+                    ShowAvatar: ="yes"
+                    ShowColumnHeaders: ="yes"
+                    ShowFooter: ="no"
+                    TabIndex: =0
+                    Tooltip: =""
+                    Visible: =step = 2
+                    Width: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
+                    X: =0
+                    Y: =0
+                    ZIndex: =1
+
+                    "'Expense Name1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+                        CanGrow: =true
+                        FieldDisplayName: ="Expense Name"
+                        FieldName: ="ExpenseName"
+                        FieldType: ="s"
+                        Order: =3
+                        Type: ="s"
+                        Visible: =true
+                        Width: =0
+                        ZIndex: =1
+
+                    Amount1 As PowerAppsOneGridTemplate_dataField.textualColumn:
+                        CanGrow: =true
+                        FieldDisplayName: ="Amount"
+                        FieldName: ="Amount"
+                        FieldType: ="n"
+                        Order: =4
+                        Type: ="s"
+                        Visible: =true
+                        Width: =0
+                        ZIndex: =2
+
+                    "'Expense Date1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+                        CanGrow: =true
+                        FieldDisplayName: ="Expense Date"
+                        FieldName: ="ExpenseDate"
+                        FieldType: ="D"
+                        Order: =5
+                        Type: ="s"
+                        Visible: =true
+                        Width: =0
+                        ZIndex: =3
+
+                    "'Do you have bills?1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+                        CanGrow: =true
+                        FieldDisplayName: ="Do you have bills?"
+                        FieldName: ="Doyouhavebills_x003f_"
+                        FieldType: ="b"
+                        Order: =6
+                        Type: ="s"
+                        Visible: =true
+                        Width: =0
+                        ZIndex: =4
+
+                    "'Bill Copy1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+                        CanGrow: =true
+                        FieldDisplayName: ="Bill Copy"
+                        FieldName: ="BillCopy"
+                        FieldType: ="I"
+                        Order: =7
+                        Type: ="s"
+                        Visible: =true
+                        Width: =0
+                        ZIndex: =5
+
+                    Category1 As PowerAppsOneGridTemplate_dataField.textualColumn:
+                        CanGrow: =true
+                        FieldDisplayName: ="Category"
+                        FieldName: ="Category"
+                        FieldType: ="s"
+                        Order: =2
+                        Type: ="s"
+                        Visible: =true
+                        Width: =0
+                        ZIndex: =6
+
+                "'Balance Table' As Table.pcfdataset":
+                    AlignInContainer: =AlignInContainer.Center
+                    BasePaletteColor: =RGBA(227, 106, 244, 1)
+                    DateOnlyFormat: ='PowerAppsOneGrid.DateOnlyFormat'.ShortDate
+                    DateTimeFormat: ='PowerAppsOneGrid.DateTimeFormat'.ShortDateTime
+                    DisplayMode: =DisplayMode.Edit
+                    FillPortions: =1
+                    Font: =Font.'Segoe UI'
+                    FontSize: =18
+                    FontWeight: =FontWeight.Semibold
+                    HeaderFont: =Font.'Segoe UI'
+                    HeaderFontSize: =20
+                    HeaderFontWeight: =FontWeight.Bold
+                    Height: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
+                    Items: ='Balance Log'
+                    LayoutMinHeight: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
+                    LayoutMinWidth: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
+                    onCellValueChange: =false
+                    onFilter: =false
+                    onNavigate: =false
+                    onRowSelect: =false
+                    onSave: =false
+                    OnSelect: =false
+                    ShowFooter: ="no"
+                    Visible: =step = 1
+                    Width: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
+                    X: =0
+                    Y: =0
+                    ZIndex: =2
+
+                    "'Current Balance1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Current Balance"
+                        FieldName: ="CurrentBalance"
+                        FieldType: ="n"
+                        FieldVariantName: ="textualColumn"
+                        Order: =2
+                        Width: =0
+                        ZIndex: =2
+
+                "'Income Table' As Table.pcfdataset":
+                    AlignInContainer: =AlignInContainer.Center
+                    BasePaletteColor: =RGBA(227, 106, 244, 1)
+                    DateOnlyFormat: ='PowerAppsOneGrid.DateOnlyFormat'.ShortDate
+                    DateTimeFormat: ='PowerAppsOneGrid.DateTimeFormat'.ShortDateTime
+                    DisplayMode: =DisplayMode.Edit
+                    FillPortions: =1
+                    Font: =Font.'Segoe UI'
+                    FontSize: =15
+                    FontWeight: =FontWeight.Normal
+                    HeaderFont: =Font.'Segoe UI'
+                    HeaderFontSize: =17
+                    HeaderFontWeight: =FontWeight.Bold
+                    Height: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
+                    Items: ='Income Tracker'
+                    LayoutMinHeight: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
+                    LayoutMinWidth: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
+                    onCellValueChange: =false
+                    onFilter: =false
+                    onNavigate: =false
+                    onRowSelect: =false
+                    onSave: =false
+                    OnSelect: =false
+                    ShowFooter: ="no"
+                    Visible: =step = 3
+                    Width: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
+                    X: =0
+                    Y: =0
+                    ZIndex: =3
+
+                    Category2 As PowerAppsOneGridTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="Category"
+                        FieldName: ="Category"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =2
+                        Width: =0
+                        ZIndex: =2
+
+                    "'Income Name1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Income Name"
+                        FieldName: ="IncomeName"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Order: =3
+                        Width: =0
+                        ZIndex: =3
+
+                    Amount2 As PowerAppsOneGridTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="Amount"
+                        FieldName: ="Amount"
+                        FieldType: ="n"
+                        FieldVariantName: ="textualColumn"
+                        Order: =4
+                        Width: =0
+                        ZIndex: =4
+
+                    "'Income Date1' As PowerAppsOneGridTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Income Date"
+                        FieldName: ="IncomeDate"
+                        FieldType: ="D"
+                        FieldVariantName: ="textualColumn"
+                        Order: =5
+                        Width: =0
+                        ZIndex: =5
+

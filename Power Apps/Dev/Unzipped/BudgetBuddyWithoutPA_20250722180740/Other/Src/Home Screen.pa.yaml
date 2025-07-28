@@ -1,0 +1,333 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Home Screen:
+    Properties:
+      Fill: =RGBA(249, 250, 251, 1)
+      LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+      OnVisible: |-
+        =Refresh('Expense Tracker');
+        Refresh('Income Tracker');
+        Refresh('Balance Log');
+        Set(step, 1)
+    Children:
+      - Home Screen Container:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =RGBA(245, 245, 245, 1)
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =16
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Width: =Parent.Width
+          Children:
+            - HS Header Container:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  Height: =75
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                Children:
+                  - HS Header:
+                      Control: Header@0.0.44
+                      Properties:
+                        Align: =Align.Center
+                        AlignInContainer: =AlignInContainer.Center
+                        BasePaletteColor: =RGBA(227, 106, 244, 1)
+                        Font: =Font.Verdana
+                        OnSelectLogo: =Navigate('Home Screen',ScreenTransition.Fade);
+                        Style: ='Header.Style'.Primary
+                        Title: ="BudgetBuddy"
+                        TitleFontSize: =30
+            - HS Footer Container:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  Height: =75
+                  LayoutAlignItems: =LayoutAlignItems.Center
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutGap: =16
+                  LayoutJustifyContent: =LayoutJustifyContent.End
+                  PaddingRight: =20
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                Children:
+                  - New Income Button:
+                      Control: Button@0.0.45
+                      Properties:
+                        BasePaletteColor: =RGBA(8, 222, 8, 1)
+                        Font: =Font.Verdana
+                        FontSize: =15
+                        FontWeight: =FontWeight.Semibold
+                        OnSelect: |-
+                          =ResetForm('Income Form');
+                          Navigate('Income Form',ScreenTransition.Fade);
+                        Text: ="New Income"
+                        Width: =140
+                  - New Expense Button:
+                      Control: Button@0.0.45
+                      Properties:
+                        BasePaletteColor: =RGBA(249, 83, 109, 1)
+                        Font: =Font.Verdana
+                        FontSize: =15
+                        FontWeight: =FontWeight.Semibold
+                        OnSelect: |-
+                          =ResetForm('Expense Form');
+                          Navigate('Expense Form',ScreenTransition.Fade);
+                        Text: ="New Expense"
+                        Width: =140
+            - HS Main Container:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  LayoutDirection: =LayoutDirection.Vertical
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                Children:
+                  - Head Container:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =50
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                        LayoutMinHeight: =50
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                      Children:
+                        - Balance Button:
+                            Control: Button@0.0.45
+                            Properties:
+                              Align: =Align.Center
+                              AlignInContainer: =AlignInContainer.Center
+                              Appearance: ='ButtonCanvas.Appearance'.Outline
+                              BasePaletteColor: =RGBA(227, 106, 244, 1)
+                              Font: =Font.'Segoe UI'
+                              FontSize: =25
+                              FontWeight: =FontWeight.Bold
+                              Height: =Parent.Height
+                              Icon: ="Money"
+                              IconStyle: ='ButtonCanvas.IconStyle'.Outline
+                              OnSelect: =Set(step, 1)
+                              Text: ="Balance"
+                              VerticalAlign: =VerticalAlign.Middle
+                              Width: =Parent.Width / 3
+                        - Expense Button:
+                            Control: Button@0.0.45
+                            Properties:
+                              Align: =Align.Center
+                              AlignInContainer: =AlignInContainer.Center
+                              Appearance: ='ButtonCanvas.Appearance'.Outline
+                              BasePaletteColor: =RGBA(227, 106, 244, 1)
+                              Font: =Font.'Segoe UI'
+                              FontSize: =25
+                              FontWeight: =FontWeight.Bold
+                              Height: =Parent.Height
+                              Icon: ="ArrowDown"
+                              OnSelect: =Set(step, 2)
+                              Text: ="Expense"
+                              VerticalAlign: =VerticalAlign.Middle
+                              Width: =Parent.Width / 3
+                        - Income Button:
+                            Control: Button@0.0.45
+                            Properties:
+                              Align: =Align.Center
+                              AlignInContainer: =AlignInContainer.Center
+                              Appearance: ='ButtonCanvas.Appearance'.Outline
+                              BasePaletteColor: =RGBA(227, 106, 244, 1)
+                              Font: =Font.'Segoe UI'
+                              FontSize: =25
+                              FontWeight: =FontWeight.Bold
+                              Height: =Parent.Height
+                              Icon: ="ArrowUp"
+                              OnSelect: =Set(step, 3)
+                              Text: ="Income"
+                              VerticalAlign: =VerticalAlign.Middle
+                              Width: =Parent.Width / 3
+                  - Container1_1:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        Height: =50
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =16
+                        LayoutMinHeight: =50
+                      Children:
+                        - Expense Table:
+                            Control: Table@1.0.278
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Stretch
+                              BasePaletteColor: =RGBA(227, 106, 244, 1)
+                              FillPortions: =1
+                              Font: =Font.'Segoe UI'
+                              FontSize: =15
+                              FontWeight: =FontWeight.Normal
+                              HeaderFont: =Font.'Segoe UI'
+                              HeaderFontSize: =17
+                              HeaderFontWeight: =FontWeight.Bold
+                              Items: ='Expense Tracker'
+                              ReflowBehavior: ='PowerAppsOneGrid.ReflowBehavior'.Reflow
+                              ShowFooter: ="no"
+                              Visible: =step = 2
+                            Children:
+                              - Expense Name1:
+                                  Control: TableDataField@1.5.0
+                                  Variant: textualColumn
+                                  IsLocked: true
+                                  Properties:
+                                    FieldDisplayName: ="Expense Name"
+                                    FieldName: ="ExpenseName"
+                                    FieldType: ="s"
+                                    Order: =3
+                              - Amount1:
+                                  Control: TableDataField@1.5.0
+                                  Variant: textualColumn
+                                  IsLocked: true
+                                  Properties:
+                                    FieldDisplayName: ="Amount"
+                                    FieldName: ="Amount"
+                                    FieldType: ="n"
+                                    Order: =4
+                              - Expense Date1:
+                                  Control: TableDataField@1.5.0
+                                  Variant: textualColumn
+                                  IsLocked: true
+                                  Properties:
+                                    FieldDisplayName: ="Expense Date"
+                                    FieldName: ="ExpenseDate"
+                                    FieldType: ="D"
+                                    Order: =5
+                              - Do you have bills?1:
+                                  Control: TableDataField@1.5.0
+                                  Variant: textualColumn
+                                  IsLocked: true
+                                  Properties:
+                                    FieldDisplayName: ="Do you have bills?"
+                                    FieldName: ="Doyouhavebills_x003f_"
+                                    FieldType: ="b"
+                                    Order: =6
+                              - Bill Copy1:
+                                  Control: TableDataField@1.5.0
+                                  Variant: textualColumn
+                                  IsLocked: true
+                                  Properties:
+                                    FieldDisplayName: ="Bill Copy"
+                                    FieldName: ="BillCopy"
+                                    FieldType: ="I"
+                                    Order: =7
+                              - Category1:
+                                  Control: TableDataField@1.5.0
+                                  Variant: textualColumn
+                                  IsLocked: true
+                                  Properties:
+                                    FieldDisplayName: ="Category"
+                                    FieldName: ="Category"
+                                    FieldType: ="s"
+                                    Order: =2
+                        - Balance Table:
+                            Control: Table@1.0.278
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Center
+                              BasePaletteColor: =RGBA(227, 106, 244, 1)
+                              FillPortions: =1
+                              Font: =Font.'Segoe UI'
+                              FontSize: =18
+                              FontWeight: =FontWeight.Semibold
+                              HeaderFont: =Font.'Segoe UI'
+                              HeaderFontSize: =20
+                              HeaderFontWeight: =FontWeight.Bold
+                              Items: ='Balance Log'
+                              ShowFooter: ="no"
+                              Visible: =step = 1
+                            Children:
+                              - Current Balance1:
+                                  Control: TableDataField@1.5.0
+                                  Variant: textualColumn
+                                  IsLocked: true
+                                  Properties:
+                                    FieldDisplayName: ="Current Balance"
+                                    FieldName: ="CurrentBalance"
+                                    FieldType: ="n"
+                                    Order: =2
+                        - Income Table:
+                            Control: Table@1.0.278
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Center
+                              BasePaletteColor: =RGBA(227, 106, 244, 1)
+                              FillPortions: =1
+                              Font: =Font.'Segoe UI'
+                              FontSize: =15
+                              FontWeight: =FontWeight.Normal
+                              HeaderFont: =Font.'Segoe UI'
+                              HeaderFontSize: =17
+                              HeaderFontWeight: =FontWeight.Bold
+                              Items: ='Income Tracker'
+                              ShowFooter: ="no"
+                              Visible: =step = 3
+                            Children:
+                              - Category2:
+                                  Control: TableDataField@1.5.0
+                                  Variant: textualColumn
+                                  IsLocked: true
+                                  Properties:
+                                    FieldDisplayName: ="Category"
+                                    FieldName: ="Category"
+                                    FieldType: ="s"
+                                    Order: =2
+                              - Income Name1:
+                                  Control: TableDataField@1.5.0
+                                  Variant: textualColumn
+                                  IsLocked: true
+                                  Properties:
+                                    FieldDisplayName: ="Income Name"
+                                    FieldName: ="IncomeName"
+                                    FieldType: ="s"
+                                    Order: =3
+                              - Amount2:
+                                  Control: TableDataField@1.5.0
+                                  Variant: textualColumn
+                                  IsLocked: true
+                                  Properties:
+                                    FieldDisplayName: ="Amount"
+                                    FieldName: ="Amount"
+                                    FieldType: ="n"
+                                    Order: =4
+                              - Income Date1:
+                                  Control: TableDataField@1.5.0
+                                  Variant: textualColumn
+                                  IsLocked: true
+                                  Properties:
+                                    FieldDisplayName: ="Income Date"
+                                    FieldName: ="IncomeDate"
+                                    FieldType: ="D"
+                                    Order: =5

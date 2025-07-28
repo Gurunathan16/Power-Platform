@@ -1,0 +1,800 @@
+"'Product Delivery' As screen":
+    Fill: =RGBA(244, 246, 248, 1)
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    "'Product Delivery Form Container' As groupContainer.manualLayoutContainer":
+        BorderStyle: =BorderStyle.None
+        Height: =620
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =1260
+        X: =72
+        Y: =72
+        ZIndex: =1
+
+        "'Product Delivery Form' As form":
+            AcceptsFocus: =false
+            BorderColor: =RGBA(245, 245, 245, 1)
+            BorderStyle: =BorderStyle.None
+            DataSource: ='Inventory Management'
+            DefaultMode: =FormMode.New
+            Height: =484
+            NumberOfColumns: =2
+            Width: =1366
+            Y: =76
+            ZIndex: =1
+
+            "'Drop off Date DataCard' As typedDataCard.blankCard":
+                AutoHeight: =true
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =0
+                ContentLanguage: =""
+                DataField: =""
+                DisplayMode: =DisplayMode.Edit
+                DisplayName: =""
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                LayoutHeight: =0
+                LayoutWidth: =0
+                LayoutX: =0
+                LayoutY: =0
+                maximumHeight: =7680
+                maximumWidth: =1366
+                minimumHeight: =20
+                minimumWidth: =20
+                Required: =false
+                Visible: =true
+                Width: =683
+                WidthFit: =false
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+                "'Drop off Date Key' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Height: =45
+                    Size: =13
+                    Text: ="Drop off Date"
+                    Width: =247
+                    X: =60
+                    Y: =8
+                    ZIndex: =1
+
+                "'Error Message - Drop off Date' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =2
+
+                "'Drop off Date DatePicker' As 'Date picker'":
+                    AccessibleLabel: =""
+                    Appearance: ='DatePickerCanvas.Appearance'.FilledLighter
+                    BorderStyle: =""
+                    ContentLanguage: =""
+                    DateTimeZone: ="Local"
+                    DisplayMode: =DisplayMode.Edit
+                    Font: =""
+                    FontItalic: =false
+                    FontSize: =0
+                    FontStrikethrough: =false
+                    FontUnderline: =false
+                    FontWeight: =""
+                    Format: ="Long Abbreviated"
+                    Height: =40
+                    IsEditable: =false
+                    OnChange: =false
+                    Placeholder: ="Select a date..."
+                    Required: =false
+                    StartOfWeek: ="Sunday"
+                    TabIndex: =0
+                    Tooltip: =""
+                    ValidationState: ="None"
+                    Visible: =true
+                    Width: =450
+                    X: =30
+                    Y: =53
+                    ZIndex: =3
+
+                Icon6_4 As icon:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 120, 212, 1)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(16, 110, 190, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.CalendarBlank
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =25
+                    X: =30
+                    Y: =15
+                    ZIndex: =4
+
+            "'Customer Feedback' As typedDataCard.blankCard":
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =200
+                Width: =683
+                X: =0
+                Y: =3
+                ZIndex: =1
+
+                "'Drop off Date Key_2' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Height: =45
+                    Size: =13
+                    Text: ="Customer Feedback"
+                    Width: =407
+                    X: =60
+                    Y: =8
+                    ZIndex: =1
+
+                "'Error Message - Drop off Date_2' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =2
+
+                Microphone1 As microphone:
+                    BorderColor: =RGBA(0, 69, 120, 1)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    DisabledBorderColor: =RGBA(161, 159, 157, 1)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    DisabledFill: =RGBA(242, 242, 241, 0)
+                    Fill: =RGBA(0, 120, 212, 1)
+                    HoverBorderColor: =RGBA(0, 120, 212, 1)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(16, 110, 190, 1)
+                    PressedBorderColor: =RGBA(0, 120, 212, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(16, 110, 190, 1)
+                    X: =30
+                    Y: =53
+                    ZIndex: =3
+
+            "'Drop off Location DataCard' As typedDataCard.blankCard":
+                AutoHeight: =true
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                BorderThickness: =0
+                ContentLanguage: =""
+                DataField: =""
+                DisplayMode: =DisplayMode.Edit
+                DisplayName: =""
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                LayoutHeight: =0
+                LayoutWidth: =0
+                LayoutX: =0
+                LayoutY: =0
+                maximumHeight: =7680
+                maximumWidth: =1366
+                minimumHeight: =20
+                minimumWidth: =20
+                Required: =false
+                Visible: =true
+                Width: =683
+                WidthFit: =false
+                X: =1
+                Y: =0
+                ZIndex: =2
+
+                "'Drop off Location Key' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Height: =45
+                    Size: =13
+                    Text: ="Drop off Location"
+                    Width: =194
+                    X: =60
+                    Y: =8
+                    ZIndex: =1
+
+                "'Error Message - Drop off Location' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =50
+                    Y: =93
+                    ZIndex: =2
+
+                "'Drop off Location Dropdown' As Dropdown.pcfdataset":
+                    AccessibleLabel: =""
+                    Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+                    BorderStyle: =""
+                    ContentLanguage: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontSize: =0
+                    Height: =40
+                    Items: =["Bengaluru", "Chennai", "Mumbai", "Kerala"]
+                    OnChange: =false
+                    Required: =true
+                    TabIndex: =0
+                    Tooltip: =""
+                    ValidationState: ="None"
+                    Visible: =true
+                    Width: =450
+                    X: =30
+                    Y: =53
+                    ZIndex: =3
+
+                Icon8_2 As icon:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 120, 212, 1)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(16, 110, 190, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.Location
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =25
+                    X: =30
+                    Y: =15
+                    ZIndex: =4
+
+            "'GST Paid DataCard' As typedDataCard.blankCard":
+                AutoHeight: =true
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =0
+                ContentLanguage: =""
+                DataField: =""
+                DisplayMode: =DisplayMode.Edit
+                DisplayName: =""
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =86
+                LayoutHeight: =0
+                LayoutWidth: =0
+                LayoutX: =0
+                LayoutY: =0
+                maximumHeight: =7680
+                maximumWidth: =1366
+                minimumHeight: =20
+                minimumWidth: =20
+                Required: =false
+                Visible: =true
+                Width: =683
+                WidthFit: =false
+                X: =0
+                Y: =1
+                ZIndex: =3
+
+                "'Error Message - GST Paid' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =1
+
+                "'GST Paid Checkbox' As checkbox":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    CheckboxBorderColor: =RGBA(96, 94, 92, 1)
+                    CheckmarkFill: =RGBA(0, 120, 212, 1)
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(50, 49, 48, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(50, 49, 48, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Size: =13
+                    Text: ="GST Paid"
+                    Width: =450
+                    X: =30
+                    Y: =24
+                    ZIndex: =2
+
+            "'Receiver Name DataCard' As typedDataCard.blankCard":
+                AutoHeight: =true
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =0
+                ContentLanguage: =""
+                DataField: =""
+                DisplayMode: =DisplayMode.Edit
+                DisplayName: =""
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                LayoutHeight: =0
+                LayoutWidth: =0
+                LayoutX: =0
+                LayoutY: =0
+                maximumHeight: =7680
+                maximumWidth: =1366
+                minimumHeight: =20
+                minimumWidth: =20
+                Required: =false
+                Visible: =true
+                Width: =683
+                WidthFit: =false
+                X: =1
+                Y: =1
+                ZIndex: =4
+
+                "'Receiver Name Key' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Height: =45
+                    Size: =13
+                    Text: ="Receiver Name"
+                    Width: =194
+                    X: =60
+                    Y: =8
+                    ZIndex: =1
+
+                "'Error Message - Receiver Name' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =2
+
+                "'Receiver Name Value' As text":
+                    BorderColor: =RGBA(245, 245, 245, 1)
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    Default: =
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    DisabledFill: =RGBA(242, 242, 241, 0)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    HintText: =""
+                    HoverBorderColor: =RGBA(16, 110, 190, 1)
+                    HoverColor: =RGBA(50, 49, 48, 1)
+                    HoverFill: =RGBA(255, 255, 255, 1)
+                    PressedBorderColor: =RGBA(0, 120, 212, 1)
+                    PressedColor: =RGBA(50, 49, 48, 1)
+                    PressedFill: =RGBA(255, 255, 255, 1)
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Size: =13
+                    Width: =450
+                    X: =30
+                    Y: =53
+                    ZIndex: =3
+
+                Icon7_2 As icon:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 120, 212, 1)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(16, 110, 190, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.Person
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =25
+                    X: =30
+                    Y: =15
+                    ZIndex: =4
+
+            "'Total Amount DataCard' As typedDataCard.blankCard":
+                AutoHeight: =true
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                BorderThickness: =0
+                ContentLanguage: =""
+                DataField: =""
+                DisplayMode: =DisplayMode.Edit
+                DisplayName: =""
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                LayoutHeight: =0
+                LayoutWidth: =0
+                LayoutX: =0
+                LayoutY: =0
+                maximumHeight: =7680
+                maximumWidth: =1366
+                minimumHeight: =20
+                minimumWidth: =20
+                Required: =false
+                Visible: =true
+                Width: =683
+                WidthFit: =false
+                X: =0
+                Y: =2
+                ZIndex: =5
+
+                "'Total Amount Key' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Height: =45
+                    Size: =13
+                    Text: ="Total Amount"
+                    Width: =250
+                    X: =60
+                    Y: =8
+                    ZIndex: =1
+
+                "'Error Message - Total Amount' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =2
+
+                "'Total Amount NumberInput' As 'Number input'":
+                    Appearance: ='NumberInput.Appearance'.FilledLighter
+                    DisplayMode: =DisplayMode.Edit
+                    Height: =40
+                    Precision: ='NumberInput.Precision'.'2'
+                    Width: =450
+                    X: =30
+                    Y: =53
+                    ZIndex: =3
+
+                Icon4_1 As icon:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 120, 212, 1)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(16, 110, 190, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.Money
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =25
+                    X: =30
+                    Y: =15
+                    ZIndex: =4
+
+            "'Due Amount DataCard' As typedDataCard.blankCard":
+                AutoHeight: =true
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                BorderThickness: =0
+                ContentLanguage: =""
+                DataField: =""
+                DisplayMode: =DisplayMode.Edit
+                DisplayName: =""
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                LayoutHeight: =0
+                LayoutWidth: =0
+                LayoutX: =0
+                LayoutY: =0
+                maximumHeight: =7680
+                maximumWidth: =1366
+                minimumHeight: =20
+                minimumWidth: =20
+                Required: =false
+                Visible: =true
+                Width: =683
+                WidthFit: =false
+                X: =1
+                Y: =2
+                ZIndex: =6
+
+                "'Due Amount Key' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.Verdana
+                    FontWeight: =FontWeight.Semibold
+                    Height: =45
+                    Size: =13
+                    Text: ="Due Amount(If any)"
+                    Width: =284
+                    X: =60
+                    Y: =8
+                    ZIndex: =1
+
+                "'Error Message - Due Amount' As label":
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Height: =10
+                    Size: =13
+                    Text: |-
+                        ="
+                        "
+                    Width: =562
+                    X: =30
+                    Y: =93
+                    ZIndex: =2
+
+                "'Due Amount NumberInput' As 'Number input'":
+                    AccessibleLabel: =""
+                    Align: =""
+                    Appearance: ='NumberInput.Appearance'.FilledLighter
+                    BorderStyle: =""
+                    ContentLanguage: =""
+                    DelayOutput: =false
+                    DisplayMode: =DisplayMode.Edit
+                    FontSize: =0
+                    Height: =40
+                    OnChange: =false
+                    Precision: ='NumberInput.Precision'.'2'
+                    Step: =1
+                    TabIndex: =0
+                    Tooltip: =""
+                    ValidationState: ="None"
+                    Visible: =true
+                    Width: =450
+                    X: =30
+                    Y: =53
+                    ZIndex: =3
+
+                Icon4_2 As icon:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 120, 212, 1)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =30
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(16, 110, 190, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.Money
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Width: =25
+                    X: =30
+                    Y: =15
+                    ZIndex: =4
+
+    "'Submit Button' As Button":
+        AcceptsFocus: =true
+        AccessibleLabel: =""
+        Align: =Align.Center
+        Appearance: ="Primary"
+        BorderStyle: =""
+        ContentLanguage: =""
+        DisplayMode: =DisplayMode.Edit
+        Font: =Font.Verdana
+        FontItalic: =false
+        FontSize: =0
+        FontStrikethrough: =false
+        FontUnderline: =false
+        FontWeight: =FontWeight.Bold
+        Height: =40
+        Icon: ="Send"
+        IconRotation: =0
+        IconStyle: ="Outline"
+        Layout: ="Icon before"
+        OnSelect: |
+            =UpdateContext({
+                Screen3Data:
+                    {
+                        'Drop off Date': 'Drop off Date DatePicker'.SelectedDate,
+                        'Drop off Location': 'Drop off Location Dropdown'.Selected.Value,
+                        'GST Paid': 'GST Paid Checkbox'.Value,
+                        'Receiver Name': 'Receiver Name Value'.Text,
+                        'Total Amount': 'Total Amount NumberInput'.Value,
+                        'Due Amount': 'Due Amount NumberInput'.Value            
+                    }
+                });
+                
+            Patch('Inventory Management', Defaults('Inventory Management'), 
+                {
+                        'Product Name': Screen1Data.'Product Name',
+                        'Product Quantity': Screen1Data.'Product Quantity',
+                        'Quality Check': Screen1Data.'Quality Check',
+                        'Hub Location': Screen1Data.'Hub Location',
+                        'Price': Screen1Data.Price,
+                        'Barcode Scanner': Screen1Data.'Barcode Scanner',
+                        'Expiry Date': Screen1Data.'Expiry Date',
+                        'Hub Address': Screen1Data.'Hub Address',
+                        'Date of Manufacturing': Screen1Data.'Date of Manufacturing',
+                        'Location Head': Screen1Data.'Location Head',
+                        'Attachments': Screen1Data.Attachments,
+                        'Product Image': Screen1Data.'Product Image',
+                        'Arrival Date': Screen2Data.'Arrival Date',
+                        'Hub Location Warehouse REF': Screen2Data.'Hub Location',
+                        'Packed': Screen2Data.Packed,
+                        'Delivered To': Screen2Data.'Delivered To',
+                        'Dispatch Date': Screen2Data.'Dispatch Date',
+                        'Dispatch To Location': Screen2Data.'Dispatch To Location',
+                        'Signature': Screen2Data.Signature,
+                        'Sign Off': Screen2Data.'Sign Off',
+                        'Drop off Date': Screen3Data.'Drop off Date',
+                        'Drop off Location': Screen3Data.'Drop off Location',
+                        'GST Paid': Screen3Data.'GST Paid',
+                        'Receiver Name': Screen3Data.'Receiver Name',
+                        'Total Amount': Screen3Data.'Total Amount',
+                        'Due Amount': Screen3Data.'Due Amount'
+            });
+            
+            ResetForm('Product Hub Form');
+            ResetForm('Shipement Warehouse Form');
+            ResetForm('Product Delivery Form');
+            
+            Clear(colAttachements);
+        TabIndex: =0
+        Text: ="Submit"
+        Tooltip: =""
+        VerticalAlign: =VerticalAlign.Middle
+        Visible: =true
+        Width: =130
+        X: =1150
+        Y: =670
+        ZIndex: =2
+
+    "'Back Button_1' As Button":
+        AcceptsFocus: =true
+        AccessibleLabel: =""
+        Align: =Align.Center
+        Appearance: ="Primary"
+        BorderStyle: =""
+        ContentLanguage: =""
+        DisplayMode: =DisplayMode.Edit
+        Font: =Font.Verdana
+        FontItalic: =false
+        FontSize: =0
+        FontStrikethrough: =false
+        FontUnderline: =false
+        FontWeight: =FontWeight.Bold
+        Height: =40
+        Icon: ="ArrowLeft"
+        IconRotation: =0
+        IconStyle: ="Outline"
+        Layout: ="Icon before"
+        OnSelect: =Back(ScreenTransition.Fade)
+        TabIndex: =0
+        Text: ="Back"
+        Tooltip: =""
+        VerticalAlign: =VerticalAlign.Middle
+        Visible: =true
+        Width: =130
+        X: =1000
+        Y: =670
+        ZIndex: =3
+

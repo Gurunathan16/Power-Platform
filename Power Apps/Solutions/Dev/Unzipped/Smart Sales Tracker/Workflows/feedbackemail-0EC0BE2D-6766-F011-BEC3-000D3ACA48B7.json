@@ -1,0 +1,89 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "gd_sharedoffice365_31a25"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      },
+      "shared_sharepointonline": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "gd_sharedsharepointonline_20fc6"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_an_item_is_created": {
+          "recurrence": {
+            "interval": 5,
+            "frequency": "Minute"
+          },
+          "splitOn": "@triggerOutputs()?['body/value']",
+          "metadata": {
+            "operationMetadataId": "d64c6031-0c3e-4566-9b4b-837cf76666af"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_sharepointonline",
+              "operationId": "GetOnNewItems",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+            },
+            "parameters": {
+              "dataset": "https://labskraft27.sharepoint.com/sites/Project",
+              "table": "e57565b1-33f9-46d8-b737-36dd946c94d3"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Send_an_email_(V2)": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "885a8737-c869-4d19-a724-3f17f29765ba"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_office365",
+              "operationId": "SendEmailV2",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+            },
+            "parameters": {
+              "emailMessage/To": "user519@labskraft.com",
+              "emailMessage/Subject": "Feedback on Your Recent Sales Performance",
+              "emailMessage/Body": "<p>Dear@{triggerOutputs()?['body/Username']},<br>\nI would like to take this opportunity to provide you with some feedback regarding your recent sales performance.<br>\n<br>\n<br>\nYour dedication and efforts in consistently achieving the weekly sales targets have been commendable. This commitment has positively contributed to our team’s overall success.<br>\n<br>\nTo further enhance your results and professional growth, I encourage you to focus on [specific areas for improvement, e.g., pipeline management, timely follow-ups, or product knowledge]. Improving in these areas will help you exceed your sales objectives more consistently.<br>\n<br>\nPlease feel free to reach out if you require any assistance, training, or resources. I am committed to supporting your development and success. Let us schedule a meeting next week to discuss your progress and any challenges you may be facing.<br>\nThank you for your continued hard work and commitment.<br>\n<br>\nBest regards,<br>\nGopica,<br>\nABC Company.<br>\n</p>",
+              "emailMessage/Importance": "Normal"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}
