@@ -1,0 +1,170 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_sharepointonline": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "gd_sharedsharepointonline_e4ed8"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "gd_sharedoffice365_64d79"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Recurrence": {
+          "recurrence": {
+            "frequency": "Day",
+            "interval": 1,
+            "startTime": "2025-07-20T12:30:00Z"
+          },
+          "metadata": {
+            "operationMetadataId": "6e518f3c-cde6-4330-8dca-5b9272a867e3"
+          },
+          "type": "Recurrence"
+        }
+      },
+      "actions": {
+        "Get_items": {
+          "runAfter": {
+            "Compose": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "5118f393-00e6-408a-8eae-7006689f845a"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_sharepointonline",
+              "operationId": "GetItems",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+            },
+            "parameters": {
+              "dataset": "https://labskraft27.sharepoint.com/sites/Project",
+              "table": "02d98b96-14dc-4742-84c6-cba94eaff0a4",
+              "$filter": "ReportDate eq '@{outputs('Compose')}'"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Compose": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "13f4652b-d53b-4f21-930b-7a1f5f813dca"
+          },
+          "type": "Compose",
+          "inputs": "@formatDateTime(utcNow(), 'yyyy-MM-dd')"
+        },
+        "Condition": {
+          "actions": {
+            "Apply_to_each": {
+              "foreach": "@variables('varSalesReps')",
+              "actions": {
+                "Send_an_email_(V2)": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "1fee0929-a245-494b-a3cb-af01e5b844db"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_office365",
+                      "operationId": "SendEmailV2",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                    },
+                    "parameters": {
+                      "emailMessage/To": "@items('Apply_to_each')?['email']",
+                      "emailMessage/Subject": "Reminder: Sales Report Not Submitted",
+                      "emailMessage/Body": "<p>Hi @{items('Apply_to_each')?['name']} ,<br>\n<br>\nThis is a reminder that you have not submitted your Sales Report for today @{outputs('Compose')}.<br>\n<br>\nPlease submit it as soon as possible.<br>\n<br>\nThank you!<br>\n</p>",
+                      "emailMessage/Importance": "Normal"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                }
+              },
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "f8c555dc-f0a1-4c42-b9ea-0f18bc9d407b"
+              },
+              "type": "Foreach"
+            }
+          },
+          "runAfter": {
+            "Initialize_variable": [
+              "Succeeded"
+            ]
+          },
+          "expression": {
+            "equals": [
+              "@length(body('Get_items')?['value'])",
+              0
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "ae480020-bda7-41eb-a3da-e8d35ebb8eb5"
+          },
+          "type": "If"
+        },
+        "Initialize_variable": {
+          "runAfter": {
+            "Get_items": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "73045b3d-c2ac-40a6-944f-1d13959ceb2e"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "varSalesReps",
+                "type": "array",
+                "value": [
+                  {
+                    "name": "anu",
+                    "email": "user518@labskraft.com"
+                  },
+                  {
+                    "name": "deepu",
+                    "email": "user514@labskraft.com"
+                  },
+                  {
+                    "name": "gopu",
+                    "email": "user521@labskraft.com"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

@@ -1,0 +1,178 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_sharepointonline": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "gd_sharedsharepointonline_e4ed8"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "gd_sharedoffice365_64d79"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Recurrence": {
+          "recurrence": {
+            "frequency": "Day",
+            "interval": 1,
+            "startTime": "2025-07-21T12:30:00Z"
+          },
+          "metadata": {
+            "operationMetadataId": "7339ce64-1d3c-43dd-a6fb-14eeb47413e6"
+          },
+          "type": "Recurrence"
+        }
+      },
+      "actions": {
+        "Get_items": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "ca60c993-d91a-404e-8ab2-023cb6be3fc1"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_sharepointonline",
+              "operationId": "GetItems",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+            },
+            "parameters": {
+              "dataset": "https://labskraft27.sharepoint.com/sites/Project",
+              "table": "8081c538-9e9f-49fa-a6b8-c519868972a9",
+              "$filter": "VisitDate ge datetime'@{formatDateTime(addDays(utcNow(),1),'yyyy-MM-dd')}T00:00:00Z' and VisitDate lt datetime'@{formatDateTime(addDays(utcNow(),1),'yyyy-MM-dd')}T23:59:59Z'\n"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Initialize_variable": {
+          "runAfter": {
+            "Get_items": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "e42fe7b7-9569-4f93-910b-531620d51d95"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "varTomorrow",
+                "type": "string",
+                "value": "@{formatDateTime(addDays(utcNow(), 1), 'yyyy-MM-dd')\r\n}"
+              }
+            ]
+          }
+        },
+        "FilterTomorrowPlans": {
+          "runAfter": {
+            "Initialize_variable": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "796d4a8d-34f5-4f2c-b77f-87bc8fa8eb42"
+          },
+          "type": "Query",
+          "inputs": {
+            "from": "@outputs('Get_items')?['body/value']",
+            "where": "@equals(formatDateTime(item()?['VisitDate'], 'yyyy-MM-dd'), variables('varTomorrow'))"
+          }
+        },
+        "Initialize_variable_2": {
+          "runAfter": {
+            "FilterTomorrowPlans": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "3e722027-9c99-476b-bff2-d1960038cf10"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "varSalesReps",
+                "type": "array",
+                "value": [
+                  {
+                    "name": "anu",
+                    "email": "user518@labskraft.com"
+                  },
+                  {
+                    "name": "deepu",
+                    "email": "user514@labskraft.com"
+                  },
+                  {
+                    "name": "gopu",
+                    "email": "user521@labskraft.com"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "Apply_to_each": {
+          "foreach": "@variables('varSalesReps')",
+          "actions": {
+            "Send_an_email_(V2)": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "38071533-5a55-40da-9342-1da7b614a2d5"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_office365",
+                  "operationId": "SendEmailV2",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                },
+                "parameters": {
+                  "emailMessage/To": "@items('Apply_to_each')?['email']",
+                  "emailMessage/Subject": "Reminder: Submit your visit plan for tomorrow",
+                  "emailMessage/Body": "<p>Hi @{items('Apply_to_each')?['name']},<br>\n<br>\nThis is a friendly reminder to submit your visit plan for tomorrow if you haven't done so yet.<br>\n<br>\nIf you have already submitted your visit plan, please disregard this message.<br>\n<br>\nPlease make sure to complete the submission by today at 7 PM.<br>\n<br>\nThank you for your cooperation!<br>\n<br>\nBest regards,<br>\nSales Operations Team</p>",
+                  "emailMessage/Importance": "Normal"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {
+            "Initialize_variable_2": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "0c805fb3-8e00-4079-8892-be074f793516"
+          },
+          "type": "Foreach"
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

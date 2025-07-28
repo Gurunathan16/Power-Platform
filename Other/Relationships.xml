@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_gd_passwordhistory" />
+  <EntityRelationship Name="business_unit_gd_product" />
+  <EntityRelationship Name="business_unit_gd_productcategory" />
+  <EntityRelationship Name="business_unit_gd_userdata" />
+  <EntityRelationship Name="gd_passwordhistory_Username_gd_userdata" />
+  <EntityRelationship Name="gd_product_ProductCategoryLookup_gd_productcategory" />
+  <EntityRelationship Name="lk_gd_passwordhistory_createdby" />
+  <EntityRelationship Name="lk_gd_passwordhistory_modifiedby" />
+  <EntityRelationship Name="lk_gd_product_createdby" />
+  <EntityRelationship Name="lk_gd_product_modifiedby" />
+  <EntityRelationship Name="lk_gd_productcategory_createdby" />
+  <EntityRelationship Name="lk_gd_productcategory_modifiedby" />
+  <EntityRelationship Name="lk_gd_userdata_createdby" />
+  <EntityRelationship Name="lk_gd_userdata_modifiedby" />
+  <EntityRelationship Name="owner_gd_passwordhistory" />
+  <EntityRelationship Name="owner_gd_product" />
+  <EntityRelationship Name="owner_gd_productcategory" />
+  <EntityRelationship Name="owner_gd_userdata" />
+  <EntityRelationship Name="team_gd_passwordhistory" />
+  <EntityRelationship Name="team_gd_product" />
+  <EntityRelationship Name="team_gd_productcategory" />
+  <EntityRelationship Name="team_gd_userdata" />
+  <EntityRelationship Name="TransactionCurrency_gd_product" />
+  <EntityRelationship Name="user_gd_passwordhistory" />
+  <EntityRelationship Name="user_gd_product" />
+  <EntityRelationship Name="user_gd_productcategory" />
+  <EntityRelationship Name="user_gd_userdata" />
+</EntityRelationships>
